@@ -3,7 +3,7 @@
 - FLAG2{...} — second pass ACK
 - FLAG3{...} — returned by local gateway on valid command
 
-## Start
+# Start
 ### Part A - Get bits out
 - Open [GNU Radio](/Tools%20and%20Frameworks/GNU_radio.md)
 ```bash
