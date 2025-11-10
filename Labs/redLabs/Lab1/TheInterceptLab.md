@@ -1,15 +1,3 @@
-**Theoretical scenario:** You’re hired to test the downlink resilience of a startup CubeSat, ODYSSEY-1 
-
-You get two historical baseband captures
-
-***ROE:*** no RF transmission and any “uplink” is simulated locally
-
-### Outcomes
-- SDR recon on synthetic captures (recognize/measure 2-FSK @ ~1200 bps)
-- Frame recovery with a CCSDS-style sync and custom header
-- Parse JSON telemetry, infer a simple auth tag, and “send” a command locally to get the final flag
-
-
 ### Flags
 - FLAG1{...} — first telemetry
 - FLAG2{...} — second pass ACK
