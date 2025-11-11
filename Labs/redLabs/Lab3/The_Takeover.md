@@ -1,8 +1,7 @@
 # Lab 3 — The Takeover
 
 
-**Mission:**  
-You’ve successfully intercepted ODYSSEY-1’s downlink. Inside the captured traffic, you spotted telemetry and even an ACK packet that contains a mysterious `auth` field
+**Scenario:** You’ve successfully intercepted ODYSSEY-1’s downlink. Inside the captured traffic, you spotted telemetry and even an ACK packet that contains a mysterious `auth` field
 
 Your task is to **reverse engineer the uplink authentication scheme, craft a forged control command, and trick the ground station into accepting it**
 
