@@ -7,8 +7,6 @@ You will:
 2. Confuse operators with replay attacks.  
 3. Lock operators out by overwhelming their weak ground station service.  
 
-Everything here is **offline and safe**. You are hacking **only synthetic files and a local container**.
-
 ---
 
 ## Requirements
