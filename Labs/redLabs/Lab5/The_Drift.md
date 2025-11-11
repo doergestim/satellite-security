@@ -55,7 +55,15 @@ This attack is attractive because **TLEs are small text files** — easy to inje
 
 ---
 
-## Manual workflow
+Download the zip for this main folder from [Here](./lab-5-the-drift.zip)
+
+- Click the Download button
+
+<img width="330" height="177" alt="image" src="https://github.com/user-attachments/assets/df15f9ee-985a-4f6a-af65-32698e1aa337" />
+
+- Extract it
+
+## Setup
 
 ### Create a Python venv for host-side tools and download the files
 ```bash
@@ -67,13 +75,7 @@ pip install numpy matplotlib
 ```
 **Why:** Host Python renders plots and runs the mini controller sim, we keep Java/Orekit in Docker for consistency
 
-Download the zip for this main folder from [Here](./lab-5-the-drift.zip)
 
-- Click the Download button
-
-<img width="330" height="177" alt="image" src="https://github.com/user-attachments/assets/df15f9ee-985a-4f6a-af65-32698e1aa337" />
-
-- Extract it
 
 
 
