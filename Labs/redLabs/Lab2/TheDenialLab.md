@@ -62,7 +62,17 @@ python3 jam.py pass_clean.iq pass_jam_-5dB.iq -5
 
 <img width="1920" height="234" alt="image" src="https://github.com/user-attachments/assets/e9ed1d03-cd8e-43aa-9ea2-85437456045e" />
 
-- It makes it impossible to decode, and if you don't believe me, try it yourself with this script
+- It makes it impossible to decode, and if you don't believe, try it yourself with this script
+
+```bash
+nano decodeScript.py
+```
+
+- Paste this code in the file and replace `<whole 0/1 string here>` with your encoded **bit stream**
+
+>[!IMPORTANT]
+>Make sure to replace in code with your bit stream, else it will no work
+
 ```
 b = "<whole 0/1 string here>"
 
@@ -82,6 +92,8 @@ candidates = try_offsets(b)
 for score, off, preview in candidates:
     print(f"offset={off}, printable={score:.2%}\n{preview}\n")
 ```
+
+- To save and exit do `Ctrl + x` and `y` and `Enter`
 
 ### Part B — Replay Attack (Confuse Operators)
 - Start the **ground station**
