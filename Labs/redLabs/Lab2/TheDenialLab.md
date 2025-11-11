@@ -1,11 +1,11 @@
 # Lab 2 — The Denial
 
-**Mission:**  
-As red team, your task is to **disrupt ODYSSEY-1’s ground communications**.  
+**Scenario:** As **red team**, your task is to **disrupt ODYSSEY-1’s ground communications**
+
 You will:  
-1. Degrade the downlink (simulate jamming).  
-2. Confuse operators with replay attacks.  
-3. Lock operators out by overwhelming their weak ground station service.  
+1. **Degrade** the downlink (simulate jamming)
+2. **Confuse** operators with replay attacks
+3. **Lock operators out** by overwhelming their weak ground station service
 
 ---
 
