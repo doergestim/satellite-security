@@ -1,4 +1,4 @@
-# Lab C — The Drift (Orbital Analysis & Manipulation)
+# Lab 5 — The Drift (Orbital Analysis & Manipulation)
 
 **Goal:** Use **Orekit** to propagate a satellite from TLE, forge small ephemeris changes, compare **real vs forged** ground pointing (az/el), and see how a naive antenna controller would mis-point. Synthetic assets only
 
