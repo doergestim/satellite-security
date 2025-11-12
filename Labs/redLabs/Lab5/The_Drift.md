@@ -9,7 +9,7 @@
 ## Folder layout (what you have)
 
 ```
-lab-5-the-drift/
+Lab5/
 ├─ assets/
 │  ├─ ODYSSEY-1.tle             # used by Orekit propagation (LEO-like, synthetic)
 │  └─ ODYSSEY-1_strict.tle      # strict 69-char TLE; importable into gpredict
@@ -55,7 +55,9 @@ This attack is attractive because **TLEs are small text files** — easy to inje
 
 ---
 
-Download the zip for this main folder from [Here](./lab-5-the-drift.zip)
+## Setup
+
+Download the zip for this main folder from [Here](./Lab5.zip) ( Only if you are not using the VM )
 
 - Click the Download button
 
@@ -63,22 +65,28 @@ Download the zip for this main folder from [Here](./lab-5-the-drift.zip)
 
 - Extract it
 
-## Setup
-
 ### Create a Python venv for host-side tools and download the files
 ```bash
-cd lab-5-the-drift
+cd ~/Desktop/Lab5
+```
+
+```bash
 python3 -m venv .venv
+```
+
+```bash
 source .venv/bin/activate
+```
+
+```bash
 pip install --upgrade pip
+```
+
+```bash
 pip install numpy matplotlib
 ```
+
 **Why:** Host Python renders plots and runs the mini controller sim, we keep Java/Orekit in Docker for consistency
-
-
-
-
-
 
 ### Add ODYSSEY‑1 to gpredict for pass planning
 
@@ -136,6 +144,9 @@ sudo docker run --rm -v "$(pwd):/work:Z" orekit-drift   python3 scripts/run_anal
 
 **Why:** In real ops, this forgery could be delivered by a compromised catalog or MITM attack, operators would then mis-point antennas
 
+>[!IMPORTANT]
+>Make sure you are in the `Lab5` directory under `~/Desktop/Lab5`
+
 Quick peek:
 ```bash
 python scripts/peek_csv.py --out outputs -n 5
@@ -148,6 +159,7 @@ python scripts/peek_csv.py --out outputs -n 5
 ```bash
 python scripts/visualize_pointing.py --out outputs
 ```
+
 You’ll see three windows:
 - **Azimuth vs time**: real vs forged
 
