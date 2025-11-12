@@ -60,6 +60,10 @@ Download the zip for this main folder from [Here](./Lab2.zip)
 
 <img width="549" height="184" alt="image" src="https://github.com/user-attachments/assets/dbd7bbfb-b44e-40c0-9025-de39e0cc5d0a" />
 
+```bash
+cd ~/Desktop/Lab2
+```
+
 - Using **xxd** grants us this output, make sure it works for you as well
 ```bash
 xxd -d pass_clean_BPF.txt
