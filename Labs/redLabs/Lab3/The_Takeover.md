@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # Lab 3 — The Takeover
 
 
@@ -5,8 +7,8 @@
 
 Your task is to **reverse engineer the uplink authentication scheme, craft a forged control command, and trick the ground station into accepting it**
 
-## Requirements
-Download the zip for this main folder from [Here](./Lab_Takeover_Kit_Full.zip)
+## Setup ( Only if you are not using the VM )
+Download the zip for this main folder from [Here](./Lab3.zip)
 
 - Click the Download button
 
