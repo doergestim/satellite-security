@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # Lab 2 — The Denial
 
 **Scenario:** As **red team**, your task is to **disrupt ODYSSEY-1’s ground communications**
@@ -6,6 +8,9 @@ You will:
 1. **Degrade** the downlink (simulate jamming)
 2. **Confuse** operators with replay attacks
 3. **Lock operators out** by overwhelming their weak ground station service
+
+>![IMPORTANT]
+>Make sure you have done [Lab 1](../Lab1/TheInterceptLab.md) already
 
 ---
 
@@ -25,10 +30,9 @@ You will:
 
 ---
 
-## Requirements
-**Having done** [Lab 1](../Lab1/TheInterceptLab.md)
+## Requirements ( Only if you are not using the VM )
 
-Download the zip for this main folder from [Here](./Lab2_The_Denial_Kit.zip)
+Download the zip for this main folder from [Here](./Lab2.zip)
 
 - Click the Download button
 
@@ -36,16 +40,6 @@ Download the zip for this main folder from [Here](./Lab2_The_Denial_Kit.zip)
 
 
 - Extract it
-
-Make sure you have these installed:
-
-- **GNU Radio Companion (GRC)** (≥ 3.8 recommended)  
-- **Python 3.9+** with:  
-  - `numpy`  
-  - `requests` (for some optional HTTP tasks)  
-- **Docker + Docker Compose** (to run the ground station)  
-- **curl** (for HTTP attacks)  
-- **xargs**, **seq**, **watch**, and optionally **jq** (all standard on most Linux distros; `jq` is useful for JSON pretty-printing
 
 ## Start
 ### Part A — Break the Link (Simulated Jamming)
