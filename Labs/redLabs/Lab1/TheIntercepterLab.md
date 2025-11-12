@@ -1,4 +1,4 @@
-# Lab 1 — The Intercept (Red-Team Signal & Protocol Ops)
+# Lab 1 — The Intercept
 
 **Scenario**: Your team is hired to test the downlink resilience of a startup's CubeSat, **ODYSSEY-1**
 They claim the link is secure. You're given two *historical* baseband captures from a ground station test
