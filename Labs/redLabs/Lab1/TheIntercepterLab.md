@@ -161,7 +161,7 @@ gnuradio-companion &
 
 - Add a ``Add Const`` and connect it to the ``Binary Slicer``, we will add 48 to convert it to **ASCII**
 
-<img width="602" height="536" alt="image" src="https://github.com/user-attachments/assets/e5112151-8c5b-4ff7-9311-591de86aedbc" />
+<img width="600" height="536" alt="image" src="https://github.com/user-attachments/assets/c8b0df5d-cee5-4a10-a264-7b49167ef67e" />
 
 - Add a ``File Sink`` and connect it to the ``Add Const``, save the file into ``~/Desktop/Lab1/assets/pass_01.bits``
 
