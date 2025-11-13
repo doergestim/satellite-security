@@ -184,9 +184,13 @@ cat ~/Desktop/Lab1/assets/pass_01.bits
 
 <img width="600" height="536" alt="image" src="https://github.com/user-attachments/assets/730f486d-b076-4dcd-b831-98b4cb62b9bd" />
 
-- To make sure we are getting hits, add a ``Tag Debug`` and connect it to the ``Correlate Access Code - Tag``, and then run the flow, you should see hits in the debug section in the bottom-left
+- To make sure we are getting hits, add a ``Tag Debug`` and connect it to the ``Correlate Access Code - Tag``
 
-<img width="547" height="445" alt="image" src="https://github.com/user-attachments/assets/3e1703f0-8bb5-4f32-8712-4fc229476b4e" />
+<img width="600" height="536" alt="image" src="https://github.com/user-attachments/assets/6e9f7888-85af-470e-807c-6819ac15dd78" />
+
+- Run the flow, you should see hits in the debug section in the bottom-left
+
+<img width="414" height="284" alt="image" src="https://github.com/user-attachments/assets/8c99b9c5-2c40-43aa-b5c4-55ffa0cfd946" />
 
 - Add a ``Tagged Stream Align`` and connect it to the ``Correlate Access Code - Tag``
 
