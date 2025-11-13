@@ -216,7 +216,7 @@ cd ~/Desktop/Lab1
 
 - Run
 ```bash
-xxd -d assets/pass_01_BPF.txt
+xxd assets/pass_01_BPF.txt
 ```
 
 - You should see information flowing out
