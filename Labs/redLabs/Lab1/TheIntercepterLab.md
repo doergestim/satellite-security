@@ -130,7 +130,14 @@ gnuradio-companion &
 
 <img width="603" height="539" alt="image" src="https://github.com/user-attachments/assets/1605b263-c539-439f-902a-82ccc945d6e5" />
 
-- Add a ``QT GUI Time Sink`` and connect it to the ``Low Pass Filter`` and set it to **float**, the run it again by pressing ``F6`` to visualize this
+- Add a ``QT GUI Time Sink`` and connect it to the ``Low Pass Filter`` and set it to **float**
+
+<img width="603" height="539" alt="image" src="https://github.com/user-attachments/assets/763cfd8c-91d1-4366-987a-6e552d22e605" />
+
+<img width="1149" height="434" alt="image" src="https://github.com/user-attachments/assets/2f31fbef-ded6-4e09-ab65-1ca5934442d7" />
+
+
+- Run it again by pressing ``F6`` to visualize this
 
 <img width="595" height="584" alt="image" src="https://github.com/user-attachments/assets/c3d8f4f6-5456-459a-9d0b-9b99a608d8fd" />
 
