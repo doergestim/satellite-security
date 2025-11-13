@@ -68,6 +68,9 @@ gnuradio-companion &
 
 <img width="604" height="531" alt="image" src="https://github.com/user-attachments/assets/52f14882-7662-429b-8a92-86f64d60303f" />
 
+>[!NOTE]
+>For each block we add don't forget the shortcut is `Ctrl + f`
+
 - Now let's add a ``Throttle`` and connect the 2 nodes
 
 <img width="377" height="147" alt="image" src="https://github.com/user-attachments/assets/7afb082d-e2dd-4ca0-90a7-e91fb953a013" />
