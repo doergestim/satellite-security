@@ -196,14 +196,13 @@ cat ~/Desktop/Lab1/assets/pass_01.bits
 
 <img width="596" height="534" alt="image" src="https://github.com/user-attachments/assets/78058138-a319-4133-b238-fe13053b146b" />
 
-
 - Add  a ``Repack Bits`` and connect it to the ``Tagged Stream Align``
 
 <img width="596" height="534" alt="image" src="https://github.com/user-attachments/assets/acd09097-1d9c-4b6f-aec7-5e7eee28651d" />
 
 - Add a ``File Sink`` and connect it to the ``Repack Bits``, save it into ``~/Desktop/Lab1/assets/pass_01_BPF.txt``
 
-<img width="549" height="445" alt="image" src="https://github.com/user-attachments/assets/712099df-7632-4d1e-8fe8-62ad97df21f7" />
+<img width="596" height="534" alt="image" src="https://github.com/user-attachments/assets/64568f23-bf92-4cbe-a85f-75f9fd3f50d3" />
 
 - This is how the final flow should look:
 
