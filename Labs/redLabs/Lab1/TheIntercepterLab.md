@@ -199,7 +199,7 @@ cat ~/Desktop/Lab1/assets/pass_01.bits
 
 - Add  a ``Repack Bits`` and connect it to the ``Tagged Stream Align``
 
-<img width="551" height="451" alt="image" src="https://github.com/user-attachments/assets/78540910-1542-4d52-a126-7e4b8e59b54b" />
+<img width="596" height="534" alt="image" src="https://github.com/user-attachments/assets/acd09097-1d9c-4b6f-aec7-5e7eee28651d" />
 
 - Add a ``File Sink`` and connect it to the ``Repack Bits``, save it into ``~/Desktop/Lab1/assets/pass_01_BPF.txt``
 
