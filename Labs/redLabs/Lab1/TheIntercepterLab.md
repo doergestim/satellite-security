@@ -71,7 +71,7 @@ gnuradio-companion &
 >[!NOTE]
 >For each block we add don't forget the shortcut is `Ctrl + f`
 
-- Now let's add a ``Throttle`` and connect the 2 nodes
+- Now let's add a ``Throttle`` and connect the 2 nodes by dragging the **out** from `File source` to the **in** of `Throttle`
 
 <img width="377" height="147" alt="image" src="https://github.com/user-attachments/assets/7afb082d-e2dd-4ca0-90a7-e91fb953a013" />
 
