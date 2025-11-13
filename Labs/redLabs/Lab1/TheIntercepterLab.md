@@ -66,7 +66,7 @@ gnuradio-companion &
 
 - Double click it and at ``File`` put the path to the ``~/Desktop/Lab1/assets/pass_01.iq`` and the rest like in the image, then press **Apply** and **Ok**
 
-<img width="551" height="447" alt="image" src="https://github.com/user-attachments/assets/97b85f7a-eeb0-4080-afb7-9856cb07c26d" />
+<img width="604" height="531" alt="image" src="https://github.com/user-attachments/assets/52f14882-7662-429b-8a92-86f64d60303f" />
 
 - Now let's add a ``Throttle`` and connect the 2 nodes
 
