@@ -85,7 +85,9 @@ gnuradio-companion &
 
 - Add a ``QT GUI Frequency Sink`` and connect it to the ``Throttle``
 
-<img width="549" height="445" alt="image" src="https://github.com/user-attachments/assets/88dc847a-adf5-463d-8904-be00a99dcd65" />
+<img width="604" height="531" alt="image" src="https://github.com/user-attachments/assets/aec248cc-eb4b-4af3-a534-40de0dd6d4ce" />
+
+<img width="681" height="180" alt="image" src="https://github.com/user-attachments/assets/57383e01-09d2-420d-aad2-fa8df8cf9527" />
 
 - Run the flow by pressing ``F6``, you’re looking at raw baseband. Two energy blobs near ±2 kHz = 2-FSK
 
