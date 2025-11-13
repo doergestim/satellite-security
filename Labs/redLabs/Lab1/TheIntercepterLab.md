@@ -165,7 +165,7 @@ gnuradio-companion &
 
 - Add a ``File Sink`` and connect it to the ``Add Const``, save the file into ``~/Desktop/Lab1/assets/pass_01.bits``
 
-<img width="548" height="446" alt="image" src="https://github.com/user-attachments/assets/ee1ac11c-499e-4551-94f1-08c95b287eac" />
+<img width="600" height="536" alt="image" src="https://github.com/user-attachments/assets/faddda91-c6a7-46f4-8de7-4c630e596bf2" />
 
 - Now you can run the flow for 5-10 seconds and check the file we created, you should get something like this
 
