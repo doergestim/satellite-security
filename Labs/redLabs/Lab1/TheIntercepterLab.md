@@ -121,6 +121,11 @@ gnuradio-companion &
 
 <img width="550" height="160" alt="image" src="https://github.com/user-attachments/assets/d2de6b95-2d09-4af8-b056-e2f8034e90d3" />
 
+<br>
+
+<img width="398" height="90" alt="image" src="https://github.com/user-attachments/assets/5a5e9617-56ca-474d-9f03-33a198f2d0da" />
+
+
 - Add a ``Low Pass Filter`` and connect it to the ``Quadrature Demod``, it removes high-frequency noise so the clock recovery locks faster
 
 <img width="550" height="446" alt="image" src="https://github.com/user-attachments/assets/b224ff60-3022-43b3-a568-226070ee80db" />
