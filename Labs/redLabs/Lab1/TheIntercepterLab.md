@@ -147,7 +147,11 @@ gnuradio-companion &
 
 - Add a ``Binary Slicer`` and connect it to the ``Clock Recovery MM`` and then a ``UChar To Float`` and connect it to the ``Binary Slicer``, the binary slicer converts each symbol into a byte 0x00 or 0x01
 
-- Add a ``QT GUI Time Sink`` and connect it to the ``UChar To Float``, and the run again with ``F6`` to see what we got
+- Add a ``QT GUI Time Sink`` and connect it to the ``UChar To Float``, set that to float
+
+<img width="602" height="536" alt="image" src="https://github.com/user-attachments/assets/8fb45293-404b-4a67-bdc0-503e526fe79a" />
+
+- Run again with ``F6`` to see what we got
 
 <img width="661" height="837" alt="image" src="https://github.com/user-attachments/assets/7e95abf6-2a76-47b2-a2b8-9f1348836043" />
 
