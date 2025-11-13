@@ -106,7 +106,8 @@ gnuradio-companion &
 
 - Add a ``Quadrature Demod`` and connect it to the ``Throttle``, this is a **Frequency discriminator** (turn FSK into a 1-D float), FSK encodes data as instantaneous frequency. Quadrature Demod converts frequency shifts into a float that swings high/low for 1/0
 
-<img width="550" height="445" alt="image" src="https://github.com/user-attachments/assets/28480cce-e33c-466f-9545-baa6d5a24c4f" />
+<img width="598" height="533" alt="image" src="https://github.com/user-attachments/assets/c92d319c-f07a-4e1e-8cd7-e9b58c0f060c" />
+
 
 - Now let's add those variables and some more, search for ``Variable`` and drag into the flow for each one, we need 3 more
 
