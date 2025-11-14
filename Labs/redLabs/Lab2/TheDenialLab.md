@@ -73,6 +73,13 @@ xxd -d pass_clean_BPF.txt
 <img width="620" height="1016" alt="image" src="https://github.com/user-attachments/assets/3ad2b3a6-9c01-4505-b30b-c5b737f0261a" />
 
 - Now try to write your own jamming script with [Gaussian Noise](https://en.wikipedia.org/wiki/Gaussian_noise) or use this one if you don't know how
+
+```bash
+nano jam.py
+```
+
+- Copy paste this:
+
 ```
 import numpy as np, sys, math
 in_iq, out_iq, snr_db = sys.argv[1], sys.argv[2], float(sys.argv[3])
@@ -83,6 +90,8 @@ n = (np.random.normal(0, math.sqrt(noise_var), x.shape)
      + 1j*np.random.normal(0, math.sqrt(noise_var), x.shape)).astype(np.complex64)
 (x+n).tofile(out_iq)
 ```
+
+- Do `Ctrl + x` and `y` and `Enter` to save and exit
 
 - And make the new files like this
 ```bash
