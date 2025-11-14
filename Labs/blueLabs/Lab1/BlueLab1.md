@@ -81,14 +81,14 @@ Watch for:
 
 # Clean Signal — Analysis
 
-## Observations
+### Observations
 - Two strong vertical stripes indicating clear BFSK tones.
 - Noise floor is low, roughly –110 to –100 dBFS.
 - Signal stands well above the noise, giving high SNR.
 - Waterfall is stable and organized.
 - Symbol transitions look sharp and well-defined.
 
-## Interpretation
+### Interpretation
 - This is a healthy downlink.
 - The demodulator will lock easily and decode reliably.
 - Represents normal, expected operational conditions.
@@ -96,14 +96,14 @@ Watch for:
 
 # Jammed Signal (0 dB) — Analysis
 
-## Observations
+### Observations
 - BFSK tones are still visible but partially submerged.
 - Noise floor is raised significantly, around –90 to –80 dBFS.
 - Waterfall shows extra broadband noise.
 - Tone edges are less distinct.
 - SNR is reduced but not destroyed.
 
-## Interpretation
+### Interpretation
 - This is a partial denial situation.
 - Demodulator may still decode some packets but with higher BER.
 - Operators would see intermittent or glitchy telemetry.
@@ -112,42 +112,80 @@ Watch for:
 
 # Jammed Signal (–5 dB) — Analysis
 
-## Observations
+### Observations
 - Noise floor is almost equal to or above the signal.
 - BFSK tones are faint and hard to distinguish.
 - Waterfall is nearly uniformly bright, indicating strong wideband jamming.
 - Symbol structure is buried in noise.
 - Effective SNR is below 0 dB.
 
-## Interpretation
+### Interpretation
 - This is a total denial scenario.
 - Demodulator will not lock or decode correctly.
 - Operators would experience complete loss of telemetry.
 - Groundstation would show stale or missing frames.
 
+---
 
 ## Inspect symbols in Inspectrum
 
 1. Start **Inspectrum**
-2. Load `pass_clean.iq`
-3. Set sample rate: **48000**
-4. Zoom in until symbol timing is visible
-5. Use *symbol period markers* to estimate symbol rate
 
-Repeat for jammed files; observe corruption of symbol structure.
+```bash
+inspectrum &
+```
 
-## Verify demodulator failure in GNU Radio Companion
+2. Set sample rate: **48000**
+3. Load `pass_clean.iq` by pressing **Input file** and selecting that file
 
-1. Load your Lab1/2 flowgraph.
-2. Set File Source → `pass_clean.iq`
-3. Run: note consistent access-code hits and decoded packets.
-4. Switch to `pass_jam_0dB.iq` and then `pass_jam_-5dB.iq`.
+<img width="1573" height="550" alt="image" src="https://github.com/user-attachments/assets/a13daa62-054e-4a52-a36d-0754327f7b9c" />
 
-Observe:
-- Tag Debug shows fewer or zero hits  
-- Output becomes empty or corrupted  
+4. What to look for:
+
+### Identify the two BFSK tones
+- Look for two horizontal bright lines (top tone and bottom tone).
+- These represent the two frequencies used for BFSK (Mark and Space).
+- In a clean signal, both tones should be stable and sharp.
+
+### Verify that the tones switch at regular intervals
+- BFSK encodes bits by switching between the two tones.
+- In Inspectrum, this appears as alternating bright segments between the two lines.
+- Good signal = clear, rectangular transitions between tones.
+
+### Locate symbol boundaries
+- Use the horizontal time axis.
+- Each repeated “block” of patterns corresponds to symbols or frames.
+- Clean signals show:
+  - Repeating sections
+  - Well-defined on/off transitions
+  - Minimal blurring
+
+### Look for the preamble structure
+- Satellite packets often start with a known pattern (e.g., alternating tones).
+- These appear as highly regular, tightly spaced transitions at the start of each frame.
+- In your screenshot, these are the short, very crisp segments at the left of each block.
+
+### Check for noise or corruption
+- Clean signal:
+  - Background is dark blue/green.
+  - Tones stand out clearly in bright yellow.
+- Jammed or degraded signal:
+  - Background becomes grainier.
+  - Tones smear or lose sharpness.
+  - Transitions look “fuzzy” or inconsistent.
+
+### Confirm symbol rate consistency
+- The distance (time) between tone transitions should be constant.
+- Clean signal:
+  - Blocks are evenly spaced.
+  - Symbol spacing is identical throughout.
+- Jammed signal:
+  - Harder to see transitions.
+  - Blocks may look smeared over time.
 
 ---
+
+- Repeat for jammed files; observe corruption of symbol structure.
 
 # Part B — Network Forensics: Replay & Flood Detection
 
