@@ -67,7 +67,7 @@ cd ~/Desktop/Lab2
 
 - Using **xxd** grants us this output, make sure it works for you as well
 ```bash
-xxd -d pass_clean_BPF.txt
+xxd pass_clean_BPF.txt
 ```
 
 
