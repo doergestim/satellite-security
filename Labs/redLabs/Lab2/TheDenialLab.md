@@ -50,7 +50,7 @@ Download the zip for this main folder from [Here](./Lab2.zip)
 
 - Let's use that for our ``pass_clean.iq``, we need to update our 2 ``Sink File`` blocks and our ``File Source`` block
 
-<img width="549" height="184" alt="image" src="https://github.com/user-attachments/assets/d1c85571-1c74-40df-b658-e7a381b90ad4" />
+<img width="598" height="535" alt="image" src="https://github.com/user-attachments/assets/1fa52405-b79a-454d-872e-cd4d4836d7c3" />
 
 <br>
 
