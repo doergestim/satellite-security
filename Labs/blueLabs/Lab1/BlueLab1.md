@@ -73,6 +73,13 @@ Watch for:
 - Smeared tones  
 - Loss of clarity in waterfall  
 
+- Here are the other 2:
+
+<img width="738" height="684" alt="image" src="https://github.com/user-attachments/assets/d25ea8b9-71ca-4209-9fd5-5207870fbd05" />
+
+<img width="738" height="684" alt="image" src="https://github.com/user-attachments/assets/408cace7-d781-4662-9374-61cc3ba4158a" />
+
+
 ## Inspect symbols in Inspectrum
 
 1. Start **Inspectrum**
