@@ -48,21 +48,25 @@ satuser@satvm:~/Desktop/BlueLab$ realpath pass_jam_-5dB.iq
 # /home/satuser/Desktop/BlueLab/pass_jam_-5dB.iq
 ```
 
+- If this window pops up, go to **File** -> **I/O Devices**
 
 2. Select **Complex Sampled (IQ) File** Device
 3. Input rate: **48000**
 4. Device string: `file=/home/satuser/Desktop/BlueLab/pass_clean.iq,freq=437.5e6,rate=48000,repeat=true,throttle=true`
-5. Observe clean BFSK tones
-
-<img width="738" height="687" alt="image" src="https://github.com/user-attachments/assets/02486823-47e6-48ff-a6d0-16189bf05595" />
-
 
 <img width="866" height="513" alt="image" src="https://github.com/user-attachments/assets/b163115f-ba48-46c5-b11f-7eff47539484" />
 
+- Click **Ok**
 
-Then repeat for (by replacing `pass_clean.iq` in the **Device string**:
+5. Observe clean **BFSK tones** by pressing the **Arrow(play)** Button on the top-left
+
+<img width="738" height="687" alt="image" src="https://github.com/user-attachments/assets/02486823-47e6-48ff-a6d0-16189bf05595" />
+
+- Then repeat for (by replacing `pass_clean.iq` in the **Device string**):
 - `pass_jam_0dB.iq`
 - `pass_jam_-5dB.iq`
+
+- Do it by going to **File** -> **I/O Devices**
 
 Watch for:
 - Raised noise floor  
