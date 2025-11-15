@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # Lab 5 — The Drift (Orbital Analysis & Manipulation)
 
 **Goal:** Use **Orekit** to propagate a satellite from TLE, forge small ephemeris changes, compare **real vs forged** ground pointing (az/el), and see how a naive antenna controller would mis-point. Synthetic assets only
@@ -203,8 +205,20 @@ deactivate || true
 ```
 
 
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/BlueLab/BlueLab.md)</i></b>
 
+<b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/Lab4/The_Relay.md)</i></b>
 
+<b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
+
+---
 
 
 
