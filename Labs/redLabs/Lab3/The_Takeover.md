@@ -142,6 +142,9 @@ xxd -g1 assets/takeover_pass_BPF.txt
    - **Hex JSON:**
      ```bash
      HEX=$(xxd -p uplink.bin | tr -d '\n')
+     ```
+  
+     ```bash
      curl -H "Content-Type: application/json" -d "{\"hex\":\"$HEX\"}" http://localhost:5000/uplink | jq .
      ```
 
