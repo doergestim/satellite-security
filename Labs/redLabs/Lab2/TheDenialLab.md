@@ -229,3 +229,18 @@ sudo docker update --cpus 0.2 <the name here>
 - Now try the attack again and try a normal command, it should take a while before it goes through
 
 
+
+***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/Labs/redLabs/Lab3/The_Takeover.md)</i></b>
+
+<b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/Lab1/TheIntercepterLab.md)</i></b>
+
+<b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
+
+***Finished with the Labs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
+
+---
