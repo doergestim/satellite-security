@@ -8,7 +8,7 @@
 
 ## Setup
 
-Download the zip for this main folder from [Here](./RFQuack_Lab.zip)
+Download the zip for this main folder from [Here](./RFQuack_Lab.zip) ( Only if you are not using the VM )
 
 - Click the Download button
 
@@ -16,25 +16,40 @@ Download the zip for this main folder from [Here](./RFQuack_Lab.zip)
 
 - Extract it
 
-Open three terminals in the lab directory
+- Go to the **lab directory**
+
+```bash
+cd ~/Desktop/RFQuack_Lab
+```
+
+- Open three **terminals** in the lab directory by pressing the button on the top left of your terminal windows
+
+<img width="41" height="49" alt="image" src="https://github.com/user-attachments/assets/7154e599-8a7d-4d8b-8512-ef189d2679e5" />
+
+
+<img width="1832" height="113" alt="image" src="https://github.com/user-attachments/assets/4f89e71d-e3d5-4d9a-a05a-2ad7334fcb2e" />
+
 
 **Terminal A — Satellite (data + control):**
 ```bash
-python sat_emulator.py --port 5000 --control-port 5001 --beacon 2
+python3 sat_emulator.py --port 5000 --control-port 5001 --beacon 2
 ```
 
 **Terminal B — (optional) Legit ground station that sends data:**
 ```bash
-python traffic_gen.py --port 5000 --send-every 7
+python3 traffic_gen.py --port 5000 --send-every 7
 ```
 
 **Terminal C — Attacker shell:**
 ```bash
-python rqshim.py
+python3 rqshim.py
 help
 ```
 
-> RX is OFF by default in this shim, you won’t see frames until you `rx start`.
+<img width="469" height="173" alt="image" src="https://github.com/user-attachments/assets/d3fb1599-1f02-4640-9146-f743b2d623b1" />
+
+
+> RX is OFF by default in this shim, you won’t see frames until you do `rx start`.
 
 ---
 
@@ -54,12 +69,18 @@ PRE(2) | SYNC(2) | SAT(1) | MODE(1) | SEQ(1) | CMD(1) | PAD(6) | CRC(2)
 
 ## 1) Recon
 
+>[!NOTE]
+>Everytime you see `rq> ...` it means you will write only the `...` part in **Terminal C**
+
 Start capture:
 ```bash
 rq> radio.set_modem_config modulation=2FSK carrierFreq=433.920
 rq> rx start
 ```
 You should now see beacons every ~2s
+
+<img width="617" height="193" alt="image" src="https://github.com/user-attachments/assets/3825d078-6b2b-489f-b9f9-a6896523aa16" />
+
 
 **Why:** You always need structure before attacks
 
