@@ -2,7 +2,7 @@
 
 
 ## What you’ll do
-Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> observe jamming effects -> propose defenses
+> Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> observe jamming effects -> propose defenses
 
 ---
 
