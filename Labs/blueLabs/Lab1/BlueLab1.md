@@ -256,8 +256,20 @@ seq 1 500 | xargs -I{} -P 20 sh -c \
 
 ## C1 — Rate-limit with Nginx
 
-1. Install/enable nginx.
-2. Create:
+### What we are going to do
+
+- Groundstation listens on **127.0.0.1:5000**
+- Nginx will listen on **port 80**
+- All requests will be forwarded to **127.0.0.1:5000**
+- Nginx will apply **rate limits** to protect the groundstation
+
+- Create the Nginx site config
+
+```bash
+sudo nano /etc/nginx/sites-available/groundstation
+```
+
+- Paste:
 
 ```nginx
 limit_req_zone $binary_remote_addr zone=odysseyratelimit:10m rate=10r/s;
@@ -269,25 +281,68 @@ server {
     location / {
         limit_req zone=odysseyratelimit burst=20 nodelay;
         proxy_pass http://127.0.0.1:5000;
+
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
 }
 ```
 
-3. Enable site:
+- To save and exit do `Ctrl + x` and `y` and `Enter`
+
+- Disable default site
+
+```bash
+sudo rm /etc/nginx/sites-enabled/default 2>/dev/null || true
+```
+
+- Enable your site
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/groundstation \
-          /etc/nginx/sites-enabled/
+          /etc/nginx/sites-enabled/groundstation
+```
+
+- Test config
+
+```bash
 sudo nginx -t
+```
+
+<img width="600" height="44" alt="image" src="https://github.com/user-attachments/assets/81b2cc3e-f8ba-4587-b241-b83387e19c29" />
+
+- Reload Nginx
+
+```bash
 sudo systemctl reload nginx
 ```
 
-4. Rerun replay & flood through port **80**.
-   - Check:
+- Test access
 
 ```bash
-sudo tail -f /var/log/nginx/error.log
+curl -v http://localhost/
 ```
+
+<img width="1385" height="515" alt="image" src="https://github.com/user-attachments/assets/1f6640e2-bbbe-47cf-a7f2-a2d2372b8614" />
+
+
+- Trigger rate limiting
+
+```bash
+seq 1 200 | xargs -I{} -P 50 sh -c \
+ 'curl -s -o /dev/null -X POST http://localhost/ingest \
+   -H "Content-Type: application/json" \
+   --data "{\"test\":{}}"' 
+```
+
+- Watch Nginx logs:
+
+```bash
+sudo head -n 20 /var/log/nginx/error.log
+```
+
+<img width="1690" height="332" alt="image" src="https://github.com/user-attachments/assets/220369d3-9129-463f-9906-383a6fedd0da" />
 
 ---
 
@@ -326,53 +381,4 @@ Check status:
 sudo fail2ban-client status groundstation-login
 ```
 
----
 
-## C3 — Detect floods with Suricata IDS
-
-Add to `/etc/suricata/rules/local.rules`:
-
-```text
-alert http any any -> any any (
-  msg:"ODYSSEY-1 Telemetry Replay / Ingest Flood";
-  http.method; content:"POST"; nocase;
-  http.uri; content:"/ingest"; nocase;
-  detection_filter:track by_src, count 50, seconds 5;
-  sid:1000001; rev:1;
-)
-```
-
-Run IDS:
-
-```bash
-sudo suricata -i lo -c /etc/suricata/suricata.yaml
-```
-
-Trigger replay again; watch:
-
-```bash
-sudo tail -f /var/log/suricata/fast.log
-```
-
----
-
-## C4 — Monitor container resource impact
-
-```bash
-sudo docker stats
-```
-
-Then run `/cmd` flood again to see saturation.
-
-Optionally throttle container:
-
-```bash
-sudo docker update --cpus 0.2 <container_name>
-```
-
-Send a normal `/cmd` request to observe latency changes:
-
-```bash
-curl -s -H "Content-Type: application/json" \
-     --data '{"mode":"SAFE"}' http://localhost/cmd
-```
