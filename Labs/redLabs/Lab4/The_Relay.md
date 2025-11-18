@@ -21,7 +21,7 @@ Download the zip for this main folder from [Here](./lab-4-the-relay.zip) ( Only 
 
 ```bash
 # enter the lab folder
-cd Lab4
+cd ~/Desktop/Lab4
 ```
 
 ```bash
