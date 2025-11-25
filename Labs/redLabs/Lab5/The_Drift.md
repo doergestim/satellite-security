@@ -152,7 +152,7 @@ sudo docker run --rm -v "$(pwd):/work:Z" orekit-drift   python3 scripts/run_anal
 
 Quick peek:
 ```bash
-python scripts/peek_csv.py --out outputs -n 5
+python3 scripts/peek_csv.py --out outputs -n 5
 ```
 
 <img width="765" height="443" alt="image" src="https://github.com/user-attachments/assets/ee5b31ff-fe0f-4d4d-b58f-46a3e7e372cd" />
@@ -160,7 +160,7 @@ python scripts/peek_csv.py --out outputs -n 5
 
 ### Visualize az/el and total pointing error
 ```bash
-python scripts/visualize_pointing.py --out outputs
+python3 scripts/visualize_pointing.py --out outputs
 ```
 
 You’ll see three windows:
@@ -181,7 +181,7 @@ You’ll see three windows:
 
 ### Create your own forged TLE (explicit file)
 ```bash
-python scripts/forge_tle.py   --in assets/ODYSSEY-1.tle   --out assets/ODYSSEY-1-forged.tle   --dn 5e-4   --draan 0.05
+python3 scripts/forge_tle.py   --in assets/ODYSSEY-1.tle   --out assets/ODYSSEY-1-forged.tle   --dn 5e-4   --draan 0.05
 ```
 
 - Re-run analysis without inline offsets:
@@ -190,14 +190,14 @@ sudo docker run --rm -v "$(pwd):/work:Z" orekit-drift   python3 scripts/run_anal
 ```
 
 ```bash
-python scripts/visualize_pointing.py --out outputs
+python3 scripts/visualize_pointing.py --out outputs
 ```
 
 **Why:** Makes the columnar edits in line‑2 tangible; students see precisely how a tiny change impacts pointing
 
 ### Antenna controller simulator
 ```bash
-python emulators/antenna_controller_sim.py --pointing outputs/forged_pointing.csv --rate_hz 2
+python3 emulators/antenna_controller_sim.py --pointing outputs/forged_pointing.csv --rate_hz 2
 ```
 - Prints lines like: `[timestamp] SET az=xxx.xx el=yy.yy`
 - **Why:** Shows how blindly trusting a plan steers hardware off‑target
