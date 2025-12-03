@@ -82,6 +82,8 @@ pip install numpy matplotlib
 
 **Why:** Host Python renders plots and runs the mini controller sim, we keep Java/Orekit in Docker for consistency
 
+## Start
+
 ### Add ODYSSEY‑1 to gpredict for pass planning
 
 **GUI import:**  
