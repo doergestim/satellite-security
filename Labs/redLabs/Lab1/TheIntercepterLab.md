@@ -52,6 +52,8 @@ They claim the link is secure. You're given two *historical* baseband captures f
 gnuradio-companion &
 ```
 
+![](/Assets/RLab1/Lab1-1.png)
+
 <img width="1920" height="1167" alt="image" src="https://github.com/user-attachments/assets/2ddbdd2b-51b3-4eb5-b4c4-4595666f81fa" />
 
 - First things first let's input our file, that's under ``~/Desktop/Lab1/assets/pass_01.iq``
