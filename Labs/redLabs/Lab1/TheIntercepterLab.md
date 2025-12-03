@@ -21,24 +21,6 @@ They claim the link is secure. You're given two *historical* baseband captures f
 - `tools/sat_gateway.py` — local validator for your crafted uplink packet
 - `assets/*.json` — samplerate + format metadata
 
----
-
-## Setup ( Only if you are not using the VM )
-
-1. Download the zip for this main folder from [Here](./Lab1.zip)
-
-- Click the Download button
-
-![1](./download.png)
-
-
-- Extract it
-
-2. Optional: Regenerate captures
-   ```bash
-   python3 tools/generate_captures.py
-   ```
-
 
 ### Flags
 - FLAG1{...} — first telemetry
