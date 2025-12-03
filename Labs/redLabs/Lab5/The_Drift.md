@@ -59,14 +59,6 @@ This attack is attractive because **TLEs are small text files** — easy to inje
 
 ## Setup
 
-Download the zip for this main folder from [Here](./Lab5.zip) ( Only if you are not using the VM )
-
-- Click the Download button
-
-<img width="330" height="177" alt="image" src="https://github.com/user-attachments/assets/df15f9ee-985a-4f6a-af65-32698e1aa337" />
-
-- Extract it
-
 ### Create a Python venv for host-side tools and download the files
 ```bash
 cd ~/Desktop/Lab5
