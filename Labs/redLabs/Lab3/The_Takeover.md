@@ -65,8 +65,6 @@ Just replace the ``File Source`` block and the `File Sink` blocks with our new `
 
 ![image](/Assets/RLab3/RLab3-1.png)
 
-<img width="1474" height="703" alt="image" src="https://github.com/user-attachments/assets/51e9f712-8175-4018-970d-79851915a7d6" />
-
 4. The **assets** folder should now look like this
 
 ![image](/Assets/RLab3/RLab3-2.png)
