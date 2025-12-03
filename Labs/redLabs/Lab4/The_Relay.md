@@ -79,19 +79,20 @@ gpredict
 In gpredict:
 - **Edit -> Update TLE data from local files**: choose `assets/` and *open*
 
+![image](/Assets/RLab4/RLab4-1.png)
 <img width="315" height="170" alt="image" src="https://github.com/user-attachments/assets/e39205f1-89bf-4ea8-ad78-a72ada1f3c7b" />
 
 - **File -> New Module**: create a new module (“DEMO-Lab”)
 
-<img width="536" height="131" alt="image" src="https://github.com/user-attachments/assets/3ec858bc-c66e-4136-b4b3-62018d1ac721" />
+![image](/Assets/RLab4/RLab4-2.png)
 
 - **Satellites -> Search for our DEMO-SAT**: pick `assets/DEMO-SAT.tle`
 
-<img width="822" height="443" alt="image" src="https://github.com/user-attachments/assets/78ee1873-e626-4013-875d-28637386f90b" />
+![image](/Assets/RLab4/RLab4-3.png)
 
 - Observe **AOS/LOS** and nominal UHF center frequency you’d monitor (synthetic example: 437.500 MHz)
 
-<img width="752" height="826" alt="image" src="https://github.com/user-attachments/assets/96290f18-a4e8-4527-88f4-0ae1e70233d2" />
+![image](/Assets/RLab4/RLab4-4.png)
 
 
 **Why:** See how real operators plan captures, we’ll still use a synthetic capture next
@@ -116,7 +117,7 @@ cd ~/Desktop/Lab4
 python3 tools/packet_tools.py --show assets/captured_kiss.hex
 ```
 
-<img width="1189" height="88" alt="image" src="https://github.com/user-attachments/assets/147d50f5-2d67-4791-99f4-cd5d4071e31a" />
+![image](/Assets/RLab4/RLab4-5.png)
 
 
 **What you’ll see (explanation):**
