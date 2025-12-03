@@ -100,12 +100,13 @@ gpredict
 - gpredict -> **Edit -> Update TLE From Local Files…** -> choose `assets/`   
 - Create a module and add **ODYSSEY-1** to see synthetic passes
 
+![image](/Assets/RLab5/RLab5-1.png)
 <img width="840" height="567" alt="image" src="https://github.com/user-attachments/assets/b4ec4c17-aaed-404b-8cdd-4ac0ccb31419" />
 
 
 **Why:** Gives context, you’ll still do the rest locally with synthetic data
 
-<img width="854" height="907" alt="image" src="https://github.com/user-attachments/assets/0fb6f7f6-a45a-46e7-9167-a2da04322e1e" />
+![image](/Assets/RLab5/RLab5-2.png)
 
 
 ### Inspect inputs
@@ -155,7 +156,7 @@ Quick peek:
 python3 scripts/peek_csv.py --out outputs -n 5
 ```
 
-<img width="765" height="443" alt="image" src="https://github.com/user-attachments/assets/ee5b31ff-fe0f-4d4d-b58f-46a3e7e372cd" />
+![image](/Assets/RLab5/RLab5-3.png)
 
 
 ### Visualize az/el and total pointing error
@@ -166,15 +167,15 @@ python3 scripts/visualize_pointing.py --out outputs
 You’ll see three windows:
 - **Azimuth vs time**: real vs forged
 
-<img width="641" height="563" alt="image" src="https://github.com/user-attachments/assets/5382ac40-f30f-4bd4-afa4-8f47b398a50d" />
+![image](/Assets/RLab5/RLab5-4.png)
 
 - **Elevation vs time**: real vs forged
 
-<img width="641" height="563" alt="image" src="https://github.com/user-attachments/assets/66bb8967-c733-4a12-b37a-cdf035f14465" />
+![image](/Assets/RLab5/RLab5-5.png)
 
 - **Total pointing error** (degrees) over time
 
-<img width="641" height="563" alt="image" src="https://github.com/user-attachments/assets/011ecdae-bb75-452d-920e-0c10a0c7ad61" />
+![image](/Assets/RLab5/RLab5-6.png)
 
 
 **Why:** Small ephemeris biases often produce multi‑degree errors near AOS/LOS—enough to miss a pass.
