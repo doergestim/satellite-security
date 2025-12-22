@@ -57,6 +57,12 @@ The `File Source` just replays the **IQ samples** so we can analyze them reliabl
 
 - Now let's add a ``Throttle`` and connect the 2 nodes by dragging the **out** from `File source` to the **in** of `Throttle`
 
+>[!NOTE]
+>Why do we use **Throttle**?
+>It limits how fast samples flow through the grap
+>
+>Without it, GNU Radio will run as fast as your CPU allows, spike usage, and make the GUI unusable when there’s no real hardware clock
+
 ![](/Assets/RLab1/Lab1-5.png)
 
 <br>
