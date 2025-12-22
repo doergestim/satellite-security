@@ -128,11 +128,11 @@ The `File Source` just replays the **IQ samples** so we can analyze them reliabl
 
 What do they mean?
 
-- **sym_rate** (**1200**): The symbol rate - how many **bits per second** the **satellite** is transmitting
+1. **sym_rate** (**1200**): The symbol rate - how many **bits per second** the **satellite** is transmitting
 
-- **sps** (**samples** per **symbol**): How many **samples** represent one **symbol**. This tells **clock recovery** where bit boundaries are
+2. **sps** (**samples** per **symbol**): How many **samples** represent one **symbol**. This tells **clock recovery** where bit boundaries are
 
-- **fdev** (**2000 Hz**): **Frequency deviation** of the **FSK tones** - how far the signal shifts for a **0** vs **1**
+3. **fdev** (**2000 Hz**): **Frequency deviation** of the **FSK tones** - how far the signal shifts for a **0** vs **1**
 
 
 - Add a ``Low Pass Filter`` and connect it to the ``Quadrature Demod``, it removes high-frequency noise so the clock recovery locks faster
