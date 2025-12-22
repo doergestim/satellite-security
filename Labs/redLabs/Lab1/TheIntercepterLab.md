@@ -164,7 +164,7 @@ The `File Source` just replays the **IQ samples** so we can analyze them reliabl
 
 ![](/Assets/RLab1/Lab1-26.png)
 
-- Add a ``File Sink`` and connect it to the ``Add Const``, save the file into ``~/Desktop/Lab1/assets/pass_01.bits``
+- Add a ``File Sink`` and connect it to the ``Add Const``, save the file into ``~/Desktop/Lab1/assets/pass_01.bits``, the `File Sink` reads the **output** into a **file**
 
 ![](/Assets/RLab1/Lab1-27.png)
 
