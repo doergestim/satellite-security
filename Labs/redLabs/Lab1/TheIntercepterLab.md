@@ -36,7 +36,7 @@ gnuradio-companion &
 
 ![](/Assets/RLab1/Lab1-1.png)
 
-- First things first let's input our file, that's under ``~/Desktop/Lab1/assets/pass_01.iq``
+- First things first let's input our file, that's under ``/home/satuser/Desktop/Lab1/assets/pass_01.iq``
 
 - To add nodes to the flow press ``Ctrl + f`` to open the search bar on the right
 
@@ -48,7 +48,7 @@ The `File Source` just replays the **IQ samples** so we can analyze them reliabl
 
 ![](/Assets/RLab1/Lab1-3.png)
 
-- Double click it and at ``File`` put the path to the ``~/Desktop/Lab1/assets/pass_01.iq`` and the rest like in the image, then press **Apply** and **Ok**
+- Double click it and at ``File`` put the path to the ``/home/satuser/Desktop/Lab1/assets/pass_01.iq`` and the rest like in the image, then press **Apply** and **Ok**
 
 ![](/Assets/RLab1/Lab1-4.png)
 
@@ -172,14 +172,14 @@ What do they mean?
 
 ![](/Assets/RLab1/Lab1-26.png)
 
-- Add a ``File Sink`` and connect it to the ``Add Const``, save the file into ``~/Desktop/Lab1/assets/pass_01.bits``, the `File Sink` reads the **output** into a **file**
+- Add a ``File Sink`` and connect it to the ``Add Const``, save the file into ``/home/satuser/Desktop/Lab1/assets/pass_01.bits``, the `File Sink` reads the **output** into a **file**
 
 ![](/Assets/RLab1/Lab1-27.png)
 
 - Now you can run the flow for 5-10 seconds and check the file we created, you should get something like this
 
 ```bash
-cat ~/Desktop/Lab1/assets/pass_01.bits
+cat /home/satuser/Desktop/Lab1/assets/pass_01.bits
 ```
 
 ```
@@ -209,7 +209,7 @@ cat ~/Desktop/Lab1/assets/pass_01.bits
 
 ![](/Assets/RLab1/Lab1-32.png)
 
-- Add a ``File Sink`` and connect it to the ``Repack Bits``, save it into ``~/Desktop/Lab1/assets/pass_01_BPF.txt``
+- Add a ``File Sink`` and connect it to the ``Repack Bits``, save it into ``/home/satuser/Desktop/Lab1/assets/pass_01_BPF.txt``
 
 ![](/Assets/RLab1/Lab1-33.png)
 
