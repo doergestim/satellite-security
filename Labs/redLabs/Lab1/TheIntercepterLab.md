@@ -71,13 +71,13 @@ The `File Source` just replays the **IQ samples** so we can analyze them reliabl
 
 - Double click the ``samp_rate`` variable and edit the **Value** to **48000**, then again press **Apply** and **Ok**, as we do with every block when we edit it
 
+![](/Assets/RLab1/Lab1-7.png)
 
 >[!NOTE]
 >What is **Sample rate**?
 >It’s how many **samples per second** the signal contains
 >Here, **48 kS/s** tells every block how fast the signal was captured so **timing**, **filters**, and **symbol recovery** work correctly
 
-![](/Assets/RLab1/Lab1-7.png)
 
 - Add a ``QT GUI Frequency Sink`` and connect it to the ``Throttle``
 
