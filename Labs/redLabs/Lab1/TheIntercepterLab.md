@@ -44,7 +44,7 @@ gnuradio-companion &
 
 - Look for ``File Source`` and drag it into the flow, we are using it because the signal is already captured
 
-The file source just replays the **IQ samples** so we can analyze them reliably without **live RF**
+The `File Source` just replays the **IQ samples** so we can analyze them reliably without **live RF**
 
 ![](/Assets/RLab1/Lab1-3.png)
 
