@@ -4,19 +4,19 @@
 
 ## Context
 This lab demonstrates a **realistic vulnerability class**:  
-**unauthenticated exposure of a management/control plane** in a protocol-heavy system.
+- **unauthenticated exposure of a management/control plane** in a protocol-heavy system
 
-You are assessing a **VisionSpace SLE Provider** deployed with insecure defaults.  
-Your goal is to **enumerate, validate impact, and remediate** the issue using professional techniques.
+You are assessing a **VisionSpace SLE Provider** deployed with insecure defaults 
 
-This is **not** a beginner lab. You are expected to understand TCP/IP, REST, and basic threat modeling.
+Your goal is to **enumerate, validate impact, and remediate** the issue
 
 ---
 
-## Assumptions
-- You are already in the `sle-provider` directory
-- Docker is installed and working
-- The provider is started with:
+## Setup
+
+```bash
+cd ~/Desktop/hacking_sle
+```
 
 ```bash
 sudo docker compose up --build -d
