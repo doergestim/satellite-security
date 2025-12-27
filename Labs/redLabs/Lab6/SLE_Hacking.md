@@ -15,6 +15,14 @@ Your goal is to **enumerate, validate impact, and remediate** the issue
 ## Setup
 
 ```bash
+git clone https://github.com/visionspacetec/sle-provider.git
+```
+
+```bash
+mv sle-provider/ hacking_sle/
+```
+
+```bash
 cd ~/Desktop/hacking_sle
 ```
 
