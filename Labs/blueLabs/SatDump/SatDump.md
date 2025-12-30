@@ -19,8 +19,8 @@ But when you compare their derived artifacts:
     - Same spectral fingerprint
     - Same repetition patterns
 
-A real satellite pass changes naturally.
-A replayed pass changes just enough to look different, but not enough to be real.
+A real satellite pass changes naturally
+A replayed pass changes just enough to look different, but not enough to be real
 
 ---
 
@@ -32,9 +32,6 @@ Under `~/Desktop/SatDumpLab/`:
 SatDumpLab/
 ├── pass_clean.iq
 ├── pass_replay.iq
-├── pipelines/
-    └── odyssey_bfsk_lab/
-        └── pipeline.json
 ```
 
 ---
@@ -139,43 +136,43 @@ ls -lah output_replay
 
 ```bash
 sha256sum output_clean/* | sort > clean.hashes.txt
+```
+
+```bash
 sha256sum output_replay/* | sort > replay.hashes.txt
-diff -u clean.hashes.txt replay.hashes.txt || true
 ```
-
-## Telemetry diff
 
 ```bash
-diff -u output_clean/telemetry.json output_replay/telemetry.json | head -n 80 || true
+diff -u clean.hashes.txt replay.hashes.txt
 ```
 
-## Repeated records (CSV or JSONL)
+<img width="1061" height="103" alt="image" src="https://github.com/user-attachments/assets/fcc276fa-bf90-41ad-9fd4-99e2bd5c5033" />
+
+- BOOM! The hashes are different, the replay has been detected!
+
+## Prove Replay With Spectograms
 
 ```bash
-tail -n +2 output_replay/*.csv 2>/dev/null | sort | uniq -c | sort -nr | head -n 50
-cat output_replay/*.jsonl 2>/dev/null | sort | uniq -c | sort -nr | head -n 50
+sox output_clean/*.wav -n spectrogram -o results/clean.png
 ```
-
----
-
-# Part D - Evidence Collection
 
 ```bash
-diff -u output_clean/telemetry.json output_replay/telemetry.json > results/telemetry_diff.txt || true
-ls -lah results
+sox output_replay/*.wav -n spectrogram -o results/replay.png
 ```
-
----
-
-# Cleanup
-
-Destroy the lab VM or remove the workspace:
 
 ```bash
-rm -rf ~/Desktop/SatDumpLab
+xdg-open results/clean.png
 ```
 
----
+```bash
+xdg-open results/replay.png
+```
+
+- Put the newly opened **Spectograms** side by side
+
+<img width="1920" height="908" alt="image" src="https://github.com/user-attachments/assets/55d48b78-7000-41ed-ad9e-69c99579ea2f" />
+
+- Again, suspiciously similar, but not quite...
 
 ***                                                                 
 
