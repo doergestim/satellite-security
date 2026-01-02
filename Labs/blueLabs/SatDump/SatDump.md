@@ -175,6 +175,7 @@ xdg-open results/replay.png
 - Again, suspiciously similar, but not quite...
 
 ***                                                                 
+<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/EphemeristaLab/Ephemerista.md)</i></b>
 
 <b><i>Want to go back? </br>[Previous Lab](/Labs/blueLabs/BlueLab/BlueLab.md)</i></b>
 
