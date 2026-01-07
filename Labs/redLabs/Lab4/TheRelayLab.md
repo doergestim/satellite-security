@@ -12,7 +12,7 @@
 
 ```bash
 # enter the lab folder
-cd ~/Desktop/Lab4
+cd ~/Desktop/TheRelay
 ```
 
 ```bash
@@ -96,10 +96,10 @@ Open and parse the KISS frames we provide
 This simulates “post‑demod” packets an attacker or operator might export
 
 >[!IMPORTANT]
->Make sure you are at `~/Desktop/Lab4/`
+>Make sure you are at `~/Desktop/TheRelay/`
 
 ```bash
-cd ~/Desktop/Lab4
+cd ~/Desktop/TheRelay
 ```
 
 ```bash
@@ -133,7 +133,7 @@ Keep it running in its terminal. Open a second terminal (or tab) for the replay 
 
 ```bash
 # in a new terminal tab, back in the lab folder
-cd ~/Desktop/Lab4
+cd ~/Desktop/TheRelay
 source .venv/bin/activate
 ```
 
