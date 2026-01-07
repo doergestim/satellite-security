@@ -178,9 +178,9 @@ xdg-open sle-management-abuse.pcap
 
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/BlueLab/BlueLab.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/DefendingOdyssey/DefendingODYSSEYLab.md)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/Lab5/The_Drift.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/TheDrift/TheDriftLab.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
 
