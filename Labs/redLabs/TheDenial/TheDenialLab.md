@@ -220,9 +220,9 @@ sudo docker update --cpus 0.2 <the name here>
 
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/Labs/redLabs/Lab3/The_Takeover.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/Labs/redLabs/TheTakeover/TheTakeoverLab.md)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/Lab1/TheIntercepterLab.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/TheIntercepter/TheIntercepterLab.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
 
