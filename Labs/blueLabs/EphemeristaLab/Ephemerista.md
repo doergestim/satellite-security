@@ -80,7 +80,7 @@ ephem = Ephemeris("satellite.bsp")
 print(ephem)
 ```
 
->[!NOTES]
+>[!NOTE]
 > You don't have to run these python scripts necessarily, we are using them as examples to understand the logic behind **Ephemerista**
 
 Typical attributes available:
