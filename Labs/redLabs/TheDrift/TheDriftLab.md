@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
-# Lab 5 — The Drift (Orbital Analysis & Manipulation)
+# Lab 5 - The Drift (Orbital Analysis & Manipulation)
 
 **Goal:** Use **Orekit** to propagate a satellite from TLE, forge small ephemeris changes, compare **real vs forged** ground pointing (az/el), and see how a naive antenna controller would mis-point
 
@@ -9,7 +9,7 @@
 ## Folder layout (what you have)
 
 ```
-Lab5/
+TheDrift/
 ├─ assets/
 │  ├─ ODYSSEY-1.tle             # used by Orekit propagation (LEO-like, synthetic)
 │  └─ ODYSSEY-1_strict.tle      # strict 69-char TLE; importable into gpredict
@@ -51,7 +51,7 @@ If an attacker **modifies a TLE** slightly (a few digits in mean motion or RAAN)
 - miss the pass entirely,
 - or waste precious downlink time trying to reacquire
 
-This attack is attractive because **TLEs are small text files** — easy to inject or spoof if distribution channels are not authenticated
+This attack is attractive because **TLEs are small text files** - easy to inject or spoof if distribution channels are not authenticated
 
 ---
 
@@ -169,7 +169,7 @@ You’ll see three windows:
 ![image](/Assets/RLab5/RLab5-6.png)
 
 
-**Why:** Small ephemeris biases often produce multi‑degree errors near AOS/LOS—enough to miss a pass.
+**Why:** Small ephemeris biases often produce multi‑degree errors near AOS/LOS-enough to miss a pass.
 
 ### Create your own forged TLE (explicit file)
 ```bash
