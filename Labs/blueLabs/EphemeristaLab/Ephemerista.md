@@ -16,6 +16,23 @@ You will learn how to load, inspect, analyze, and validate orbital data, then ex
 pip install ephemerista
 ```
 
+>[!NOTES]
+> Usually, you would use it under a **python environment**, this is how you would do that in bash:
+
+
+```bash
+python3 -m venv venv
+```
+
+```bash
+source venv/bin/activate
+```
+
+```bash
+pip install ephemerista
+```
+
+
 Quick verification:
 
 ```bash
