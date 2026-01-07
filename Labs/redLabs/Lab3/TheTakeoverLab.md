@@ -63,7 +63,7 @@ Just replace the ``File Source`` block and the `File Sink` blocks with our new `
 5. View `takeover_pass_BPF.txt`
 
 ```bash
-cd ~/Desktop/Lab3
+cd ~/Desktop/TheTakeover
 ```
 
 ```bash
