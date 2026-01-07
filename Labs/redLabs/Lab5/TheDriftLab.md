@@ -61,7 +61,7 @@ This attack is attractive because **TLEs are small text files** — easy to inje
 
 ### Create a Python venv for host-side tools and download the files
 ```bash
-cd ~/Desktop/Lab5
+cd ~/Desktop/TheDrift
 ```
 
 ```bash
@@ -120,7 +120,7 @@ Open and edit `config/gs.json` if desired:
 **Why:** Orbit prediction always depends on **where** you observe from and **when**
 
 >[!IMPORTANT]
->Make sure you are in the `Lab5` directory under `~/Desktop/Lab5`
+>Make sure you are in the `Lab5` directory under `~/Desktop/TheDrift`
 
 ### Build the Orekit container
 ```bash
