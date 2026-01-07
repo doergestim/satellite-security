@@ -15,7 +15,7 @@ Your goal is to **enumerate, validate impact, and remediate** the issue
 ## Start
 
 ```bash
-cd ~/Desktop/hacking_sle
+cd ~/Desktop/SLEHacking
 ```
 
 ```bash
