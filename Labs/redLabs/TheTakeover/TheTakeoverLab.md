@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
-# Lab 3 — The Takeover
+# Lab 3 - The Takeover
 
 
 **Scenario:** You’ve successfully intercepted ODYSSEY-1’s downlink. Inside the captured traffic, you spotted telemetry and even an ACK packet that contains a mysterious `auth` field
@@ -8,9 +8,9 @@
 Your task is to **reverse engineer the uplink authentication scheme, craft a forged control command, and trick the ground station into accepting it**
 
 ## Provided
-- ``assets/takeover_pass.iq`` — synthetic downlink (48 kS/s cf32)
-- ``groundstation/`` — control app (verifies your forged uplink)
-- ``tools/craft_uplink_template.py`` — OPTIONAL helper
+- ``assets/takeover_pass.iq`` - synthetic downlink (48 kS/s cf32)
+- ``groundstation/`` - control app (verifies your forged uplink)
+- ``tools/craft_uplink_template.py`` - OPTIONAL helper
 
 Protocol recap (from Lab 1):
 - SYNC=0x1ACFFC1D
@@ -32,7 +32,7 @@ docker compose version
 ---
 
 # Start
-## Part A — Decode the Downlink
+## Part A - Decode the Downlink
 
 1. **Open GNU Radio Companion (GRC)** and take the flow from [Lab 1](../Lab1/TheIntercepterLab.md) or build this flow:
    ```
@@ -81,7 +81,7 @@ xxd -g1 assets/takeover_pass_BPF.txt
 
 ---
 
-## Part B — Forge the Uplink
+## Part B - Forge the Uplink
 
 1. Build a **TYPE=3** packet with this payload:
    ```json
@@ -119,7 +119,7 @@ xxd -g1 assets/takeover_pass_BPF.txt
 
 ---
 
-## Part C — Send It
+## Part C - Send It
 
 1. Start the control app:  
    ```bash
@@ -154,7 +154,7 @@ xxd -g1 assets/takeover_pass_BPF.txt
    }
    ```
 
-4. Check the dashboard (`/` endpoint) — it should now display your new mode and auth tag
+4. Check the dashboard (`/` endpoint) - it should now display your new mode and auth tag
 
 
 
