@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
-# Lab 2 — The Denial
+# Lab 2 - The Denial
 
 **Scenario:** As **red team**, your task is to **disrupt ODYSSEY-1’s ground communications**
 
@@ -15,7 +15,7 @@ You will:
 ---
 
 **Provided:**
-- **pass_clean.iq** (48 kS/s, complex float32) — synthetic BFSK downlink
+- **pass_clean.iq** (48 kS/s, complex float32) - synthetic BFSK downlink
 - **groundstation/** (Dockerized, intentionally weak):
 
 1. ``/`` dashboard (SSE live view)
@@ -31,7 +31,7 @@ You will:
 ---
 
 ## Start
-### Part A — Break the Link (Simulated Jamming)
+### Part A - Break the Link (Simulated Jamming)
 
 - You will need the **GRC Flowgraph** we built during [Lab 1](../Lab1/TheInterceptLab.md)
 
@@ -146,7 +146,7 @@ for score, off, preview in candidates:
 python3 decodeScript.py
 ```
 
-### Part B — Replay Attack (Confuse Operators)
+### Part B - Replay Attack (Confuse Operators)
 - Start the **ground station**
 ```bash
 cd groundstation
@@ -180,7 +180,7 @@ seq 1 500 | xargs -I{} -P 20 sh -c \
 - Watch the dashboard, values freeze/loop, operators see **stale data**
 
 
-### Part C — Lock Operators Out (Denial of Service)
+### Part C - Lock Operators Out (Denial of Service)
 - Spam ``/login`` (weak, no rate limit)
 ```bash
 seq 1 1000 | xargs -I{} -P 50 sh -c \
