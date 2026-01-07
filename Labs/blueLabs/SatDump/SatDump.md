@@ -36,43 +36,7 @@ SatDumpLab/
 
 ---
 
-## Setup - Install SatDump + Dependencies
-
-### System packages
-
-```bash
-sudo apt update
-sudo apt install -y git curl unzip p7zip-full   libfftw3-dev libusb-1.0-0-dev   qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
-```
-
-### Install SatDump
-
-```bash
-cd ~/Downloads
-```
-```bash
-git clone https://github.com/SatDump/SatDump.git
-```
-```bash
-cd SatDump
-```
-```bash
-mkdir build && cd build
-```
-```bash
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
-```
-```bash
-make -j`nproc`
-```
-```bash
-sudo make install
-```
-
-
----
-
-## Setup
+## Start
 
 ```bash
 cd ~/Desktop/SatDumpLab
