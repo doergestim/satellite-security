@@ -1,12 +1,12 @@
 # Satellite Hacking Course
 
 ### Red Labs
-  - [The Intercepter](Labs/redLabs/Lab1/TheIntercepterLab.md)
-  - [The Denial](Labs/redLabs/Lab2/TheDenialLab.md)
-  - [The Takeover](Labs/redLabs/Lab3/The_Takeover.md)
-  - [The Relay](Labs/redLabs/Lab4/The_Relay.md)
-  - [The Drift](Labs/redLabs/Lab5/The_Drift.md)
-  - [Hacking SLE](Labs/redLabs/Lab6/SLE_Hacking.md)
+  - [The Intercepter](Labs/redLabs/TheIntercepter/TheIntercepterLab.md)
+  - [The Denial](Labs/redLabs/TheDenial/TheDenialLab.md)
+  - [The Takeover](Labs/redLabs/TheTakeover/TheTakeoverLab.md)
+  - [The Relay](Labs/redLabs/TheRelay/TheRelayLab.md)
+  - [The Drift](Labs/redLabs/TheDrift/TheDriftLab.md)
+  - [Hacking SLE](Labs/redLabs/SLEHacking/SLEHackingLab.md)
 
 ### Blue Lab
   - [Defending Odyssey](Labs/blueLabs/DefendingOdyssey/DefendingODYSSEYLab.md)
