@@ -14,7 +14,7 @@ In this lab you will:
 2. Use **Wireshark** to understand the replay and HTTP floods  
 3. Use **Docker**, **Nginx**, **Fail2ban**, and **Suricata** to harden and monitor the groundstation
 
-You already have under `~/Desktop/BlueLab`(the files from **Lab2**):
+You already have under `~/Desktop/DefendingODYSSEY`(the files from **Lab2**):
 - `pass_clean.iq`
 - `pass_jam_0dB.iq`
 - `pass_jam_-5dB.iq`
@@ -35,7 +35,7 @@ gqrx &
 - Get the path of the files:
 
 ```bash
-cd ~/Desktop/BlueLab
+cd ~/Desktop/DefendingODYSSEY
 ```
 
 ```bash
