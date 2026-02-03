@@ -51,7 +51,7 @@ blocks:
     alias: ''
     begin_tag: pmt.PMT_NIL
     comment: ''
-    file: /home/satuser/Desktop/Lab1/assets/pass_01.iq
+    file: /home/ubuntu/Desktop/TheIntercepter/assets/pass_01.iq
     length: '0'
     maxoutbuf: '0'
     minoutbuf: '0'
