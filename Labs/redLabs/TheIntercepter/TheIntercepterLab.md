@@ -29,39 +29,39 @@ They claim the link is secure. You're given two *historical* baseband captures f
 
 # Start
 ### Part A - Get bits out
-- Open [GNU Radio](/Tools%20and%20Frameworks/GNU_radio.md)
+- Open [GNU Radio Companion](/Tools%20and%20Frameworks/GNU_radio.md)
 ```bash
 gnuradio-companion &
 ```
 
 ![](/Assets/RLab1/Lab1-1.png)
 
-- First things first let's input our file, that's under ``/home/satuser/Desktop/Lab1/assets/pass_01.iq``
+- First things first, let's input data from our file that's under ``/home/satuser/Desktop/Lab1/assets/pass_01.iq``
 
-- To add nodes to the flow press ``Ctrl + f`` to open the search bar on the right
+- To add blocks to the flow press ``Ctrl + f`` to open the search bar on the right
 
 ![](/Assets/RLab1/Lab1-2.png)
 
-- Look for ``File Source`` and drag it into the flow, we are using it because the signal is already captured
+- Look for ``File Source`` and drag it into the flow. We are using the ``File Source`` block because the signal is already captured
 
 The `File Source` just replays the **IQ samples** so we can analyze them reliably without **live RF**
 
 ![](/Assets/RLab1/Lab1-3.png)
 
-- Double click it and at ``File`` put the path to the ``/home/satuser/Desktop/Lab1/assets/pass_01.iq`` and the rest like in the image, then press **Apply** and **Ok**
+- Double click the ``File Source`` block to open the configuration settings. In the ``File`` field, put the path to the ``/home/ubuntu/Desktop/TheIntercepter/assets/pass_01.iq`` capture file. Fill out the rest of the fields to match what you see in the image. Press **Apply** and then **Ok**
 
 ![](/Assets/RLab1/Lab1-4.png)
 
 >[!IMPORTANT]
->For each block we add don't forget the shortcut is `Ctrl + f`
+>For each block we add, don't forget that the shortcut to search for blocks is `Ctrl + f`
 
-- Now let's add a ``Throttle`` and connect the 2 nodes by dragging the **out** from `File source` to the **in** of `Throttle`
+- Now let's add a ``Throttle`` block and connect the 2 blocks by dragging the **out** from `File Source` to the **in** of `Throttle`
 
 >[!NOTE]
->Why do we use **Throttle**?
->It limits how fast samples flow through the grap
+>Why do we use ``Throttle``?
+>``Throttle`` limits how fast samples flow through the graph
 >
->Without it, GNU Radio will run as fast as your CPU allows, spike usage, and make the GUI unusable when there’s no real hardware clock
+>Without a ``Throttle``, GNU Radio will run as fast as your CPU allows, spike usage, and make the GUI unusable when there’s no real hardware clock to otherwise limit the input rate
 
 ![](/Assets/RLab1/Lab1-5.png)
 
@@ -69,7 +69,7 @@ The `File Source` just replays the **IQ samples** so we can analyze them reliabl
 
 ![](/Assets/RLab1/Lab1-6.png)
 
-- Double click the ``samp_rate`` variable and edit the **Value** to **48000**, then again press **Apply** and **Ok**, as we do with every block when we edit it
+- Double click the ``samp_rate`` variable block at the top of the graph and edit the **Value** to **48000**. Press **Apply** and then **Ok**, as we do with every block when we edit it
 
 ![](/Assets/RLab1/Lab1-7.png)
 
@@ -79,12 +79,12 @@ The `File Source` just replays the **IQ samples** so we can analyze them reliabl
 >Here, **48 kS/s** tells every block how fast the signal was captured so **timing**, **filters**, and **symbol recovery** work correctly
 
 
-- Add a ``QT GUI Frequency Sink`` and connect it to the ``Throttle``
+- Add a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle``
 
 >[!NOTE]
 >What is `QT GUI Frequency Sink`?
->It shows the **signal** in the **frequency domain**
->We use it to see where energy sits in the **spectrum** so we can quickly identify things like **bandwidth**, **offsets**, and **FSK tones**
+>It shows the **signal** in the **frequency domain**.
+>We use it to see where energy sits in the **spectrum** so we can quickly identify things like **bandwidth**, **offsets**, and **FSK (Frequency-Shift Keying) tones**
 
 ![](/Assets/RLab1/Lab1-8.png)
 
@@ -104,18 +104,18 @@ The `File Source` just replays the **IQ samples** so we can analyze them reliabl
 
 ![](/Assets/RLab1/Lab1-11.png)
 
-- You’re looking at **raw baseband**. Two energy blobs near **±2 kHz** = **2-FSK**
+- You’re looking at **raw baseband**. You will notice two energy blobs near **±2 kHz**, indicating that this signal was likely encoded using **Binary FSK** a.k.a. **2-FSK** or **2FSK**
 
 ![](/Assets/RLab1/Lab1-12.png)
 
 - Close that and let's go on, we are going to keep that for reference and testing purposes
 
-- Add a ``Quadrature Demod`` and connect it to the ``Throttle``, this is a **Frequency discriminator** (turn **FSK** into a **1-D float**), FSK encodes data as instantaneous frequency. Quadrature Demod converts frequency shifts into a float that swings **high**/**low** for **1**/**0**
+- Add a ``Quadrature Demod`` block and connect it to the ``Throttle``, this is a **Frequency discriminator** that can convert **FSK** into a **1-D float** representation. **FSK** encodes data as instantaneous frequency. ``Quadrature Demod`` converts frequency shifts into a float that swings **high**/**low** for **1**/**0**, respectively. For the sake of simplicity, open the settings for the ``Quadrature Demod`` block and change **fsk_deviation_hz** to **fdev**
 
 ![](/Assets/RLab1/Lab1-13.png)
 
 
-- Now let's add those variables and some more, search for ``Variable`` and drag into the flow for each one, we need 3 more
+- The ``Quadrature Demod`` block references the **fdev** variable, but we haven't added that variable yet to the graph. Let's add that variable plus a few more. Search for ``Variable`` and drag a total of three ``Variable`` blocks onto the graph.
 
 ![](/Assets/RLab1/Lab1-14.png)
 
@@ -135,16 +135,16 @@ What do they mean?
 
 1. **sym_rate** (**1200**): The symbol rate - how many **bits per second** the **satellite** is transmitting
 
-2. **sps** (**samples** per **symbol**): How many **samples** represent one **symbol**. This tells **clock recovery** where bit boundaries are
+2. **sps** (**samp_rate / sym_rate**): The samples per second - how many **samples** represent one **symbol**. This tells **clock recovery** where bit boundaries are
 
-3. **fdev** (**2000 Hz**): **Frequency deviation** of the **FSK tones** - how far the signal shifts for a **0** vs **1**
+3. **fdev** (**2000**): **Frequency deviation** (in **Hz**) of the **FSK tones** - how far the signal shifts for a **0** vs **1**
 
 
-- Add a ``Low Pass Filter`` and connect it to the ``Quadrature Demod``, it removes high-frequency noise so the clock recovery locks faster
+- Add a ``Low Pass Filter`` block and connect it to the ``Quadrature Demod`` block. The ``Low Pass Filter`` block removes high-frequency noise so that the clock recovery locks faster. Open the settings for the ``Low Pass Filter`` block and change them to match what is shown in the image below
 
 ![](/Assets/RLab1/Lab1-18.png)
 
-- Add a ``QT GUI Time Sink`` and connect it to the ``Low Pass Filter`` and set it to **float**
+- Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, and change the **Type** setting to **Float**
 
 ![](/Assets/RLab1/Lab1-19.png)
 
@@ -160,13 +160,13 @@ What do they mean?
 >
 >If you need to use this, just **download** it into your **VM** and **double click** on it
 
-- Add a ``Clock Recovery MM`` and connect it to the ``Low Pass Filter``, our float stream is oversampled at 48 kS/s. This block finds the optimal sample per symbol every 40 samples to align to bit boundaries
+- Add a ``Clock Recovery MM`` block and connect it to the ``Low Pass Filter`` block. Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block finds the optimal sample per symbol every 40 samples to align to bit boundaries. Open the ``Clock Recovery MM`` block and change the settings to match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-22.png)
 
-- Add a ``Binary Slicer`` and connect it to the ``Clock Recovery MM`` and then a ``UChar To Float`` and connect it to the ``Binary Slicer``, the binary slicer converts each symbol into a byte 0x00 or 0x01
+- Add a ``Binary Slicer`` block and connect it to the ``Clock Recovery MM`` block. Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` block. The ``Binary Slicer`` converts each symbol into a byte 0x00 or 0x01
 
-- Add a ``QT GUI Time Sink`` and connect it to the ``UChar To Float``, set that to float
+- Add a ``QT GUI Time Sink`` block and connect it to the ``UChar To Float`` block. Open the settings for the ``QT GUI Time Sink`` block and set the **Type** setting to **Float**
 
 ![](/Assets/RLab1/Lab1-23.png)
 
@@ -183,18 +183,18 @@ What do they mean?
 >
 >If you need to use this, just **download** it into your **VM** and **double click** on it
 
-- Add a ``Add Const`` and connect it to the ``Binary Slicer``, we will add 48 to convert it to **ASCII**
+- Add a ``Add Const`` block and connect it to the ``Binary Slicer`` block. We will add 48 to convert the ``Binary Slicer`` output to **ASCII**. Open the settings for the ``Add Const`` block and change them match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-26.png)
 
-- Add a ``File Sink`` and connect it to the ``Add Const``, save the file into ``/home/satuser/Desktop/Lab1/assets/pass_01.bits``, the `File Sink` reads the **output** into a **file**
+- Add a ``File Sink`` block and connect it to the ``Add Const`` block. The `File Sink` block reads the **output** from the ``Add Const`` block and saves it into a **file**. Open the settings for the ``File Sink`` block and change them to match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-27.png)
 
-- Now you can run the flow for 5-10 seconds and check the file we created, you should get something like this
+- Now you can run the flow for 5-10 seconds and check the file that was created. You should get something like the following
 
 ```bash
-cat /home/satuser/Desktop/Lab1/assets/pass_01.bits
+cat /home/ubuntu/Desktop/TheIntercepter/assets/pass_01.bits
 ```
 
 ```
@@ -202,13 +202,13 @@ cat /home/satuser/Desktop/Lab1/assets/pass_01.bits
 ```
 
 ### Part B - Frame sync + parsing
-- For this lab, the Sync word is **0x1ACFFC1D**, a very common one, which in binary is **00011010110011111111110000011101**
+- Let's turn those 0's and 1's into something more readable. We first need to determine where pieces of information, known as **frames**, begin so that we can perform that conversion. The beginning of **frames** is signified with a **sync word**. For this lab, the **sync word** is **0x1ACFFC1D**, a very common one, which in binary is **00011010110011111111110000011101**
 
-- Let's add a ``Correlate Access Code - Tag`` and connect it to the ``Binary Slicer``, it searches the **bitstream** for a known **sync word**. When it finds that **pattern**, it tags the stream so **downstream blocks** know **“a frame starts here”**
+- Let's add a ``Correlate Access Code - Tag`` block and connect it to the ``Binary Slicer`` block. The ``Correlate Access Code - Tag`` block searches the **bitstream** for a known **sync word**. When the block finds that **sync word**, it tags the stream so that downstream blocks know **“a frame starts here”**. Change the settings in the `Correlate Access Code - Tag`` block to match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-28.png)
 
-- To make sure we are getting hits, add a ``Tag Debug`` and connect it to the ``Correlate Access Code - Tag``, it just shows you the tags in the **stream**
+- To make sure we are getting hits, add a ``Tag Debug`` block and connect it to the ``Correlate Access Code - Tag`` block. The ``Tag Debug`` block just shows you the tags in the **stream**. Open the ``Tag Debug`` block settings and change the **Type** to **Byte**
 
 ![](/Assets/RLab1/Lab1-29.png)
 
@@ -221,15 +221,15 @@ cat /home/satuser/Desktop/Lab1/assets/pass_01.bits
 >
 >If you need to use this, just **download** it into your **VM** and **double click** on it
 
-- Add a ``Tagged Stream Align`` and connect it to the ``Correlate Access Code - Tag``, it realigns the **stream** so data starts exactly at the **tagged frame boundary**
+- Add a ``Tagged Stream Align`` block and connect it to the ``Correlate Access Code - Tag`` block. The ``Tagged Stream Align`` block realigns the **stream** so data starts exactly at the **tagged frame boundary**. Change the settings in the ``Tagged Stream Align`` block to match those seen in the image below
 
 ![](/Assets/RLab1/Lab1-31.png)
 
-- Add  a ``Repack Bits`` and connect it to the ``Tagged Stream Align``, it groups **individual bits** into **bytes**. After **frame sync**, we need real **bytes** so the data can be dumped, parsed, and read as a **packet**
+- Add a ``Repack Bits`` block and connect it to the ``Tagged Stream Align`` block. The ``Repack Bits`` block groups **individual bits** into **bytes**. After **frame sync**, we need real **bytes** so the data can be dumped, parsed, and read as a **packet**. Open the settings for the ``Repack Bits`` block and ensure they match those seen in the image below
 
 ![](/Assets/RLab1/Lab1-32.png)
 
-- Add a ``File Sink`` and connect it to the ``Repack Bits``, save it into ``/home/satuser/Desktop/Lab1/assets/pass_01_BPF.txt``
+- Add a ``File Sink`` block, connect it to the ``Repack Bits`` block, and change the settings to those seen in the image below
 
 ![](/Assets/RLab1/Lab1-33.png)
 
