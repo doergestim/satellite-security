@@ -256,7 +256,7 @@ cd ~/Desktop/TheIntercepter
 
 - Run
 ```bash
-xxd assets/pass_01_BPF.txt
+xxd assets/pass_01_BPF.bits
 ```
 
 - You should see information flowing out
