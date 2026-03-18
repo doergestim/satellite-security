@@ -194,7 +194,8 @@ What do they mean?
 
 - Add a ``File Sink`` block and connect it to the ``Add Const`` block. The `File Sink` block reads the **output** from the ``Add Const`` block and saves it into a **file**. Open the settings for the ``File Sink`` block and change them to match what is seen in the image below
 
-![](/Assets/RLab1/Lab1-27.png)
+
+<img src="/Assets/RLab1/Lab1-27.png" width="700">
 
 - Now you can run the flow for 5-10 seconds and check the file that was created. You should get something like the following
 
