@@ -111,7 +111,7 @@ You should get:
 ```
 
 ## 5) Common mistakes
-- CRC includes SYNC → **wrong** (exclude SYNC)
-- JSON spacing differs → CRC mismatch (CRC must match the bytes you actually send)
+- CRC includes SYNC -> **wrong** (exclude SYNC)
+- JSON spacing differs -> CRC mismatch (CRC must match the bytes you actually send)
 - Wrong TYPE (must be `0x03`) or wrong LEN
 - Auth computed from wrong `epoch`/`sat`
