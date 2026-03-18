@@ -100,7 +100,7 @@ curl -s http://127.0.0.1:2048/api/service-instances/ | jq .
 
 ### 3.2 Enumerate runtime configuration
 ```bash
-curl -s http://127.0.0.1:2048/api/sle-config | jq .
+curl -s http://127.0.0.1:2048/api/sle-config/ | jq .
 ```
 
 <img width="471" height="306" alt="image" src="https://github.com/user-attachments/assets/6cacb5d9-68c4-4102-b306-54ab9f122887" />
