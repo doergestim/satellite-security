@@ -49,6 +49,7 @@ You will:
 
 ![image](/Assets/RLab2/RLab2-4.png)
 
+- Run the flow after changint the **File Source** and the 2 **File Sinks** to the right paths
 
 ```bash
 cd ~/Desktop/TheDenial
