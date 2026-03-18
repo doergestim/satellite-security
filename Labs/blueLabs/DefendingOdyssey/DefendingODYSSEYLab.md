@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
-# Blue Lab 1 — Defending ODYSSEY-1: RF & Groundstation Defense
+# Blue Lab 1 - Defending ODYSSEY-1: RF & Groundstation Defense
 
 **Scenario:** You are **blue team** for ODYSSEY-1.  
 Red team has:
@@ -22,7 +22,7 @@ You already have under `~/Desktop/DefendingODYSSEY`(the files from **Lab2**):
 
 ---
 
-# Part A — RF: Visually Detect & Understand the Jamming
+# Part A - RF: Visually Detect & Understand the Jamming
 
 ## Compare clean vs jammed signals in Gqrx
 
@@ -84,7 +84,7 @@ Watch for:
 
 ![image](/Assets/BLab1/BLab1-4.png)
 
-# Clean Signal — Analysis
+# Clean Signal - Analysis
 
 ### Observations
 - Two strong vertical stripes indicating clear BFSK tones.
@@ -99,7 +99,7 @@ Watch for:
 - Represents normal, expected operational conditions.
 
 
-# Jammed Signal (0 dB) — Analysis
+# Jammed Signal (0 dB) - Analysis
 
 ### Observations
 - BFSK tones are still visible but partially submerged.
@@ -115,7 +115,7 @@ Watch for:
 - Packet loss is likely but not total.
 
 
-# Jammed Signal (–5 dB) — Analysis
+# Jammed Signal (–5 dB) - Analysis
 
 ### Observations
 - Noise floor is almost equal to or above the signal.
@@ -192,9 +192,9 @@ inspectrum &
 
 - Repeat for jammed files; observe corruption of symbol structure.
 
-# Part B — Network Forensics: Replay & Flood Detection
+# Part B - Network Forensics: Replay & Flood Detection
 
-## B1 — Observe normal traffic with Wireshark
+## B1 - Observe normal traffic with Wireshark
 
 1. Run groundstation:
 
@@ -232,7 +232,7 @@ sudo wireshark &
 
 ---
 
-## B2 — Watch replay attack in Wireshark
+## B2 - Watch replay attack in Wireshark
 
 1. Trigger replay (from a terminal):
 
@@ -257,9 +257,9 @@ seq 1 500 | xargs -I{} -P 20 sh -c \
 
 ---
 
-# Part C — Hardening & Detection with Standard Tools
+# Part C - Hardening & Detection with Standard Tools
 
-## C1 — Rate-limit with Nginx
+## C1 - Rate-limit with Nginx
 
 ### What we are going to do
 
