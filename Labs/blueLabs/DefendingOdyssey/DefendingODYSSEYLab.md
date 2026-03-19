@@ -60,7 +60,7 @@ realpath pass_jam_-5dB.iq
 3. Input rate: **48000**
 4. Device string: `file=/home/ubuntu/Desktop/DefendingODYSSEY/pass_clean.iq,freq=437.5e6,rate=48000,repeat=true,throttle=true`
 
-<img width="690" height="469" alt="image" src="https://github.com/user-attachments/assets/0f4434b8-be3b-44ec-acdb-64e84591f8b0" />
+<img width="550" height="473" alt="image" src="https://github.com/user-attachments/assets/0b5ac322-a5ce-4da1-b414-eb3de85f1e08" />
 
 - Click **Ok**
 
