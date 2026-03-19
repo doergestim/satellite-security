@@ -62,7 +62,7 @@ realpath pass_jam_-5dB.iq
 
 ![image](/Assets/BLab1/BLab1-1.png)
 
-<img width="693" height="473" alt="image" src="https://github.com/user-attachments/assets/5427ff9e-65ee-4651-920d-3b7b048d1f25" />
+<img width="690" height="469" alt="image" src="https://github.com/user-attachments/assets/0f4434b8-be3b-44ec-acdb-64e84591f8b0" />
 
 - Click **Ok**
 
