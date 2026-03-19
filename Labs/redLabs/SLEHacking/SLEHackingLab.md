@@ -31,7 +31,8 @@ sudo docker compose up --build -d
 sudo docker ps --format "table {{.Names}}\t{{.Ports}}"
 ```
 
-<img width="1732" height="39" alt="image" src="https://github.com/user-attachments/assets/bdd623d9-6a53-4f99-99bf-ce326b2fb6aa" />
+<img width="1781" height="57" alt="2026-03-19_11-52" src="https://github.com/user-attachments/assets/0ee86895-9ae7-41dd-a5ad-ce8473c3ad63" />
+
 
 Expected exposure:
 - **TCP 2048** -> Management REST API
@@ -55,7 +56,7 @@ Expected:
 
 This proves the service is **alive**
 
-<img width="1169" height="198" alt="image" src="https://github.com/user-attachments/assets/10def248-70df-4551-aeeb-532be3813044" />
+<img width="1160" height="220" alt="2026-03-19_11-53" src="https://github.com/user-attachments/assets/8067c4ad-24af-4f2e-b405-18c42a0ab3c7" />
 
 
 ---
