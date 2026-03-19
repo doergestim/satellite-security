@@ -4,6 +4,9 @@
 
 # Ephemerista
 
+>[!IMPORTANT]
+>DISCLAIMER - This lab is more of a documentation and quiz, not a hands-on experience, you don't need to run any of the commands, all of the commands presented are examples
+
 ## Overview
 
 This lab introduces **Ephemerista**, a library for working with satellite ephemeris data
