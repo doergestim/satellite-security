@@ -70,32 +70,67 @@ Small errors in ephemerista data often scale into large operational failures
 
 ---
 
-## Loading Ephemerista Data
+## Initialization
+
+Before using any Ephemerista functionality, you **must** initialize the library with three required data files:
+
+- **Earth Orientation Parameters (EOP)** from the IERS
+- **Planetary ephemerides** in SPK format (e.g. `de440s.bsp` from NASA JPL)
+- **Orekit data package** for force models and time transforms
+
+```python
+import ephemerista
+
+ephemerista.init(
+    eop_path="finals2000A.all.csv",
+    spk_path="de440s.bsp",
+    orekit_data="orekit-data-main.zip"
+)
+```
+
+>[!IMPORTANT]
+> This initialization must be called **once per Python session** before anything else. Skipping it will cause errors in all downstream calculations.
+
+>[!NOTE]
+> The required data files can be downloaded from:
+> - EOP: https://datacenter.iers.org/data/csv/finals2000A.all.csv
+> - SPK: https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440s.bsp
+> - Orekit: https://gitlab.orekit.org/orekit/orekit-data/-/archive/main/orekit-data-main.zip
+
+---
+
+## Loading Ephemeris Data
 
 ### Using Two-Line Element (TLE) Data
 
 >[!IMPORTANT]
->Everytime you run a python code, either use an IDE like **Visual Studio**, or run it in console like this: `nano script.py` -> **Ctrl + X** and **Y** and **Enter** to save an exit -> `python3 script.py` to run it -> `rm script.py` to delete it to then make another one
+>Everytime you run a python code, either use an IDE like **Visual Studio**, or run it in console like this: `nano script.py` -> **Ctrl + X** and **Y** and **Enter** to save and exit -> `python3 script.py` to run it -> `rm script.py` to delete it to then make another one
+
+TLEs are loaded as strings and passed directly to the `SGP4` propagator:
 
 ```python
-from ephemerista import Ephemeris
+import ephemerista
+from ephemerista.propagators.sgp4 import SGP4
+from ephemerista.time import TimeDelta
 
-ephem = Ephemeris("satellite.bsp")
-print(ephem)
+ephemerista.init(
+    eop_path="finals2000A.all.csv",
+    spk_path="de440s.bsp",
+    orekit_data="orekit-data-main.zip"
+)
+
+iss_tle = """ISS (ZARYA)
+1 25544U 98067A   24187.33936543 -.00002171  00000+0 -30369-4 0  9995
+2 25544  51.6384 225.3932 0010337  32.2603  75.0138 15.49573527461367"""
+
+propagator = SGP4(tle=iss_tle)
+print(propagator.time)   # epoch parsed from the TLE
 ```
 
 >[!NOTE]
 > You don't have to run these python scripts necessarily, we are using them as examples to understand the logic behind **Ephemerista**
 
-Typical attributes available:
-
-```python
-ephem.epoch
-ephem.frame
-ephem.metadata
-```
-
-You should always inspect the epoch and frame before performing calculations
+You should always inspect the epoch before performing calculations — `propagator.time` exposes the TLE epoch directly.
 
 ---
 
@@ -103,35 +138,33 @@ You should always inspect the epoch and frame before performing calculations
 
 ### Position at a Specific Time
 
+Propagate to a single point in time by passing a `Time` object:
+
 ```python
-from datetime import datetime, timezone
-from ephemerista import SPK
+from ephemerista.propagators.sgp4 import SGP4
+from ephemerista.time import Time, TimeDelta
 
-spk = SPK("example.bsp")
+propagator = SGP4(tle=iss_tle)
 
-t = datetime(2026, 1, 1, 12, 0, tzinfo=timezone.utc)
-state = spk.state(
-    target="SATELLITE",
-    observer="EARTH",
-    time=t,
-    frame="J2000"
-)
+t = Time.from_iso("UTC", "2026-01-01T12:00:00")
+state = propagator.propagate(time=t)
 
-print(state.position)
+print(state.position)   # vector in km, Earth-centered
 ```
 
-Returned values are vector objects, usually in meters.
+Returned position values are vectors, typically in kilometres.
 
 ### Position Over a Time Window
 
 ```python
-positions = []
-for hour in range(0, 24):
-    t = datetime(2026, 1, 1, hour, 0, tzinfo=timezone.utc)
-    positions.append(ephem.position_at(t))
+start_time = propagator.time
+end_time = start_time + TimeDelta.from_hours(24)
+times = start_time.trange(end_time, step=float(TimeDelta.from_minutes(1)))
+
+trajectory = propagator.propagate(time=times)
 ```
 
-This pattern is commonly used for pass prediction and trajectory analysis.
+This pattern is commonly used for pass prediction and trajectory analysis. The returned `trajectory` object holds all state vectors across the time window.
 
 ---
 
@@ -139,9 +172,13 @@ This pattern is commonly used for pass prediction and trajectory analysis.
 
 ### Querying Velocity
 
+Each propagated state contains both position and velocity:
+
 ```python
-velocity = ephem.velocity_at(t)
-print(velocity)
+state = propagator.propagate(time=t)
+
+print(state.position)   # km
+print(state.velocity)   # km/s
 ```
 
 **Velocity** magnitude for **LEO satellites** typically ranges between **7–8 km/s**
@@ -149,11 +186,13 @@ print(velocity)
 ### Sanity Check Example
 
 ```python
-speed = velocity.magnitude()
-assert 6500 < speed < 8500
+import numpy as np
+
+speed = np.linalg.norm(state.velocity)
+assert 6.5 < speed < 8.5, f"Unexpected speed: {speed} km/s"
 ```
 
-Sanity checks like this are simple but effective for catching corrupted data
+Sanity checks like this are simple but effective for catching corrupted or stale data
 
 ---
 
@@ -161,17 +200,34 @@ Sanity checks like this are simple but effective for catching corrupted data
 
 Ephemerista supports multiple coordinate frames, commonly:
 
-- **ECI** (Earth-Centered Inertial)
-- **ECEF** (Earth-Centered Earth-Fixed)
+- **ECI** (Earth-Centered Inertial) — inertial, fixed to stars
+- **ECEF** (Earth-Centered Earth-Fixed) — rotates with the Earth
+
+The propagated trajectory carries its frame as an attribute:
+
+```python
+trajectory = propagator.propagate(time=times)
+print(trajectory.frame)           # shows the current reference frame
+print(trajectory.frame.abbreviation)
+```
 
 ### Transforming Between Frames
 
+Frame transformations are handled via Ephemerista's `coords` module:
+
 ```python
-eci = ephem.position_at(t, frame="ECI")
-ecef = ephem.transform(eci, to="ECEF")
+from ephemerista.coords.twobody import Cartesian
+
+# The trajectory is natively in ECI; inspect its frame
+print(trajectory.frame.abbreviation)   # e.g. "TEME" for SGP4 output
+
+# Convert a single state to Cartesian for manual frame work
+state = propagator.propagate(time=t)
+print(state.position)
+print(state.velocity)
 ```
 
-**Frame mismatches** are a frequent source of subtle but serious errors
+**Frame mismatches** are a frequent source of subtle but serious errors — always verify `trajectory.frame` before mixing data from different sources.
 
 ---
 
@@ -180,12 +236,16 @@ ecef = ephem.transform(eci, to="ECEF")
 ### Estimating Doppler Shift
 
 ```python
-def doppler_shift(relative_velocity, carrier_frequency):
-    c = 299_792_458
-    return carrier_frequency * (relative_velocity / c)
+def doppler_shift(relative_velocity_km_s, carrier_frequency_hz):
+    c = 299_792.458   # km/s
+    return carrier_frequency_hz * (relative_velocity_km_s / c)
 
-shift = doppler_shift(7500, 2.2e9)
-print(shift)
+import numpy as np
+state = propagator.propagate(time=t)
+speed = np.linalg.norm(state.velocity)   # km/s
+
+shift = doppler_shift(speed, 2.2e9)
+print(f"Max Doppler shift: {shift:.0f} Hz")
 ```
 
 Incorrect ephemeris data directly translates to incorrect Doppler compensation, often resulting in degraded or lost links
@@ -197,17 +257,27 @@ Incorrect ephemeris data directly translates to incorrect Doppler compensation, 
 Using multiple ephemeris sources is common in real systems.
 
 ```python
-ephem_a = Ephemeris.from_tle("source_a.tle")
-ephem_b = Ephemeris.from_tle("source_b.tle")
+from ephemerista.propagators.sgp4 import SGP4
+from ephemerista.time import TimeDelta
+import numpy as np
 
-delta = ephem_a.position_at(t) - ephem_b.position_at(t)
-print(delta.magnitude())
+propagator_a = SGP4(tle=tle_source_a)
+propagator_b = SGP4(tle=tle_source_b)
+
+t = propagator_a.time
+state_a = propagator_a.propagate(time=t)
+state_b = propagator_b.propagate(time=t)
+
+delta = np.linalg.norm(
+    np.array(state_a.position) - np.array(state_b.position)
+)
+print(f"Position difference: {delta:.3f} km")
 ```
 
 Interpretation:
-- **Tens of meters**: normal variation
-- **Hundreds of meters**: investigate
-- **Kilometers**: likely stale or incorrect data
+- **Tens of metres**: normal variation
+- **Hundreds of metres**: investigate
+- **Kilometres**: likely stale or incorrect data
 
 ---
 
@@ -216,11 +286,19 @@ Interpretation:
 ### Introducing a Timing Offset
 
 ```python
-tampered = ephem.copy()
-tampered.epoch_offset(seconds=1)
+from ephemerista.time import Time, TimeDelta
+import numpy as np
 
-error = tampered.position_at(t) - ephem.position_at(t)
-print(error.magnitude())
+t_nominal = propagator.time
+t_offset  = t_nominal + TimeDelta.from_seconds(1)
+
+state_nominal = propagator.propagate(time=t_nominal)
+state_offset  = propagator.propagate(time=t_offset)
+
+error = np.linalg.norm(
+    np.array(state_nominal.position) - np.array(state_offset.position)
+)
+print(f"1-second offset causes {error*1000:.1f} m position error")
 ```
 
 Even sub-second **offsets** can cause errors large enough to:
@@ -231,11 +309,13 @@ Even sub-second **offsets** can cause errors large enough to:
 ### Progressive Offset Analysis
 
 ```python
-for offset in [0.1, 0.5, 1, 2]:
-    test = ephem.copy()
-    test.epoch_offset(seconds=offset)
-    err = test.position_at(t) - ephem.position_at(t)
-    print(offset, err.magnitude())
+for seconds in [0.1, 0.5, 1, 2]:
+    t_test = t_nominal + TimeDelta.from_seconds(seconds)
+    s_test = propagator.propagate(time=t_test)
+    err = np.linalg.norm(
+        np.array(state_nominal.position) - np.array(s_test.position)
+    )
+    print(f"Offset {seconds}s → {err*1000:.1f} m error")
 ```
 
 ---
@@ -245,21 +325,30 @@ for offset in [0.1, 0.5, 1, 2]:
 ### Basic Bounds Checking
 
 ```python
-pos = ephem.position_at(t).magnitude()
-vel = ephem.velocity_at(t).magnitude()
+import numpy as np
 
-assert pos > 6_000_000
-assert vel < 9_000
+state = propagator.propagate(time=t)
+
+pos_km = np.linalg.norm(state.position)
+vel_km_s = np.linalg.norm(state.velocity)
+
+assert pos_km > 6_000,  f"Position too low: {pos_km:.1f} km"
+assert vel_km_s < 9.0,  f"Velocity too high: {vel_km_s:.3f} km/s"
 ```
 
 ### Rate-of-Change Monitoring
 
 ```python
-p1 = ephem.position_at(t)
-p2 = ephem.position_at(t.replace(minute=t.minute + 1))
+t1 = propagator.time
+t2 = t1 + TimeDelta.from_minutes(1)
 
-delta = (p2 - p1).magnitude()
-assert delta < 600_000
+s1 = propagator.propagate(time=t1)
+s2 = propagator.propagate(time=t2)
+
+delta_km = np.linalg.norm(
+    np.array(s2.position) - np.array(s1.position)
+)
+assert delta_km < 600, f"Unexpected position jump: {delta_km:.1f} km"
 ```
 
 ---
@@ -329,6 +418,7 @@ Scroll for the **Answers**
 4. **Correct answer: A**
 
 5. **Correct answer: A**
+
 
 
 
