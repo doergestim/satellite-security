@@ -66,7 +66,8 @@ realpath pass_jam_-5dB.iq
 
 5. Observe clean **BFSK tones** by pressing the **Arrow(play)** Button on the top-left
 
-![image](/Assets/BLab1/BLab1-2.png)
+<img width="1090" height="698" alt="image" src="https://github.com/user-attachments/assets/0ebea7fd-b7eb-4e34-8da5-794ade284574" />
+
 
 - Then repeat for (by replacing `pass_clean.iq` in the **Device string**):
 - `pass_jam_0dB.iq`
