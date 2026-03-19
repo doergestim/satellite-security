@@ -34,11 +34,19 @@ Auth rule (discover/confirm from pass): auth = sha1(str(epoch) + sat + "-BLUE")[
    - Find the telemetry packet with `epoch` and `sat`
    - Find the ACK packet containing `auth=xxxxxxx` (this is your clue)
 
-Just replace the ``File Source`` block and the `File Sink` blocks with our new `assets/takeover_pass.iq` and run it
+Just replace the ``File Source`` block with our new `/home/ubuntu/Desktop/TheTakeover/assets/takeover_pass.iq` and the `File Sink` blocks to their respective names( `/home/ubuntu/Desktop/TheTakeover/assets/takeover_pass.bits` and `/home/ubuntu/Desktop/TheTakeover/assets/takeover_pass_BPF.txt` ) and run it
 
 ![image](/Assets/RLab3/RLab3-1.png)
 
 4. The **assets** folder should now look like this
+
+```bash
+cd ~/Desktop/TheTakeover/
+```
+
+```bash
+ls assets/
+```
 
 ![image](/Assets/RLab3/RLab3-2.png)
 
