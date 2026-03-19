@@ -132,14 +132,15 @@ curl -s http://127.0.0.1:2048/api/sle-config/ | jq .
 
 ## 4. Exploitation Capability Validation
 
-You will **prove** modification is possible without executing it
+You will **prove** modification is possible
 
 ### 4.1 Check allowed methods
 ```bash
 curl -i -X OPTIONS http://127.0.0.1:2048/api/service-instances/test
 ```
 
-<img width="507" height="216" alt="image" src="https://github.com/user-attachments/assets/9e06e697-4dd1-4b25-bd83-d38c81ec8b94" />
+<img width="1005" height="234" alt="2026-03-19_12-01" src="https://github.com/user-attachments/assets/36205c0f-74f6-4fa0-aae0-44ac26b6dc25" />
+
 
 Expected:
 - `Allow:` header including `POST`, `PATCH`, or `DELETE`
@@ -155,7 +156,7 @@ No further exploitation is required to prove risk.
 
 ---
 
-## 6. Traffic capture:
+## 5. Traffic capture:
 
 ```bash
 sudo tcpdump -i lo -nn tcp port 2048 -w sle-management-abuse.pcap
