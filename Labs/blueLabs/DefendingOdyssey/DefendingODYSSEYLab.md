@@ -214,12 +214,10 @@ sudo docker compose up --build
 
 ![image](/Assets/BLab1/BLab1-6.png)
 
-3. Open a new terminal by pressing the button on the **Top-Left** of your already open **terminal** and open **Wireshark**
-
-![image](/Assets/BLab1/BLab1-7.png)
+3. Open a new terminal. Then run:
 
 ```bash
-sudo wireshark &
+sudo -E wireshark &
 ```
 
 4. Capture on `Loopback: lo`
