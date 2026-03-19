@@ -62,8 +62,10 @@ Now, let's make the following changes:
 3. Output Directory: `/home/ubuntu/Desktop/SatDumpLab/output_clean/`
 4. Baseband Format: `cs8`
 5. Samplerate: `48000`
+6. Doppler Correction: `Unchecked`
 
-<img width="1001" height="748" alt="2026-03-19_14-08" src="https://github.com/user-attachments/assets/bcaf88d7-540a-4b50-942e-231852e06247" />
+
+<img width="961" height="695" alt="2026-03-19_15-23_1" src="https://github.com/user-attachments/assets/8cd7f961-e0a7-4c49-b2e8-52e95935972e" />
 
 
 - Start
