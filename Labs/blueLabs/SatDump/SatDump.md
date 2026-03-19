@@ -73,7 +73,8 @@ Verify:
 ls -lah output_clean
 ```
 
-<img width="877" height="84" alt="image" src="https://github.com/user-attachments/assets/d6fd28c5-56c5-4446-b14c-353ac635fa28" />
+<img width="726" height="91" alt="2026-03-19_14-09" src="https://github.com/user-attachments/assets/d44fee64-3fb0-4859-850c-c7974e94033a" />
+
 
 ---
 
