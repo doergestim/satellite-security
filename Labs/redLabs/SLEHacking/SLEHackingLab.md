@@ -74,7 +74,8 @@ GET /api/sle-config
 GET, PATCH /api/sle-config/<string:param>
 ```
 
-<img width="1169" height="198" alt="image" src="https://github.com/user-attachments/assets/90950af0-ed71-4ee7-a195-564a1d992ef0" />
+
+<img width="707" height="218" alt="2026-03-19_11-57" src="https://github.com/user-attachments/assets/99f6930e-b37b-4533-a9f3-1625b99673ca" />
 
 
 ### Finding
@@ -91,7 +92,8 @@ This alone constitutes a **high-severity vulnerability**
 curl -s http://127.0.0.1:2048/api/service-instances/ | jq .
 ```
 
-<img width="471" height="75" alt="image" src="https://github.com/user-attachments/assets/ff7cfdbd-442d-4b0d-bb2a-8251f04ed19d" />
+<img width="943" height="94" alt="2026-03-19_11-58" src="https://github.com/user-attachments/assets/a5839274-7272-4f26-8dc8-f4c13081a8d0" />
+
 
 **Impact:**
 - Attacker learns live operational state
@@ -104,7 +106,9 @@ curl -s http://127.0.0.1:2048/api/service-instances/ | jq .
 curl -s http://127.0.0.1:2048/api/sle-config/ | jq .
 ```
 
-<img width="471" height="306" alt="image" src="https://github.com/user-attachments/assets/6cacb5d9-68c4-4102-b306-54ab9f122887" />
+<img width="883" height="329" alt="2026-03-19_11-59" src="https://github.com/user-attachments/assets/22753345-25fa-4db1-9449-5e6a99c40b92" />
+
+
 
 | Parameter | Category | Exploitation Impact | Why It Matters |
 |---------|--------|---------------------|---------------|
