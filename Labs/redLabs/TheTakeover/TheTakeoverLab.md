@@ -53,10 +53,6 @@ ls assets/
 5. View `takeover_pass_BPF.txt`
 
 ```bash
-cd ~/Desktop/TheTakeover
-```
-
-```bash
 xxd -g1 assets/takeover_pass_BPF.txt
 ```
 
@@ -118,19 +114,29 @@ xxd -g1 assets/takeover_pass_BPF.txt
    # Visit http://localhost:5000 in your browser
    ```
 
-2. Submit your packet:  
-   - **Binary upload:**
-     ```bash
-     curl -F "packet=@uplink.bin" http://localhost:5000/uplink | jq .
-     ```
-   - **Hex JSON:**
-     ```bash
-     HEX=$(xxd -p uplink.bin | tr -d '\n')
-     ```
+2. Submit your packet:
+
+- In another terminal:
+
+```bash
+cd ~/Desktop/TheTakeover/
+```
+
+- **Binary upload:**
+
+```bash
+curl -F "packet=@uplink.bin" http://localhost:5000/uplink | jq .
+```
+
+- **Hex JSON:**
+
+```bash
+HEX=$(xxd -p uplink.bin | tr -d '\n')
+```
   
-     ```bash
-     curl -H "Content-Type: application/json" -d "{\"hex\":\"$HEX\"}" http://localhost:5000/uplink | jq .
-     ```
+```bash
+ curl -H "Content-Type: application/json" -d "{\"hex\":\"$HEX\"}" http://localhost:5000/uplink | jq .
+```
 
 ![image](/Assets/RLab3/RLab3-5.png)
 
