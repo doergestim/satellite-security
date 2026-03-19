@@ -210,7 +210,7 @@ cat /home/ubuntu/Desktop/TheIntercepter/assets/pass_01.bits
 ### Part B - Frame sync + parsing
 - Let's turn those 0's and 1's into something more readable. We first need to determine where pieces of information, known as **frames**, begin so that we can perform that conversion. The beginning of **frames** is signified with a **sync word**. For this lab, the **sync word** is **0x1ACFFC1D**, a very common one, which in binary is **00011010110011111111110000011101**
 
-- Let's add a ``Correlate Access Code - Tag`` block and connect it to the ``Binary Slicer`` block. The ``Correlate Access Code - Tag`` block searches the **bitstream** for a known **sync word**. When the block finds that **sync word**, it tags the stream so that downstream blocks know **“a frame starts here”**. Change the settings in the `Correlate Access Code - Tag`` block to match what is seen in the image below
+- Let's add a ``Correlate Access Code - Tag`` block and connect it to the ``Binary Slicer`` block. The ``Correlate Access Code - Tag`` block searches the **bitstream** for a known **sync word**. When the block finds that **sync word**, it tags the stream so that downstream blocks know **“a frame starts here”**. Change the settings in the ``Correlate Access Code - Tag`` block to match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-28.png)
 
