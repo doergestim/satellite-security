@@ -62,7 +62,8 @@ satdump-ui
 4. Baseband Format: `cs8`
 5. Samplerate: `48000`
 
-<img width="999" height="635" alt="image" src="https://github.com/user-attachments/assets/34cdc2da-1d4b-41d4-912a-957f7d2778bd" />
+<img width="1001" height="748" alt="2026-03-19_14-08" src="https://github.com/user-attachments/assets/bcaf88d7-540a-4b50-942e-231852e06247" />
+
 
 - Start
 
