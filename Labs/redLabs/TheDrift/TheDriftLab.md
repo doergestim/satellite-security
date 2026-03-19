@@ -89,7 +89,7 @@ pip install numpy matplotlib
 gpredict
 ```
 
-- gpredict -> **Edit -> Update TLE From Local Files…** -> choose `assets/`   
+- gpredict -> **Edit -> Update TLE From Local Files…** -> choose `/home/ubuntu/Desktop/TheDrift/assets/`   
 - Create a module and add **ODYSSEY-1** to see synthetic passes
 
 ![image](/Assets/RLab5/RLab5-1.png)
