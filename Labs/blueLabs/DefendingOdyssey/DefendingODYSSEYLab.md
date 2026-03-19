@@ -70,12 +70,15 @@ realpath pass_jam_-5dB.iq
 
 
 - Then repeat for (by replacing `pass_clean.iq` in the **Device string**):
-- `pass_jam_0dB.iq`
 
 - `file=/home/ubuntu/Desktop/DefendingODYSSEY/pass_jam_0dB.iq,freq=437.5e6,rate=48000,repeat=true,throttle=true`
-- `pass_jam_-5dB.iq`
+
+<img width="1089" height="697" alt="image" src="https://github.com/user-attachments/assets/c8471a7d-a1d1-4c90-8934-2a3f1cda786b" />
+
 -  `file=/home/ubuntu/Desktop/DefendingODYSSEY/pass_jam_-5dB.iq,freq=437.5e6,rate=48000,repeat=true,throttle=true`
-- 
+
+<img width="1090" height="737" alt="image" src="https://github.com/user-attachments/assets/59dd63f9-5f66-4646-a1e9-66425a652cca" />
+
 
 - Do it by going to **File** -> **I/O Devices**
 
@@ -84,11 +87,6 @@ Watch for:
 - Smeared tones  
 - Loss of clarity in waterfall  
 
-- Here are the other 2:
-
-![image](/Assets/BLab1/BLab1-3.png)
-
-![image](/Assets/BLab1/BLab1-4.png)
 
 # Clean Signal - Analysis
 
