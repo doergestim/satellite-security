@@ -161,3 +161,7 @@ xdg-open results/replay.png
 Please be sure to destroy the lab environment!
 
 [Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
+
+---
+
+> Created By Turcu Știolică Alexandru - Black Hills Information Security
