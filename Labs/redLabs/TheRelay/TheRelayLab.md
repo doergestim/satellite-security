@@ -139,6 +139,13 @@ Expected JSON:
   "nonce": null
 }
 ```
+
+And:
+
+<pre>
+[!] Replay did not achieve unauthorized state (check emulator logs).    <-- because we didn't play the replay yet, it is normal!
+</pre>
+
 **Why:** Confirm the target is reachable and in a known-good state
 
 ---
@@ -151,7 +158,7 @@ Send the two frames (AUTH followed by EXEC) to the emulator. Pace them at ~0.8 s
 python3 tools/replay.py --kiss assets/captured_kiss.hex --host 127.0.0.1 --port 52001 --pace 0.8
 ```
 
-**What happens:**
+**What happens(check the logs back in the first terminal as well):**
 - Emulator logs **AUTH OK**, then **EXEC ACCEPTED -> mode=OP owned=true**.
 - No crypto broken: we simply **replayed** previously valid traffic lacking freshness binding.
 
@@ -173,23 +180,34 @@ Stop the emulator (Ctrl‑C)
 
 Toggle each protection in `emulators/groundstation_vuln.py` and retry the replay to see which control blocks it.
 
-Open the file and set:
+Open the file:
+
+```bash
+nano emulators/groundstation_vuln.py
+```
+
+and set:
 ```python
 REQUIRE_FRESH_TS = True     # reject stale timestamps (±300s window)
 REJECT_REPLAY = True        # keep recent frame hashes and drop duplicates
 REQUIRE_AUTH_NONCE = True   # bind AUTH to a fresh server-provided nonce
 ```
 
-Restart emulator:
+To save and exit do `Ctrl+x` + `y` and `Enter`
+
+Restart emulator by going to the first terminal, do `Ctrl+c` to stop it and run it again:
+
 ```bash
 python3 emulators/groundstation_vuln.py
 ```
 
 ### Freshness check
 Replay again:
+
 ```bash
 python3 tools/replay.py --kiss assets/captured_kiss.hex --host 127.0.0.1 --port 52001 --pace 0.8
 ```
+
 Expected log: `STALE TS - dropping`.  
 **Why:** Old frames should not be accepted as “fresh.”
 
