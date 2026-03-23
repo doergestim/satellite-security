@@ -402,12 +402,7 @@ Expected log: `NONCE MISMATCH - dropping`
 
 **Why:** The nonce is single-use and server-generated. An attacker who recorded yesterday's traffic has no way to forge a valid nonce for today's session - challenge-response breaks replay even when timestamps are absent or clocks are unsynchronized.
 
-> [!TIP]
-> You can override defaults with flags if your setup differs:
-> ```bash
-> python3 tools/nonce_auth_demo.py --host 127.0.0.1 --port 52001 \
->     --status-url http://127.0.0.1:8000/status --token abcd1234
-> ```
+
 
 
 ***                                                                 
