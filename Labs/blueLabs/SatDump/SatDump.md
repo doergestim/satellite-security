@@ -57,7 +57,7 @@ satdump-ui
 
 Now, let's make the following changes:
 
-1. Pipepline: `Analog Demodulation`
+1. Pipeline: `Analog Demodulation`
 2. Input File: `/home/ubuntu/Desktop/SatDumpLab/pass_clean.iq`
 3. Output Directory: `/home/ubuntu/Desktop/SatDumpLab/output_clean/`
 4. Baseband Format: `cs8`
