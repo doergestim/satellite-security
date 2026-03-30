@@ -108,7 +108,7 @@ The complex baseband u(t) = I(t) + jQ(t) contains the in-phase (I) and quadratur
 ### Polyphase & multirate filtering
 - **Polyphase filters** implement efficient resampling (decimation/interpolation) and channelizers (filter banks) — critical for SDR pipelines that need computational efficiency.
 
-###considerations for satellite signals
+### Considerations for satellite signals
 - Use steep bandpass filters to isolate a narrow telemetry carrier in a crowded VHF/UHF band.  
 - For GNSS and L-band, filter insertion loss and front-end linearity matter — avoid strong blockers saturating the LNA.  
 - Apply matched filters in detection chains for known preambles/pulse shapes to maximize SNR.

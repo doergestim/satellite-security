@@ -42,8 +42,8 @@ GPS‑SDR‑SIM numerically generates GNSS baseband signals (pseudorandom codes 
 ## use  cases
 
 1. **Receiver robustness validation:** generate scenarios with small clock drifts, sudden time jumps, or coherent takeover where spoofed signals pull a receiver off real satellites. Use these to evaluate receiver lock behavior and failover logic.  
-2. **Timing infrastructure tests:** feed synthetic GNSS signals to timing servers or NTP/PTP clientsr, leap second handling, and authentication measures.  
-3. **Operator training ** run realistic spoofing exercises in an RF‑shielded facility to train operators on detection and incident response without risking real-world disruption.  
+2. **Timing infrastructure tests:** feed synthetic GNSS signals to timing servers or NTP/PTP client, leap second handling, and authentication measures.  
+3. **Operator training** run realistic spoofing exercises in an RF‑shielded facility to train operators on detection and incident response without risking real-world disruption.  
 4. **ML detector training sets:** generate labeled examples of spoofing vs. clean traces for supervised learning of spoofing detectors.  
 5. **Integration testing for ground-control systems:** verify that antenna control, scheduling software, or ground-station automation behaves safely when presented with manipulated GNSS-derived telemetry.  
 

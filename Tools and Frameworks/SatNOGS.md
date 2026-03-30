@@ -11,7 +11,7 @@
 
 ## 1. scope
 
-This page concentrates on **practical, security-relevant uses** of SatNOGS for defenders, researchers, and analysts. It assumes familiarity with SDR toolchains (ex: [GNU Radio explained here](./GNU_radio.md)) and concentrates on how SatNOGS can be used **operationall y** for monitoring, reconnaissance, threat detection, and secure ground-station design. 
+This page concentrates on **practical, security-relevant uses** of SatNOGS for defenders, researchers, and analysts. It assumes familiarity with SDR toolchains (ex: [GNU Radio explained here](./GNU_radio.md)) and concentrates on how SatNOGS can be used **operationally** for monitoring, reconnaissance, threat detection, and secure ground-station design. 
 
 ---
 
@@ -40,7 +40,7 @@ This page concentrates on **practical, security-relevant uses** of SatNOGS for d
 1. **Search the DB** for your target satellite to get center frequencies, expected modulation, and typical pass windows.
 2. **Schedule an observation** across network stations or target a set of trusted local stations to collect IQ and decoded outputs for the next pass.
 3. **Automate retrieval** of observation results via the API; ingest IQ into your analysis environment (GNU Radio, custom parsers) for offline signature extraction or anomaly detection.
-4. **Compare across stations:** yiou can build automated scripts that compute differences in SNR, center frequency offset, or symbol error rate across stations during the same pass.
+4. **Compare across stations:** you can build automated scripts that compute differences in SNR, center frequency offset, or symbol error rate across stations during the same pass.
 5. **Store and index** observation metadata and IQ files in your SIEM or data lake for long-term trend analysis and correlation with other telemetry sources.
 
 ---

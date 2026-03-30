@@ -121,7 +121,7 @@ Successful decoding of telemetry requires reliable bit- and byte-level synchroni
 - **Escaping:** `FESC` (0xDB) and escape sequences (ex: `FESC` `TFEND`) are used to encode literal control bytes that appear in payloads.
 - **Command byte:** a single command/control byte follows FEND to indicate port or command type; after that comes the payload and a closing FEND.
 
-### Why KISS amd telemetry pipelines?
+### Why KISS and telemetry pipelines?
 - KISS allows a TNC or radio interface to present raw layer-2 frames (ex: AX.25 packets) to host software reliably over a byte-stream transport.
 - When capturing telemetry over TCP/serial using KISS, store the raw KISS-wrapped frames (or the unwrapped payload) and record timestamps at the earliest point possible (on receive) to preserve timing provenance.
 
@@ -218,7 +218,7 @@ Detecting anomalies requires a combination of simple rule checks and statistical
 
 ---
 
-## 11.best practices & governance
+## 11. Best Practices & Governance
 
 - **Define telemetry classification:** not all telemetry needs the same confidentiality; classify channels and protect accordingly.
 - **Document everything:** frame formats, calibration tables, decoder versions must be documented and preserved.

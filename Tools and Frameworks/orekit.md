@@ -10,7 +10,7 @@
 
 ---
 
-## summary
+## Summary
 
 Orekit turns ephemerides and initial states into precise, instrument-grade predictions and transforms: accurate access windows, Doppler vs time, contact geometries, eclipse predictions, and covariance/STM support for orbit determination and conjunction assessment. For satellite security, Orekit enables:
 
@@ -25,7 +25,7 @@ Orekit turns ephemerides and initial states into precise, instrument-grade predi
 
 ---
 
-##capabilities 
+## Capabilities 
 
 - **Date & time scales:** robust handling of UTC/TAI/TT/TDB and conversions.  
 - **Frames & transforms:** EME2000, ITRF, ICRF, topocentric transforms, IERS/EOP support.  

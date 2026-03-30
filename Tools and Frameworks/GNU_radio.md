@@ -45,7 +45,7 @@ This makes GNU Radio a primary choice for prototyping satellite receivers, exper
 - **Mid-range:** HackRF One (transmit & receive, limited bandwidth), LimeSDR
 - **Research / high-end:** Ettus USRP family (B200/B210/USRP X300/X310) — full duplex, wideband, and professional timing options
 
-https://www.ettus.com/all-products/ub210-kit/   //damnn
+https://www.ettus.com/all-products/ub210-kit/
 
 When working on satellite signals, consider front-end frequency coverage (L-band, S-band, VHF/UHF, LEO downlink frequencies), antenna gain, and the need for Doppler-tracking (frequency agility / rapid tuning).
 

@@ -273,7 +273,7 @@ xxd assets/pass_01_BPF.bits
 
 ![](/Assets/RLab1/Lab1-36.png)
 
-- We get an **ACK** response with out second flag: **FLAG2{protocol_reversed}**
+- We get an **ACK** response with our second flag: **FLAG2{protocol_reversed}**
 
 - For the final flag, we will build this payload script using the information from ``pass_01.iq`` and save it as ``uplink_craft.py`` in the main directory
 

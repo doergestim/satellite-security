@@ -90,7 +90,7 @@ gpredict
 ```
 
 - gpredict -> **Edit -> Update TLE From Local Files…** -> choose `/home/ubuntu/Desktop/TheDrift/assets/`   
-- Create a module by goint to **File** -> **New Module** and add **ODYSSEY-1** to see synthetic passes
+- Create a module by going to **File** -> **New Module** and add **ODYSSEY-1** to see synthetic passes
 
 ![image](/Assets/RLab5/RLab5-1.png)
 

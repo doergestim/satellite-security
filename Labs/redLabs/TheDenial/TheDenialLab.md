@@ -49,7 +49,7 @@ You will:
 
 ![image](/Assets/RLab2/RLab2-4.png)
 
-- Run the flow after changint the **File Source** and the 2 **File Sinks** to the right paths. You can run it for **5-10 seconds**, that is plenty!
+- Run the flow after changing the **File Source** and the 2 **File Sinks** to the right paths. You can run it for **5-10 seconds**, that is plenty!
 
 ```bash
 cd ~/Desktop/TheDenial
@@ -97,7 +97,7 @@ python3 jam.py pass_clean.iq pass_jam_-5dB.iq -5
 - Now run the flowgraph on both of these files, what do you notice?
 1. The tag debug doesn't work, it messes up the access code and so it will not get any hits
 2. Because of Nr. 1, the BPF file will be empty
-3. The ``.bits`` files are completely different from eachother, I'll show only the begginings
+3. The ``.bits`` files are completely different from each other, I'll show only the beginnings
 
 ![image](/Assets/RLab2/RLab2-6.png)
 
@@ -118,7 +118,7 @@ nano decodeScript.py
 - Paste this code in the file and replace `<whole 0/1 string here>` with your encoded **bit stream**
 
 >[!IMPORTANT]
->Make sure to replace in code with your bit stream, else it will no work
+>Make sure to replace in code with your bit stream, else it will not work
 
 ```
 b = "<whole 0/1 string here>"

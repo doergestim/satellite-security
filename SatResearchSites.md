@@ -1,4 +1,4 @@
-For receiving and decoding sattelite signals
+For receiving and decoding satellite signals
 - https://satnogs.org/
 - https://www.gnuradio.org/
 - https://github.com/daniestevez/gr-satellites - GNU Radio out-of-tree module for decoding signals from many satellites
@@ -17,19 +17,19 @@ Cool stuff
 - https://github.com/Horizon935/SATELLITE_HACKING
 
 
-Sattelite hacking from a defensive perspective
+Satellite hacking from a defensive perspective
 - Search "DEF CON “Aerospace Village” talks" on google or youtube
 - https://academic.oup.com/cybersecurity/article/11/1/tyaf013/8162738
 - CyberSat conferences - https://www.cybersatsummit.com/ - 19-20 Nov
 
 CTF
-- https://hackasat.com/ - 5 years of annual sattelite hacking ctf
+- https://hackasat.com/ - 5 years of annual satellite hacking ctf
 - https://github.com/deptofdefense/hack-a-sat-library
 - https://hackmd.io/@osgWm7MiSOO-Rl_1HF6Ggw/SyKKnpjT_
 
 Studies
 - https://arxiv.org/search/?query=satellite+security&searchtype=all&abstracts=show&order=-announced_date_first&size=50 - a lot of information, like A LOT, just need to find it
-- https://link.springer.com/article/10.1007/s10207-020-00503-w - explains sattelites in general really well
+- https://link.springer.com/article/10.1007/s10207-020-00503-w - explains satellites in general really well
 - https://d1wqtxts1xzle7.cloudfront.net/121567606/Protecting_Space_Assets_Cybersecurity_Challenges_and_Solutions_for_the_Final_Frontier-libre.pdf?1740640942=&response-content-disposition=inline%3B+filename%3DProtecting_Space_Assets_Cybersecurity_Ch.pdf&Expires=1756135907&Signature=aHXZNdOGr9iPewVteOiOizPW8pkYzILYCR4RU6AvaTCUcuL4bkUMvRpO6ED8UtzW~AU4RKeVYADZTIb~4QJLhblYBSRI87I4iq5CqjqKtBghfqLsagDCgZjvjvbrsBjS8f4IrnNhx29T0Omk3GYGtNivSkMYcgJHDZVoxylfA2DU4uLpAcrumvTjdwdujRB9pBfmUmYPACbXuQZobRH696mG698Nyu8E9~o~FJ5wa-TA6nlcK9dWnJoN7g7DzbO5ducjLkyXd8uOpxN8QOWo~RhNx-PE25b811a8UQehqEwt65lrS45vuyHlNy8QazZywDy~marDJ4JzzC62xbUYRQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA - talks about the unique vulnerabilities of satellites
 - https://arc.aiaa.org/doi/epdf/10.2514/6.2020-4014 - satellite to satellite hacking
 - https://ieeexplore.ieee.org/abstract/document/11062651 - communication networks
