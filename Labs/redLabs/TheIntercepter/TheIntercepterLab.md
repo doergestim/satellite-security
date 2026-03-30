@@ -261,7 +261,7 @@ xxd assets/pass_01_BPF.bits
 
 - You should see information flowing out
 
-![](/Assets/RLab1/Lab1-45.png)
+![](/Assets/RLab1/Lab1-35.png)
 
 - Hooray!! It works! We get valuable information:
 
