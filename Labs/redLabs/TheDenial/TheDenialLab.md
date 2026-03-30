@@ -10,7 +10,7 @@ You will:
 3. **Lock operators out** by overwhelming their weak ground station service
 
 >[!IMPORTANT]
->Make sure you have done [Lab 1](../TheIntercepter/TheInterceptLab.md) already
+>Make sure you have done [Lab 1](../TheIntercepter/TheIntercepterLab.md) already
 
 ---
 
