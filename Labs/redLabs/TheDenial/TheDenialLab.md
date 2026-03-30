@@ -33,7 +33,7 @@ You will:
 ## Start
 ### Part A - Break the Link (Simulated Jamming)
 
-- You will need the **GRC Flowgraph** we built during [Lab 1](../Lab1/TheInterceptLab.md)
+- You will need the **GRC Flowgraph** we built during [Lab 1](../TheIntercepter/TheInterceptLab.md)
 
 ![image](/Assets/RLab2/RLab2-1.png)
 
