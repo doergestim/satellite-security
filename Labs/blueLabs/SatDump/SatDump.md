@@ -152,7 +152,7 @@ xdg-open results/replay.png
 ***                                                                 
 <b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/EphemeristaLab/Ephemerista.md)</i></b>
 
-<b><i>Want to go back? </br>[Previous Lab](/Labs/blueLabs/DefendingOdyssey/DefendingODYSSEY_API&DoS-Protection.md)</i></b>
+<b><i>Want to go back? </br>[Previous Lab](/Labs/blueLabs/DefendingOdyssey/DefendingODYSSEY_API_And_DoS-Protection.md)</i></b>
 
 <b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
 
