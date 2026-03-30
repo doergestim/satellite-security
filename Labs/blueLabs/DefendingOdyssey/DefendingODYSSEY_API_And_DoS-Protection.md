@@ -61,7 +61,7 @@ sudo -E wireshark &
 
 ```bash
 seq 1 200 | xargs -I{} -P 50 sh -c \
- 'curl -s -o /dev/null -X POST http://localhost/ingest \
+ 'curl -s -o /dev/null -X POST http://localhost:5000/ingest \
    -H "Content-Type: application/json" \
    --data "{\"test\":{}}"' 
 ```
@@ -149,7 +149,7 @@ sudo systemctl reload nginx
 - Test access
 
 ```bash
-curl -v http://localhost/
+curl -v http://localhost:5000/
 ```
 
 ![image](/Assets/BLab1/BLab1-14.png)
@@ -159,7 +159,7 @@ curl -v http://localhost/
 
 ```bash
 seq 1 200 | xargs -I{} -P 50 sh -c \
- 'curl -s -o /dev/null -X POST http://localhost/ingest \
+ 'curl -s -o /dev/null -X POST http://localhost:5000/ingest \
    -H "Content-Type: application/json" \
    --data "{\"test\":{}}"' 
 ```
