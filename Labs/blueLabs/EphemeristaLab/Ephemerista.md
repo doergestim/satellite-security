@@ -39,7 +39,7 @@ pip install ephemerista
 Quick verification:
 
 ```bash
-python - << 'EOF'
+python3 - << 'EOF'
 import ephemerista
 print(ephemerista)
 EOF
