@@ -11,8 +11,7 @@
 ```
 TheDrift/
 ├─ assets/
-│  ├─ ODYSSEY-1.tle             # used by Orekit propagation (LEO-like, synthetic)
-│  └─ ODYSSEY-1_strict.tle      # strict 69-char TLE; importable into gpredict
+│  └─ ODYSSEY-1.tle             # used by Orekit propagation (LEO-like, synthetic)
 ├─ config/
 │  └─ gs.json                   # groundstation location/time window
 ├─ docker/
