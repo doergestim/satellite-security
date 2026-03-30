@@ -149,7 +149,7 @@ sudo systemctl reload nginx
 - Test access
 
 ```bash
-curl -v http://localhost:5000/
+curl -v http://localhost/
 ```
 
 ![image](/Assets/BLab1/BLab1-14.png)
