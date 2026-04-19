@@ -260,7 +260,7 @@ wireshark sle-management-abuse.pcap
 
 
 ***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/DefendingOdyssey/DefendingODYSSEYLab.md)</i></b>
+<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/DefendingOdyssey/DefendingODYSSEY_RF-Analysis.md)</i></b>
 
 <b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/TheDrift/TheDriftLab.md)</i></b>
 
