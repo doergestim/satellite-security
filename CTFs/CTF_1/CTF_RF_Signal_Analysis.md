@@ -1,8 +1,12 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # RF Signal Analysis CTF
 
 **Assets provided:**
 - `pass_ctf.iq` - complex float32 baseband IQ recording
 - `pass_ctf.json` - metadata for the IQ recording
+
+Download the files [here](./ctf_1_files.zip) and **unzip** them
 
 **Tools you will need:** GNU Radio Companion, Python 3 (numpy, hashlib, struct, binascii)
 
@@ -53,3 +57,18 @@ authentication token. What is it?**
 
 **Q10. What integrity algorithm protects each frame, and which bytes does it cover?
 Be specific about what is included and what is excluded.**
+
+
+## If stuck or want to check your answers, here is the [writeup](./CTF_RF_Signal_Analysis_Writeup.md)
+
+
+***                                                                 
+<b><i>Continuing the CTF? </br>[Next Lab](../CTF_2/)</i></b>
+
+<b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
+
+***Finished with the CTFs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
