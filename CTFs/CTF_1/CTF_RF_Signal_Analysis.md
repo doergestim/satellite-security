@@ -6,7 +6,7 @@
 - `pass_ctf.iq` - complex float32 baseband IQ recording
 - `pass_ctf.json` - metadata for the IQ recording
 
-Download the files [here](./ctf_1_files.zip) and **unzip** them
+## Download the files [here](./ctf_1_files.zip) and **unzip** them
 
 **Tools you will need:** GNU Radio Companion, Python 3 (numpy, hashlib, struct, binascii)
 
