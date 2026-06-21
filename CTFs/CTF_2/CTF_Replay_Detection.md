@@ -1,10 +1,13 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # Replay Attack Detection CTF
 
 **Assets provided:**
-- `groundstation_ingest.pcap` - capture of traffic to a groundstation's `/ingest`
-  telemetry endpoint
+- `groundstation_ingest.pcap` - capture of traffic to a groundstation's `/ingest` telemetry endpoint
 
 **Tools you will need:** Wireshark (or tshark)
+
+## Download the file [here](./groundstation_ingest.pcap)
 
 **Scenario:** You are reviewing a packet capture pulled from a groundstation's network
 tap after operators reported the live telemetry dashboard appeared to "freeze" and loop
@@ -56,3 +59,18 @@ replay burst?**
 
 **Q10. What check is missing from the server's handling of `/ingest` that would have
 prevented this attack? Name the specific defensive mechanism.**
+
+
+## If stuck or want to check your answers, here is the [writeup](./CTF_Replay_Detection_Writeup.md)
+
+
+***                                                                 
+<b><i>Continuing the CTF? </br>[Next Lab](../CTF_3/)</i></b>
+
+<b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
+
+***Finished with the CTFs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
