@@ -145,7 +145,7 @@ entire replay burst?**
 > http.request.uri == "/ingest" && http contains "SAFE"
 > ```
 >
-> then **Statistics -> Endpoints** to see the distinct source ports
+> then **Statistics -> Endpoints** and go to the **TCP** tab to see the distinct source ports
 > involved. A small, reused pool of source ports across hundreds of
 > requests is consistent with a local automated script (such as
 > `xargs -P N` invoking `curl` in parallel) reusing a handful of concurrent
