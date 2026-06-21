@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # Replay Attack Detection CTF - Writeup
 
 ---
@@ -275,3 +277,7 @@ In this lab series, Lab 4 (TheRelay) demonstrates all three of these as
 configurable toggles on a hardened groundstation, so you can directly
 compare the same replay attack against a defended endpoint and see each
 mechanism block it in turn.
+
+***                                                                 
+
+<b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
