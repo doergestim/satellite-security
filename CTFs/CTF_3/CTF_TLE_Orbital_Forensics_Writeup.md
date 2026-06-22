@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # Orbital Forensics CTF - Writeup
 
 ---
@@ -294,3 +296,9 @@ tampered values before distributing the file, exactly as this CTF's own
 self-consistent; it tells you nothing about whether the orbital elements inside it are
 true. That distinction - integrity versus authenticity - is the same one that came up in
 the Replay Detection CTF, just applied to a different kind of file.
+
+
+
+***                                                                 
+
+<b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
