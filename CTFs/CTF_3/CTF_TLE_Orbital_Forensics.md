@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
 # Orbital Forensics CTF
 
 **Assets provided:**
@@ -11,6 +13,8 @@
 
 **Tools you will need:** a text editor, a calculator or Python, and (optional) an SGP4
 library such as `sgp4` for Python if you want to reproduce the propagation yourself
+
+## Download the files [here](./CTF_3_files) and unzip them
 
 **Scenario:** A groundstation operator flags that their antenna missed part of a
 scheduled ODYSSEY-2 pass. They pulled the TLE their system used from the update channel
@@ -66,3 +70,16 @@ of position error a 1-second timing error would introduce. Show your working.**
 
 **Q10. What groundstation coordinates (latitude/longitude) were used to compute the
 pointing angles in this analysis? Where is this located?**
+
+## If stuck or want to check your answers, here is the [writeup](./CTF_TLE_Orbital_Forensics_Writeup.md)
+
+***                                                                 
+<b><i>Continuing the CTF? </br>[Next Lab](../CTF_4/)</i></b>
+
+<b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
+
+***Finished with the CTFs?***
+
+Please be sure to destroy the lab environment!
+
+[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
