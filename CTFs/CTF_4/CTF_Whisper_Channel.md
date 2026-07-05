@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+
+
 # The Whisper Channel CTF
 
 **Assets provided:**
@@ -5,6 +8,8 @@
 - `whisper_channel.json` - metadata for the IQ recording
 
 **Tools you will need:** GNU Radio Companion, Python 3 (numpy)
+
+## Download the files [here](./whisper_channel.zip) and unzip them
 
 **Scenario:** You have intercepted a baseband recording during a satellite pass.
 There is an obvious signal. Decode it. Then look harder.
@@ -55,3 +60,12 @@ type. What is its value?**
 ---
 
 **Q10. What is the sample rate of the recording?**
+
+## If stuck or want to check your answers, here is the [writeup](./CTF_Whisper_Channel_Writeup.md)
+
+***                                                                 
+<b><i>Continuing the CTF? </br>[Next Lab](../CTF_5/)</i></b>
+
+<b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
+
+***Finished with the CTFs?***
