@@ -313,3 +313,8 @@ Detection requires either:
   looks like, you can model it, subtract it from the recording, and analyze
   the residual. What remains after subtraction is everything that isn't the
   expected signal, including covert channels.
+
+  
+***                                                                 
+
+<b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
