@@ -65,7 +65,7 @@ prevented this attack? Name the specific defensive mechanism.**
 
 
 ***                                                                 
-<b><i>Continuing the CTF? </br>[Next Lab](../CTF_3/)</i></b>
+<b><i>Continuing the CTF? </br>[Next Lab](../CTF_3/CTF_TLE_Orbital_Forensics.md)</i></b>
 
 <b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
 
