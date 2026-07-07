@@ -74,7 +74,7 @@ pointing angles in this analysis? Where is this located?**
 ## If stuck or want to check your answers, here is the [writeup](./CTF_TLE_Orbital_Forensics_Writeup.md)
 
 ***                                                                 
-<b><i>Continuing the CTF? </br>[Next Lab](../CTF_4/)</i></b>
+<b><i>Continuing the CTF? </br>[Next Lab](../CTF_4/CTF_Whisper_Channel.md)</i></b>
 
 <b><i>Looking for a different CTF/Lab? </br>[Lab Directory](/navigation.md)</i></b>
 
