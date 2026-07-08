@@ -11,6 +11,13 @@
 
 `192.168.1.50`
 
+> [!NOTES]
+> You might note be able to get this from the beggining, these first questions are easier to answer afterwards
+
+
+
+
+
 > **Step 1 - Find all hosts making HTTP requests.** Apply:
 > ```
 > http.request
@@ -18,19 +25,27 @@
 > Look at the `ip.src` column. Three source IPs appear: `192.168.1.20`,
 > `192.168.1.50`, and `192.168.1.77`.
 >
-> **Step 2 - Narrow to the suspicious host.** Normal browser traffic from
-> `192.168.1.20` uses realistic User-Agent strings (Chrome, Firefox, curl).
-> Filter to each of the other two hosts and inspect their User-Agent headers:
+> **Step 2 - Identify which hosts look suspicious.** Filter to each host and
+> inspect their User-Agent headers. `192.168.1.20` uses realistic browser strings
+> (Chrome, Firefox, curl) - normal. Both `192.168.1.50` and `192.168.1.77`
+> carry a `probe/NNN;` substring in every User-Agent. Both are candidates.
+>
+> **Step 3 - Check the IO Graph for beaconing.** Go to **Statistics -> IO Graph**.
+> Both suspicious hosts show periodic spikes, but check the destination for each:
 > ```
 > http.request && ip.src == 192.168.1.50
+> http.request && ip.src == 192.168.1.77
 > ```
-> Every request from `192.168.1.50` carries an unusual User-Agent containing
-> the substring `probe/`. This pattern does not appear in any traffic from
-> `192.168.1.20`.
+> `192.168.1.50` sends all its requests to the same external IP (`93.184.216.34`).
+> `192.168.1.77` sends all its requests to a different IP (`203.0.113.10`).
 >
-> **Step 3 - Note the other suspicious host.** `192.168.1.77` also uses
-> `probe/` User-Agents, but sends requests to a different destination IP
-> (`203.0.113.10`, not `93.184.216.34`). It is a decoy - see Q10.
+> **Step 4 - Check whether the encoded values make sense.** For each host,
+> read the numbers from the `probe/NNN;` fields in order and look them up in
+> the ASCII table. The values from `192.168.1.50` (79, 68, 89, 83...) all fall
+> in the printable ASCII range and spell readable text. The values from
+> `192.168.1.77` (132, 155, 178...) are all above 127 - outside standard
+> printable ASCII - and produce garbage. The host encoding coherent, readable
+> ASCII is the exfiltrator.
 
 ---
 
