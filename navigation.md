@@ -20,6 +20,7 @@
   - [CTF 2 - Replay Attack Detection](CTFs/CTF_2/CTF_Replay_Detection.md)
   - [CTF 3 - Orbital Forensics](CTFs/CTF_3/CTF_TLE_Orbital_Forensics.md)
   - [CTF 4 - The Whisper Channel](CTFs/CTF_4/CTF_Whisper_Channel.md)
+  - [CTF 5 - The Slow Exfil](CTFs/CTF_5/CTF_Slow_Exfil.md)
 
 
 *** 
