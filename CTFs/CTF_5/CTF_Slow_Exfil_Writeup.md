@@ -11,7 +11,7 @@
 
 `192.168.1.50`
 
-> [!NOTES]
+> [!NOTE]
 > You might note be able to get this from the beggining, these first questions are easier to answer afterwards
 
 
