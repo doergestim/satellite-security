@@ -51,7 +51,7 @@ Now we need to open a browser and navigate to `http://localhost:5000`
 ![image](/Assets/BLab1/BLab1-6.png)
 
 If you've made it this far, it means that the docker was successfully built.<br>
-Next, we need to launch Wireshark.<br.
+Next, we need to launch Wireshark.<br>
 Open a new terminal and run the following:
 
 ```bash
