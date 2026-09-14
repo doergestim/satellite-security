@@ -73,7 +73,8 @@ Click any of the bigger **packets**.
 
 ### Watch replay attack in Wireshark
 
-1. Trigger replay (from a terminal):
+In this section, we are going to trigger a replay attack.<br>
+From a terminal, run the following:
 
 ```bash
 seq 1 200 | xargs -I{} -P 50 sh -c \
@@ -82,8 +83,9 @@ seq 1 200 | xargs -I{} -P 50 sh -c \
    --data "{\"test\":{}}"' 
 ```
 
-2. In Wireshark:
-   - Apply filter with `Ctrl + /` and paste this: `frame contains "ingest"`
+Back over in Wireshark, we need to apply a filter.<br>
+   - Apply filter with `Ctrl + /` and paste the following: 
+<pre>frame contains "ingest"</pre>
    - See many POSTs to `/ingest`
 
 ![image](/Assets/BLab1/BLab1-11.png)
