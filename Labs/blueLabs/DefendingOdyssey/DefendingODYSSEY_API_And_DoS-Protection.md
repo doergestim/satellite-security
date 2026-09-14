@@ -69,7 +69,7 @@ Click any of the bigger **packets**.
 
 ![image](/Assets/BLab1/BLab1-10.png)
 
----
+<br>
 
 ### Watch replay attack in Wireshark
 
