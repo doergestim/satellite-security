@@ -36,7 +36,7 @@ Before we begin, we need to open a terminal.
 
 
 
-Next, we need to create our groundstation by running the following command:
+Next, we need to create our groundstation by running the following commands:
 
 ```bash
 cd /home/ubuntu/Desktop/DefendingODYSSEY/groundstation
