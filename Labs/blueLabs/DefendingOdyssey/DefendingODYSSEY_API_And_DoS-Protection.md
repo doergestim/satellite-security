@@ -1,7 +1,5 @@
 ![image](/Assets/Attachments/blueantisyphon.png)
 
-Test Test Test
-
 # Blue Lab 1 - Defending ODYSSEY-1: API & DoS Protection
 
 #### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
@@ -30,11 +28,15 @@ You already have under `~/Desktop/DefendingODYSSEY`:
 
 ---
 
-## Part B - Network Forensics: Replay & Flood Detection
+## Network Forensics: Replay & Flood Detection
 
 ### Observe normal traffic with Wireshark
 
-1. Run groundstation:
+Before we begin, we need to open a terminal.
+
+
+
+Next, we need to create our groundstation by running the following command:
 
 ```bash
 cd /home/ubuntu/Desktop/DefendingODYSSEY/groundstation
@@ -44,7 +46,7 @@ cd /home/ubuntu/Desktop/DefendingODYSSEY/groundstation
 sudo docker compose up --build
 ```
 
-2. Open browser -> `http://localhost:5000`
+Now we need to open a browser and navigate to `http://localhost:5000`
 
 ![image](/Assets/BLab1/BLab1-6.png)
 
