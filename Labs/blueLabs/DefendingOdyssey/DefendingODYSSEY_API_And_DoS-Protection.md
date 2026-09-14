@@ -2,10 +2,21 @@
 
 # Blue Lab 1 - Defending ODYSSEY-1: API & DoS Protection
 
-**Scenario:** You are **blue team** for ODYSSEY-1.  
+#### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
+If you do not have this VM, please contact us!
+
+<hr>
+
+## Lab Scenario
+
+In this lab, your are **blue team** for ODYSSEY-1.  
 Red team has:
 - Replayed stale telemetry into the groundstation
 - Flooded `/login` and `/cmd` on your groundstation service
+
+<hr>
+
+## Lab Overview
 
 In this lab you will:
 
@@ -17,9 +28,9 @@ You already have under `~/Desktop/DefendingODYSSEY`:
 
 ---
 
-# Part B - Network Forensics: Replay & Flood Detection
+## Part B - Network Forensics: Replay & Flood Detection
 
-## B1 - Observe normal traffic with Wireshark
+### Observe normal traffic with Wireshark
 
 1. Run groundstation:
 
@@ -55,7 +66,7 @@ sudo -E wireshark &
 
 ---
 
-## B2 - Watch replay attack in Wireshark
+### Watch replay attack in Wireshark
 
 1. Trigger replay (from a terminal):
 
@@ -80,9 +91,9 @@ seq 1 200 | xargs -I{} -P 50 sh -c \
 
 ---
 
-# Part C - Hardening & Detection with Standard Tools
+## Part C - Hardening & Detection with Standard Tools
 
-## C1 - Rate-limit with Nginx
+### Rate-limit with Nginx
 
 ### What we are going to do
 
