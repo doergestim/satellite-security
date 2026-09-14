@@ -63,9 +63,7 @@ Go ahead and **Double-Click** on it.
 
 ![image](/Assets/BLab1/BLab1-8.png)
 
-- Double **Click** on that
-
-- Click any bigger **packet**
+Click any of the bigger **packets**.
 
 ![image](/Assets/BLab1/BLab1-9.png)
 
