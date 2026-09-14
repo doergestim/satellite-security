@@ -58,7 +58,8 @@ Open a new terminal and run the following:
 sudo -E wireshark &
 ```
 
-4. Capture on `Loopback: lo`
+Once the window is up, we want to capture on `Loopback: lo`<br>
+Go ahead and **Double-Click** on it.
 
 ![image](/Assets/BLab1/BLab1-8.png)
 
