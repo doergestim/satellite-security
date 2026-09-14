@@ -83,9 +83,10 @@ seq 1 200 | xargs -I{} -P 50 sh -c \
    --data "{\"test\":{}}"' 
 ```
 
-Back over in Wireshark, we need to apply a filter.<br>
-   - Apply filter with `Ctrl + /` and paste the following: 
+Back over in Wireshark, we need to apply a filter by typing `Ctrl + /`
+Then, paste the following: 
 <pre>frame contains "ingest"</pre>
+
    - See many POSTs to `/ingest`
 
 ![image](/Assets/BLab1/BLab1-11.png)
