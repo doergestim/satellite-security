@@ -106,12 +106,14 @@ This will pull up a graph window. Can you identify the spike in rate?
 
 #### What we are going to do
 
-- Groundstation listens on **127.0.0.1:5000**
-- Nginx will listen on **port 80**
-- All requests will be forwarded to **127.0.0.1:5000**
-- Nginx will apply **rate limits** to protect the groundstation
+- Setup Groundstation to listen **127.0.0.1:5000**
+- Setup Nginx to listen on **port 80**
+- Forward all requests to **127.0.0.1:5000**
+- Use Nginx to apply **rate limits** to protect the groundstation
 
-- Create the Nginx site config
+
+To get started, open a terminal.<br>
+Create the Nginx site config by running the following:
 
 ```bash
 sudo nano /etc/nginx/sites-available/groundstation
