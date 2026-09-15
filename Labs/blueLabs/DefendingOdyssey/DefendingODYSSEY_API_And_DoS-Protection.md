@@ -89,12 +89,11 @@ Back over in Wireshark, we need to apply a filter by typing `Ctrl + /`
 Then, paste the following: 
 <pre>frame contains "ingest"</pre>
 
-   - See many POSTs to `/ingest`
-
 ![image](/Assets/BLab1/BLab1-11.png)
 
-
-3. On the top part of your window, go to **Statistics** -> **IO Graphs** -> **identify spike in rate**
+Before we continue, we want to press the red square **STOP** button at the top left of the window.<br>
+Next, at the top part of your window, go to **Statistics** -> **IO Graphs**<br>
+This will pull up a graph window. Can you identify the spike in rate?
 
 ![image](/Assets/BLab1/BLab1-12.png)
 
