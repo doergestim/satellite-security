@@ -20,11 +20,8 @@ Red team has:
 
 In this lab you will:
 
-1. Use **Wireshark** to understand the replay and HTTP floods  
-2. Use **Docker**, **Nginx**, **Fail2ban**, and **Suricata** to harden and monitor the groundstation
-
-You already have under `~/Desktop/DefendingODYSSEY`:
-- `groundstation/`
+- Use **Wireshark** to understand the replay and HTTP floods  
+- Use **Docker**, **Nginx**, **Fail2ban**, and **Suricata** to harden and monitor the groundstation
 
 ---
 
