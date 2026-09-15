@@ -149,7 +149,8 @@ sudo rm /etc/nginx/sites-enabled/default 2>/dev/null || true
 And enable your site instead:
 
 ```bash
-sudo ln -s /etc/nginx/sites-available/groundstation /etc/nginx/sites-enabled/groundstation
+sudo ln -s /etc/nginx/sites-available/groundstation \
+          /etc/nginx/sites-enabled/groundstation
 ```
 
 Now it's time to test the config
