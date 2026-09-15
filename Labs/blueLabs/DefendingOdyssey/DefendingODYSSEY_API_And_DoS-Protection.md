@@ -119,6 +119,7 @@ Create the Nginx site config by running the following:
 sudo nano /etc/nginx/sites-available/groundstation
 ```
 
+
 Next, paste:
 
 ```nginx
