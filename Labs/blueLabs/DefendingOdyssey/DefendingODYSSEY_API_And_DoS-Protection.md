@@ -100,11 +100,11 @@ This will pull up a graph window. Can you identify the spike in rate?
 
 ---
 
-## Part C - Hardening & Detection with Standard Tools
+## Hardening & Detection with Standard Tools
 
 ### Rate-limit with Nginx
 
-### What we are going to do
+#### What we are going to do
 
 - Groundstation listens on **127.0.0.1:5000**
 - Nginx will listen on **port 80**
