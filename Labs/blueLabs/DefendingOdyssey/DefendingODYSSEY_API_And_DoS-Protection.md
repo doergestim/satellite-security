@@ -119,7 +119,7 @@ Create the Nginx site config by running the following:
 sudo nano /etc/nginx/sites-available/groundstation
 ```
 
-- Paste:
+Next, paste:
 
 ```nginx
 limit_req_zone $binary_remote_addr zone=odysseyratelimit:10m rate=10r/s;
@@ -139,22 +139,22 @@ server {
 }
 ```
 
-- To save and exit do `Ctrl + x` and `y` and `Enter`
+To save and exit do `Ctrl + x` and `y` and `Enter`<br>
 
-- Disable default site
+Now we need to disable the default site:
 
 ```bash
 sudo rm /etc/nginx/sites-enabled/default 2>/dev/null || true
 ```
 
-- Enable your site
+And enable your site instead:
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/groundstation \
           /etc/nginx/sites-enabled/groundstation
 ```
 
-- Test config
+Now it's time to test the config
 
 ```bash
 sudo nginx -t
@@ -162,13 +162,14 @@ sudo nginx -t
 
 ![image](/Assets/BLab1/BLab1-13.png)
 
-- Reload Nginx
+
+Reload Nginx with the following command:
 
 ```bash
 sudo systemctl reload nginx
 ```
 
-- Test access
+Before we go any further, let's test access:
 
 ```bash
 curl -v http://localhost/
@@ -177,7 +178,7 @@ curl -v http://localhost/
 ![image](/Assets/BLab1/BLab1-14.png)
 
 
-- Trigger rate limiting
+Next, trigger the rate limiting:
 
 ```bash
 seq 1 200 | xargs -I{} -P 50 sh -c \
@@ -186,7 +187,7 @@ seq 1 200 | xargs -I{} -P 50 sh -c \
    --data "{\"test\":{}}"' 
 ```
 
-- Watch Nginx logs:
+Now, watch Nginx logs:
 
 ```bash
 sudo head -n 20 /var/log/nginx/error.log
@@ -194,23 +195,6 @@ sudo head -n 20 /var/log/nginx/error.log
 
 ![image](/Assets/BLab1/BLab1-15.png)
 
----
-
-***
-
-<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/SatDump/SatDump.md)</i></b>
-
-<b><i>Want to go back? </br>[Previous Lab](./Defending_Odyssey_RF-Analysis.md)</i></b>
-
-<b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
-
-***Finished with the Labs?***
-
-Please be sure to destroy the lab environment!
-
-[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
-
----
 
 
 > Created By Turcu Știolică Alexandru - Black Hills Information Security
