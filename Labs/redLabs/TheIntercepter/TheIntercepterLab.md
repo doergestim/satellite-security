@@ -276,7 +276,10 @@ Run again with ``F6`` to see what we got.
 >If you need to use this, just **download** it into your **VM** and **double click** on it
 -->
 
-- Add a ``Add Const`` block and connect it to the ``Binary Slicer`` block. We will add 48 to convert the ``Binary Slicer`` output to **ASCII**. Open the settings for the ``Add Const`` block and change them match what is seen in the image below
+<br>
+
+### Add Const Block
+Add a ``Add Const`` block and connect it to the ``Binary Slicer`` block. We will add 48 to convert the ``Binary Slicer`` output to **ASCII**. Open the settings for the ``Add Const`` block and change them match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-26.png)
 
