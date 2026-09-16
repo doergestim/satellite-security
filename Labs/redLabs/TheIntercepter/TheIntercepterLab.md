@@ -213,6 +213,9 @@ Open the settings for the ``Low Pass Filter`` block and change them to match wha
 
 ![](/Assets/RLab1/Lab1-18.png)
 
+<br>
+### Add QT GUI Time Sink Block
+
 - Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, and change the **Type** setting to **Float**
 
 ![](/Assets/RLab1/Lab1-19.png)
