@@ -188,6 +188,10 @@ Edit each of them by **double-clicking** on each of them and edit them to be the
 
 ![](/Assets/RLab1/Lab1-16.png)
 
+<br>
+
+After editing each variable, they should look like this:
+
 ![](/Assets/RLab1/Lab1-17.png)
 
 What do they mean?
