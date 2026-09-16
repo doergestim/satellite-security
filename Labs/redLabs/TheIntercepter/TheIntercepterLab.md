@@ -100,7 +100,7 @@ Connect the 2 blocks by dragging the **out** from `File Source` to the **in** of
 
 ![](/Assets/RLab1/Lab1-6.png)
 
-*Double click the ``samp_rate`` variable block at the top of the graph and edit the **Value** to **48000**. Press **Apply** and then **Ok**, as we do with every block when we edit it
+**Double-click** the ``samp_rate`` variable block at the top of the graph and edit the **Value** to **48000**. Press **Apply** and then **Ok**, as we do with every block when we edit it
 
 ![](/Assets/RLab1/Lab1-7.png)
 
