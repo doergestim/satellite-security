@@ -135,7 +135,7 @@ In the **Id** field write **Lab1**, and under **Generate Options** select **QT G
 
 <br>
 
-### Running the Flow #1
+## Run the Flow #1
 
 Let's run the flow by pressing ``F6``.<br>
 You will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on our **Desktop**.
@@ -223,27 +223,41 @@ Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, a
 
 ![](/Assets/RLab1/Lab1-20.png)
 
+<br>
 
-- Run it again by pressing ``F6`` to visualize this
+## Run the Flow #2
+
+Run it again by pressing ``F6`` to visualize this
 
 ![](/Assets/RLab1/Lab1-21.png)
 
+<!--
 >[!IMPORTANT]
 >Here is a [Checkpoint File](/Assets/RLab1/TheIntercept_2.grc)
 >
 >If you need to use this, just **download** it into your **VM** and **double click** on it
+-->
 
-- Add a ``Clock Recovery MM`` block and connect it to the ``Low Pass Filter`` block. Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block finds the optimal sample per symbol every 40 samples to align to bit boundaries. Open the ``Clock Recovery MM`` block and change the settings to match what is seen in the image below
+<br> 
+
+### Add Clock Recovery MM Block
+Add a ``Clock Recovery MM`` block and connect it to the ``Low Pass Filter`` block.<br>
+Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block finds the optimal sample per symbol every 40 samples to align to bit boundaries. Open the ``Clock Recovery MM`` block and change the settings to match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-22.png)
 
-- Add a ``Binary Slicer`` block and connect it to the ``Clock Recovery MM`` block. Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` block. The ``Binary Slicer`` converts each symbol into a byte 0x00 or 0x01
+<br>
 
-- Add a ``QT GUI Time Sink`` block and connect it to the ``UChar To Float`` block. Open the settings for the ``QT GUI Time Sink`` block and set the **Type** setting to **Float**
-
-![](/Assets/RLab1/Lab1-23.png)
+### Add Binary Slicer Block
+Add a ``Binary Slicer`` block and connect it to the ``Clock Recovery MM`` block.<br> 
+Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` block. The ``Binary Slicer`` converts each symbol into a byte 0x00 or 0x01.
 
 <br>
+
+### Add QT GUI Time Sink Block
+Add a ``QT GUI Time Sink`` block and connect it to the ``UChar To Float`` block. Open the settings for the ``QT GUI Time Sink`` block and set the **Type** setting to **Float**
+
+![](/Assets/RLab1/Lab1-23.png)
 
 ![](/Assets/RLab1/Lab1-24.png)
 
