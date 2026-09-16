@@ -151,9 +151,11 @@ You might also get a warning, ignore it!
 >If you need to use this, just **download** it into your **VM** and **double click** on it
 -->
 
+After saving, you will see this window pop up:
+
 ![](/Assets/RLab1/Lab1-11.png)
 
-- You’re looking at **raw baseband**. You will notice two energy blobs near **±2 kHz**, indicating that this signal was likely encoded using **Binary FSK** a.k.a. **2-FSK** or **2FSK**
+You’re looking at **raw baseband**. You will notice two energy blobs near **±2 kHz**, indicating that this signal was likely encoded using **Binary FSK** a.k.a. **2-FSK** or **2FSK**
 
 ![](/Assets/RLab1/Lab1-12.png)
 
