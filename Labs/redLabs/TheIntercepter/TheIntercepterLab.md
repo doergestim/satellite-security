@@ -106,15 +106,19 @@ Press **Apply** and then **Ok**.
 ![](/Assets/Attachments/variable_48000.png)
 
 >[!NOTE]
->What is **Sample rate**?
+>What is **Sample rate**?<br>
+>
 >It’s how many **samples per second** the signal contains
 >Here, **48 kS/s** tells every block how fast the signal was captured so **timing**, **filters**, and **symbol recovery** work correctly
 
+<br>
 
-- Add a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle``
+### Add QT GUI Frequency Sink
+We need to a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle`` block.
 
 >[!NOTE]
->What is `QT GUI Frequency Sink`?
+>What is `QT GUI Frequency Sink`?<br>
+>
 >It shows the **signal** in the **frequency domain**.
 >We use it to see where energy sits in the **spectrum** so we can quickly identify things like **bandwidth**, **offsets**, and **FSK (Frequency-Shift Keying) tones**
 
@@ -122,12 +126,19 @@ Press **Apply** and then **Ok**.
 
 ![](/Assets/RLab1/Lab1-9.png)
 
-- Double click the `Options` block on the top-left, in the **Id** field write **Lab1**, and under **Generate Options** select **QT GUI**
+<br>
+
+**Double-click** the `Options` block on the top-left.<br>
+In the **Id** field write **Lab1**, and under **Generate Options** select **QT GUI**.
 
 ![](/Assets/RLab1/Lab1-10.png)
 
+<br>
 
-- Run the flow by pressing ``F6``, you will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on **Desktop**, you might also get a warning, ignore it!
+Let's run the flow by pressing ``F6``.<br>
+You will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on **Desktop**.
+
+You might also get a warning, ignore it!
 
 >[!IMPORTANT]
 >Here is a [Checkpoint File](/Assets/RLab1/TheIntercept_1.grc)
