@@ -176,19 +176,21 @@ For the sake of simplicity, open the settings for the ``Quadrature Demod`` block
 ![](/Assets/RLab1/Lab1-13.png)
 
 
-- The ``Quadrature Demod`` block references the **fdev** variable, but we haven't added that variable yet to the graph. Let's add that variable plus a few more. Search for ``Variable`` and drag a total of three ``Variable`` blocks onto the graph.
+The ``Quadrature Demod`` block references the **fdev** variable, but we haven't added that variable yet to the graph.<br>
+Let's add that variable plus a few more.<br>
+
+Search for ``Variable`` and drag a total of three ``Variable`` blocks onto the graph.<br>
+Edit each of them by **double-clicking** on each of them and edit them to be the following:
 
 ![](/Assets/RLab1/Lab1-14.png)
 
-<br>
-
 ![](/Assets/RLab1/Lab1-15.png)
-
-<br>
 
 ![](/Assets/RLab1/Lab1-16.png)
 
 <br>
+
+After editing each variable, they should look like this:
 
 ![](/Assets/RLab1/Lab1-17.png)
 
@@ -200,12 +202,22 @@ What do they mean?
 
 3. **fdev** (**2000**): **Frequency deviation** (in **Hz**) of the **FSK tones** - how far the signal shifts for a **0** vs **1**
 
+<br>
 
-- Add a ``Low Pass Filter`` block and connect it to the ``Quadrature Demod`` block. The ``Low Pass Filter`` block removes high-frequency noise so that the clock recovery locks faster. Open the settings for the ``Low Pass Filter`` block and change them to match what is shown in the image below
+### Add Low Pass Filter Block
+
+Add a ``Low Pass Filter`` block and connect it to the ``Quadrature Demod`` block.<br>
+The ``Low Pass Filter`` block removes high-frequency noise so that the clock recovery locks faster.<br>
+
+Open the settings for the ``Low Pass Filter`` block and change them to match what is shown in the image below
 
 ![](/Assets/RLab1/Lab1-18.png)
 
-- Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, and change the **Type** setting to **Float**
+<br>
+
+### Add QT GUI Time Sink Block
+
+Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, and change the **Type** setting to **Float**
 
 ![](/Assets/RLab1/Lab1-19.png)
 
