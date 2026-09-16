@@ -177,9 +177,8 @@ For the sake of simplicity, open the settings for the ``Quadrature Demod`` block
 
 
 The ``Quadrature Demod`` block references the **fdev** variable, but we haven't added that variable yet to the graph.<br>
-Let's add that variable plus a few more.
+Let's add that variable plus a few more.<br>
 
-<br>
 Search for ``Variable`` and drag a total of three ``Variable`` blocks onto the graph.
 
 ![](/Assets/RLab1/Lab1-14.png)
