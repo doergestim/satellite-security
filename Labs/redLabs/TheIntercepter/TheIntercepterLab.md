@@ -42,7 +42,7 @@ Intercept -> Decode -> Reverse -> (Simulated) Command
 
 <hr>
 
-## Step 1: Get Bits Out
+## Setting Up the Flow
 
 Begin by opening a terminal.
 
@@ -134,6 +134,8 @@ In the **Id** field write **Lab1**, and under **Generate Options** select **QT G
 ![](/Assets/RLab1/Lab1-10.png)
 
 <br>
+
+
 
 Let's run the flow by pressing ``F6``.<br>
 You will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on **Desktop**.
