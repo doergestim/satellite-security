@@ -180,7 +180,6 @@ The ``Quadrature Demod`` block references the **fdev** variable, but we haven't 
 Let's add that variable plus a few more.
 
 <br>
-
 Search for ``Variable`` and drag a total of three ``Variable`` blocks onto the graph.
 
 ![](/Assets/RLab1/Lab1-14.png)
