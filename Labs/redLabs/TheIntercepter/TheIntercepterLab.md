@@ -246,9 +246,16 @@ Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block find
 
 ![](/Assets/RLab1/Lab1-22.png)
 
-- Add a ``Binary Slicer`` block and connect it to the ``Clock Recovery MM`` block. Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` block. The ``Binary Slicer`` converts each symbol into a byte 0x00 or 0x01
+<br>
 
-- Add a ``QT GUI Time Sink`` block and connect it to the ``UChar To Float`` block. Open the settings for the ``QT GUI Time Sink`` block and set the **Type** setting to **Float**
+### Add Binary Slicer Block
+Add a ``Binary Slicer`` block and connect it to the ``Clock Recovery MM`` block.<br> 
+Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` block. The ``Binary Slicer`` converts each symbol into a byte 0x00 or 0x01.
+
+<br>
+
+### Add QT GUI Time Sink Block
+Add a ``QT GUI Time Sink`` block and connect it to the ``UChar To Float`` block. Open the settings for the ``QT GUI Time Sink`` block and set the **Type** setting to **Float**
 
 ![](/Assets/RLab1/Lab1-23.png)
 
