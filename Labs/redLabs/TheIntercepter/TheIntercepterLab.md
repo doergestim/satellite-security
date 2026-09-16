@@ -262,7 +262,10 @@ Open the settings for the ``QT GUI Time Sink`` block and set the **Type** settin
 
 ![](/Assets/RLab1/Lab1-24.png)
 
-- Run again with ``F6`` to see what we got
+<br>
+
+## Run the Flow #3
+Run again with ``F6`` to see what we got.
 
 ![](/Assets/RLab1/Lab1-25.png)
 
