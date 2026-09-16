@@ -86,6 +86,7 @@ Press **Apply** and then **Ok**.
 
 <br>
 ### Add Throttle Block
+
 Now let's add a ``Throttle`` block.<br>
 Connect the 2 blocks by dragging the **out** from `File Source` to the **in** of `Throttle`.
 
