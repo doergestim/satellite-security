@@ -135,7 +135,7 @@ In the **Id** field write **Lab1**, and under **Generate Options** select **QT G
 
 <br>
 
-## Running the Flow #1
+## Run the Flow #1
 
 Let's run the flow by pressing ``F6``.<br>
 You will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on our **Desktop**.
@@ -225,7 +225,7 @@ Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, a
 
 <br>
 
-## Running the Flow #2
+## Run the Flow #2
 
 Run it again by pressing ``F6`` to visualize this
 
