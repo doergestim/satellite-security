@@ -206,7 +206,12 @@ What do they mean?
 
 ### Add Low Pass Filter Block
 
-Add a ``Low Pass Filter`` block and connect it to the ``Quadrature Demod`` block. The ``Low Pass Filter`` block removes high-frequency noise so that the clock recovery locks faster. Open the settings for the ``Low Pass Filter`` block and change them to match what is shown in the image below
+Add a ``Low Pass Filter`` block and connect it to the ``Quadrature Demod`` block.<br>
+The ``Low Pass Filter`` block removes high-frequency noise so that the clock recovery locks faster. 
+
+<br>
+
+Open the settings for the ``Low Pass Filter`` block and change them to match what is shown in the image below
 
 ![](/Assets/RLab1/Lab1-18.png)
 
