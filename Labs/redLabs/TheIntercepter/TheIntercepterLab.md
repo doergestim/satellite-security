@@ -103,7 +103,7 @@ Connect the 2 blocks by dragging the **out** from `File Source` to the **in** of
 **Double-click** the ``samp_rate`` variable block at the top of the graph and edit the **Value** to **48000**.<br>
 Press **Apply** and then **Ok**.
 
-![](/Assets/RLab1/Lab1-7.png)
+![](/Assets/Attachments/variable_48000.png)
 
 >[!NOTE]
 >What is **Sample rate**?
