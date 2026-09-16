@@ -42,7 +42,8 @@ Intercept -> Decode -> Reverse -> (Simulated) Command
 
 Begin by opening a terminal.
 
-- Open [GNU Radio Companion](/Tools%20and%20Frameworks/GNU_radio.md)
+Open [GNU Radio Companion](/Tools%20and%20Frameworks/GNU_radio.md)
+
 ```bash
 gnuradio-companion &
 ```
