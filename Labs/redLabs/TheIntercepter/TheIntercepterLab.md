@@ -81,7 +81,7 @@ Press **Apply** and then **Ok**.
 
 <img src="/Assets/RLab1/Lab1-4.png" width="700">
 
->[!IMPORTANT]
+>[!TIP]
 >For each block we add, don't forget that the shortcut to search for blocks is `Ctrl + f`
 
 - Now let's add a ``Throttle`` block and connect the 2 blocks by dragging the **out** from `File Source` to the **in** of `Throttle`
