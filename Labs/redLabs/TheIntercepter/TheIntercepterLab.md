@@ -16,11 +16,15 @@ They claim the link is secure. You're given two *historical* baseband captures f
 ## Lab Objective
 Intercept -> Decode -> Reverse -> (Simulated) Command
 
+<br>
+
 ### Learning Outcomes
 - Practice SDR recon on *synthetic* captures (recognize FSK, estimate bitrate)
 - Recover frames using a CCSDS-like sync word and custom framing
 - Parse telemetry, extract hidden intel, and derive a simple auth scheme
 - Craft a valid **command packet** and feed it to a **local uplink gateway** (no RF) to receive the final flag
+
+<br>
 
 ### What You Get
 - `assets/pass_01.iq` - complex float32, 48 kS/s baseband (cleaner)
@@ -29,6 +33,7 @@ Intercept -> Decode -> Reverse -> (Simulated) Command
 - `tools/sat_gateway.py` - local validator for your crafted uplink packet
 - `assets/*.json` - samplerate + format metadata
 
+<br>
 
 ### Flags
 - FLAG1{...} - first telemetry
