@@ -223,8 +223,11 @@ Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, a
 
 ![](/Assets/RLab1/Lab1-20.png)
 
+<br>
 
-- Run it again by pressing ``F6`` to visualize this
+### Running the Flow #2
+
+Run it again by pressing ``F6`` to visualize this
 
 ![](/Assets/RLab1/Lab1-21.png)
 
