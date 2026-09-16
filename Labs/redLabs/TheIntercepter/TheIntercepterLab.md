@@ -85,8 +85,8 @@ Press **Apply** and then **Ok**.
 >For each block we add, don't forget that the shortcut to search for blocks is `Ctrl + f`
 
 <br>
-### Add Throttle Block
 
+### Add Throttle Block
 Now let's add a ``Throttle`` block.<br>
 Connect the 2 blocks by dragging the **out** from `File Source` to the **in** of `Throttle`.
 
