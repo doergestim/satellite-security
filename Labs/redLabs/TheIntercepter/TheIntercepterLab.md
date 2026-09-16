@@ -256,7 +256,7 @@ Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` bloc
 
 ### Add QT GUI Time Sink Block
 Add a ``QT GUI Time Sink`` block and connect it to the ``UChar To Float`` block.<br>
-Open the settings for the ``QT GUI Time Sink`` block and set the **Type** setting to **Float**
+Open the settings for the ``QT GUI Time Sink`` block and set the **Type** setting to **Float**.
 
 ![](/Assets/RLab1/Lab1-23.png)
 
