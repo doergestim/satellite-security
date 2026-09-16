@@ -64,14 +64,18 @@ Search for `file source`.
 
 ![](/Assets/RLab1/Lab1-2.png)
 
-Look for ``File Source`` and drag it into the flow. We are using the ``File Source`` block because the signal is already captured
+When it shows up, either double-click it or drag it into the flow.<br>
+We are using the `File Source` block because the signal is already captured.
 
-The `File Source` just replays the **IQ samples** so we can analyze them reliably without **live RF**
+The `File Source` just replays the **IQ samples** so we can analyze them reliably without **live RF**.
 
 ![](/Assets/RLab1/Lab1-3.png)
 
-- Double click the ``File Source`` block to open the configuration settings. In the ``File`` field, put the path to the ``/home/ubuntu/Desktop/TheIntercepter/assets/pass_01.iq`` capture file. Fill out the rest of the fields to match what you see in the image. Press **Apply** and then **Ok**
-
+Once in the flow, double click the ``File Source`` block to open the configuration settings.<br>
+In the `File` field, paste the following:
+<pre>/home/ubuntu/Desktop/TheIntercepter/assets/pass_01.iq</pre>
+<br>
+Press **Apply** and then **Ok**.
 
 <img src="/Assets/RLab1/Lab1-4.png" width="700">
 
