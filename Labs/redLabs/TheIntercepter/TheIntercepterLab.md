@@ -64,7 +64,7 @@ Search for `file source`.
 
 ![](/Assets/RLab1/Lab1-2.png)
 
-When it shows up, either double-click it or drag it into the flow.<br>
+When it shows up, either **double-click** it or **drag & drop** it into the flow.<br>
 We are using the `File Source` block because the signal is already captured.
 
 The `File Source` just replays the **IQ samples** so we can analyze them reliably without **live RF**.
