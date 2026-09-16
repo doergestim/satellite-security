@@ -111,8 +111,8 @@ Press **Apply** and then **Ok**.
 >It’s how many **samples per second** the signal contains
 >Here, **48 kS/s** tells every block how fast the signal was captured so **timing**, **filters**, and **symbol recovery** work correctly
 
-
-- Add a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle``
+### Add QT GUI Frequency Sink
+Add a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle``
 
 >[!NOTE]
 >What is `QT GUI Frequency Sink`?<br>
