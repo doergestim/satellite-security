@@ -202,8 +202,11 @@ What do they mean?
 
 3. **fdev** (**2000**): **Frequency deviation** (in **Hz**) of the **FSK tones** - how far the signal shifts for a **0** vs **1**
 
+<br>
 
-- Add a ``Low Pass Filter`` block and connect it to the ``Quadrature Demod`` block. The ``Low Pass Filter`` block removes high-frequency noise so that the clock recovery locks faster. Open the settings for the ``Low Pass Filter`` block and change them to match what is shown in the image below
+### Add Low Pass Filter Block
+
+Add a ``Low Pass Filter`` block and connect it to the ``Quadrature Demod`` block. The ``Low Pass Filter`` block removes high-frequency noise so that the clock recovery locks faster. Open the settings for the ``Low Pass Filter`` block and change them to match what is shown in the image below
 
 ![](/Assets/RLab1/Lab1-18.png)
 
