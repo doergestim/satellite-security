@@ -114,7 +114,7 @@ Press **Apply** and then **Ok**.
 <br>
 
 ### Add QT GUI Frequency Sink
-Add a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle``
+We need to a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle``
 
 >[!NOTE]
 >What is `QT GUI Frequency Sink`?<br>
