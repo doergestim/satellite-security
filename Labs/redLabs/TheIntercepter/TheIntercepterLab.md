@@ -231,12 +231,18 @@ Run it again by pressing ``F6`` to visualize this
 
 ![](/Assets/RLab1/Lab1-21.png)
 
+<!--
 >[!IMPORTANT]
 >Here is a [Checkpoint File](/Assets/RLab1/TheIntercept_2.grc)
 >
 >If you need to use this, just **download** it into your **VM** and **double click** on it
+-->
 
-- Add a ``Clock Recovery MM`` block and connect it to the ``Low Pass Filter`` block. Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block finds the optimal sample per symbol every 40 samples to align to bit boundaries. Open the ``Clock Recovery MM`` block and change the settings to match what is seen in the image below
+<br> 
+
+### Add Clock Recovery MM Block
+Add a ``Clock Recovery MM`` block and connect it to the ``Low Pass Filter`` block.<br>
+Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block finds the optimal sample per symbol every 40 samples to align to bit boundaries. Open the ``Clock Recovery MM`` block and change the settings to match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-22.png)
 
