@@ -293,7 +293,9 @@ Open the settings for the ``File Sink`` block and change them to match what is s
 
 <img src="/Assets/RLab1/Lab1-27.png" width="700">
 
-- Now you can run the flow for 5-10 seconds and check the file that was created. You should get something like the following
+<br>
+
+Run the flow for 5-10 seconds and check the file that was created. You should get something like the following
 
 ```bash
 cat /home/ubuntu/Desktop/TheIntercepter/assets/pass_01.bits
