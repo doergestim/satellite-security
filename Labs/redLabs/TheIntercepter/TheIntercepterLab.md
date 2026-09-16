@@ -126,7 +126,10 @@ We need to a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle`` 
 
 ![](/Assets/RLab1/Lab1-9.png)
 
-- Double click the `Options` block on the top-left, in the **Id** field write **Lab1**, and under **Generate Options** select **QT GUI**
+<br>
+
+**Double-click** the `Options` block on the top-left.<br>
+In the **Id** field write **Lab1**, and under **Generate Options** select **QT GUI**.
 
 ![](/Assets/RLab1/Lab1-10.png)
 
