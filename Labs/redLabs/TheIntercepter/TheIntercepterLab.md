@@ -290,7 +290,6 @@ Add a ``File Sink`` block and connect it to the ``Add Const`` block.<br>
 The `File Sink` block reads the **output** from the ``Add Const`` block and saves it into a **file**.<br> 
 Open the settings for the ``File Sink`` block and change them to match what is seen in the image below
 
-
 <img src="/Assets/RLab1/Lab1-27.png" width="700">
 
 <br>
