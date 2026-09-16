@@ -76,6 +76,7 @@ Once in the flow, double click the ``File Source`` block to open the configurati
 In the `File` field, paste the following:
 <pre>/home/ubuntu/Desktop/TheIntercepter/assets/pass_01.iq</pre>
 <br>
+
 Press **Apply** and then **Ok**.
 
 <img src="/Assets/RLab1/Lab1-4.png" width="700">
