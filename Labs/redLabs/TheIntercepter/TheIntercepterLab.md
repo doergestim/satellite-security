@@ -1,21 +1,28 @@
-![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
-
+![image](/Assets/Attachments/blueantisyphon.png)
 
 # Lab 1 - The Intercept
+#### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
+If you do not have this VM, please contact us!
 
-**Scenario**: Your team is hired to test the downlink resilience of a startup's CubeSat, **ODYSSEY-1**
+<hr>
+
+## Lab Scenario
+Your team is hired to test the downlink resilience of a startup's CubeSat, **ODYSSEY-1**.
 
 They claim the link is secure. You're given two *historical* baseband captures from a ground station test
 
-> Goal: Intercept -> Decode -> Reverse -> (Simulated) Command
+<hr>
 
-## Learning Outcomes
+## Lab Objective
+Intercept -> Decode -> Reverse -> (Simulated) Command
+
+### Learning Outcomes
 - Practice SDR recon on *synthetic* captures (recognize FSK, estimate bitrate)
 - Recover frames using a CCSDS-like sync word and custom framing
 - Parse telemetry, extract hidden intel, and derive a simple auth scheme
 - Craft a valid **command packet** and feed it to a **local uplink gateway** (no RF) to receive the final flag
 
-## What You Get
+### What You Get
 - `assets/pass_01.iq` - complex float32, 48 kS/s baseband (cleaner)
 - `assets/pass_02.iq` - complex float32, 48 kS/s baseband (noisier)
 - `tools/generate_captures.py` - deterministically regenerates the captures
@@ -28,12 +35,14 @@ They claim the link is secure. You're given two *historical* baseband captures f
 - FLAG2{...} - second pass ACK
 - FLAG3{...} - returned by local gateway on valid command
 
-# Start
-### Part A - Get bits out
+<hr>
 
-- Open a terminal
+## Step 1: Get Bits Out
 
-- Open [GNU Radio Companion](/Tools%20and%20Frameworks/GNU_radio.md)
+Begin by opening a terminal.
+
+Open [GNU Radio Companion](/Tools%20and%20Frameworks/GNU_radio.md)
+
 ```bash
 gnuradio-companion &
 ```

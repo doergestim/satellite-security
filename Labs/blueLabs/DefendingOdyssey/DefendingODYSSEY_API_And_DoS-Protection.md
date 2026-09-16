@@ -1,7 +1,5 @@
 ![image](/Assets/Attachments/blueantisyphon.png)
 
-Test Test Test
-
 # Blue Lab 1 - Defending ODYSSEY-1: API & DoS Protection
 
 #### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
@@ -22,19 +20,18 @@ Red team has:
 
 In this lab you will:
 
-1. Use **Wireshark** to understand the replay and HTTP floods  
-2. Use **Docker**, **Nginx**, **Fail2ban**, and **Suricata** to harden and monitor the groundstation
-
-You already have under `~/Desktop/DefendingODYSSEY`:
-- `groundstation/`
+- Use **Wireshark** to understand the replay and HTTP floods  
+- Use **Docker**, **Nginx**, **Fail2ban**, and **Suricata** to harden and monitor the groundstation
 
 ---
 
-## Part B - Network Forensics: Replay & Flood Detection
+## Network Forensics: Replay & Flood Detection
 
 ### Observe normal traffic with Wireshark
 
-1. Run groundstation:
+Before we begin, we need to open a terminal.
+
+Next, we need to create our groundstation by running the following commands:
 
 ```bash
 cd /home/ubuntu/Desktop/DefendingODYSSEY/groundstation
@@ -44,33 +41,35 @@ cd /home/ubuntu/Desktop/DefendingODYSSEY/groundstation
 sudo docker compose up --build
 ```
 
-2. Open browser -> `http://localhost:5000`
+Now we need to open a browser and navigate to `http://localhost:5000`
 
 ![image](/Assets/BLab1/BLab1-6.png)
 
-3. Open a new terminal. Then run:
+If you've made it this far, it means that the docker was successfully built.<br>
+Next, we need to launch Wireshark.<br>
+Open a new terminal and run the following:
 
 ```bash
 sudo -E wireshark &
 ```
 
-4. Capture on `Loopback: lo`
+Once the window is up, we want to capture on `Loopback: lo`<br>
+Go ahead and **Double-Click** on it.
 
 ![image](/Assets/BLab1/BLab1-8.png)
 
-- Double **Click** on that
-
-- Click any bigger **packet**
+Click any of the bigger **packets**.
 
 ![image](/Assets/BLab1/BLab1-9.png)
 
 ![image](/Assets/BLab1/BLab1-10.png)
 
----
+<br>
 
 ### Watch replay attack in Wireshark
 
-1. Trigger replay (from a terminal):
+In this section, we are going to trigger a replay attack.<br>
+From a terminal, run the following:
 
 ```bash
 seq 1 200 | xargs -I{} -P 50 sh -c \
@@ -79,38 +78,45 @@ seq 1 200 | xargs -I{} -P 50 sh -c \
    --data "{\"test\":{}}"' 
 ```
 
-2. In Wireshark:
-   - Apply filter with `Ctrl + /` and paste this: `frame contains "ingest"`
-   - See many POSTs to `/ingest`
+<br>
+
+Back over in Wireshark, we need to apply a filter by typing `Ctrl + /`
+Then, paste the following: 
+<pre>frame contains "ingest"</pre>
 
 ![image](/Assets/BLab1/BLab1-11.png)
 
-
-3. On the top part of your window, go to **Statistics** -> **IO Graphs** -> **identify spike in rate**
+Before we continue, we want to press the red square **STOP** button at the top left of the window.<br>
+Next, at the top part of your window, go to **Statistics** -> **IO Graphs**<br>
+This will pull up a graph window. Can you identify the spike in rate?
 
 ![image](/Assets/BLab1/BLab1-12.png)
 
 
 ---
 
-## Part C - Hardening & Detection with Standard Tools
+## Hardening & Detection with Standard Tools
 
 ### Rate-limit with Nginx
 
-### What we are going to do
+#### What we are going to do
 
-- Groundstation listens on **127.0.0.1:5000**
-- Nginx will listen on **port 80**
-- All requests will be forwarded to **127.0.0.1:5000**
-- Nginx will apply **rate limits** to protect the groundstation
+- Setup Groundstation to listen **127.0.0.1:5000**
+- Setup Nginx to listen on **port 80**
+- Forward all requests to **127.0.0.1:5000**
+- Use Nginx to apply **rate limits** to protect the groundstation
 
-- Create the Nginx site config
+
+To get started, open a terminal.<br>
+Create the Nginx site config by running the following:
 
 ```bash
 sudo nano /etc/nginx/sites-available/groundstation
 ```
 
-- Paste:
+<br>
+
+Next, paste:
 
 ```nginx
 limit_req_zone $binary_remote_addr zone=odysseyratelimit:10m rate=10r/s;
@@ -130,22 +136,22 @@ server {
 }
 ```
 
-- To save and exit do `Ctrl + x` and `y` and `Enter`
+To save and exit do `Ctrl + x` and `y` and `Enter`<br>
 
-- Disable default site
+Now we need to disable the default site:
 
 ```bash
 sudo rm /etc/nginx/sites-enabled/default 2>/dev/null || true
 ```
 
-- Enable your site
+And enable your site instead:
 
 ```bash
 sudo ln -s /etc/nginx/sites-available/groundstation \
           /etc/nginx/sites-enabled/groundstation
 ```
 
-- Test config
+Now it's time to test the config
 
 ```bash
 sudo nginx -t
@@ -153,13 +159,14 @@ sudo nginx -t
 
 ![image](/Assets/BLab1/BLab1-13.png)
 
-- Reload Nginx
+
+Reload Nginx with the following command:
 
 ```bash
 sudo systemctl reload nginx
 ```
 
-- Test access
+Before we go any further, let's test access:
 
 ```bash
 curl -v http://localhost/
@@ -168,7 +175,7 @@ curl -v http://localhost/
 ![image](/Assets/BLab1/BLab1-14.png)
 
 
-- Trigger rate limiting
+Next, trigger the rate limiting:
 
 ```bash
 seq 1 200 | xargs -I{} -P 50 sh -c \
@@ -177,7 +184,7 @@ seq 1 200 | xargs -I{} -P 50 sh -c \
    --data "{\"test\":{}}"' 
 ```
 
-- Watch Nginx logs:
+Now, watch Nginx logs:
 
 ```bash
 sudo head -n 20 /var/log/nginx/error.log
@@ -185,23 +192,6 @@ sudo head -n 20 /var/log/nginx/error.log
 
 ![image](/Assets/BLab1/BLab1-15.png)
 
----
-
-***
-
-<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/SatDump/SatDump.md)</i></b>
-
-<b><i>Want to go back? </br>[Previous Lab](./Defending_Odyssey_RF-Analysis.md)</i></b>
-
-<b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
-
-***Finished with the Labs?***
-
-Please be sure to destroy the lab environment!
-
-[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
-
----
 
 
 > Created By Turcu Știolică Alexandru - Black Hills Information Security
