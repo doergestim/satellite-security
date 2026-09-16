@@ -167,7 +167,8 @@ Close that and let's go on, we are going to keep that for reference and testing 
 ### Add Quadrature Demod
 
 Add a ``Quadrature Demod`` block and connect it to the ``Throttle``.<br>
-This is a **Frequency discriminator** that can convert **FSK** into a **1-D float** representation. **FSK** encodes data as instantaneous frequency. ``Quadrature Demod`` converts frequency shifts into a float that swings **high**/**low** for **1**/**0**, respectively. For the sake of simplicity, open the settings for the ``Quadrature Demod`` block and change **fsk_deviation_hz** to **fdev**
+This is a **Frequency discriminator** that can convert **FSK** into a **1-D float** representation. **FSK** encodes data as instantaneous frequency.<br>
+``Quadrature Demod`` converts frequency shifts into a float that swings **high**/**low** for **1**/**0**, respectively. For the sake of simplicity, open the settings for the ``Quadrature Demod`` block and change **fsk_deviation_hz** to **fdev**
 
 ![](/Assets/RLab1/Lab1-13.png)
 
