@@ -142,12 +142,14 @@ You will be prompted to save the file, let's save it with the name **Lab1_GNU.gr
 
 You might also get a warning, ignore it!
 
+<!--
 >[!IMPORTANT]
 >Here is a [Checkpoint File](/Assets/RLab1/TheIntercept_1.grc)
 >
 ><pre>cd /Downloads</pre>
 ><pre>curl -O https://github.com/doergestim/satellite-security/blob/main/Assets/RLab1/TheIntercept_1.grc</pre>
 >If you need to use this, just **download** it into your **VM** and **double click** on it
+-->
 
 ![](/Assets/RLab1/Lab1-11.png)
 
