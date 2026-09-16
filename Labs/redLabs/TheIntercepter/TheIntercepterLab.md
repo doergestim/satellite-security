@@ -42,7 +42,7 @@ Intercept -> Decode -> Reverse -> (Simulated) Command
 
 <hr>
 
-## Step 1: Get Bits Out
+## Setting Up the Flow
 
 Begin by opening a terminal.
 
@@ -113,7 +113,7 @@ Press **Apply** and then **Ok**.
 
 <br>
 
-### Add QT GUI Frequency Sink
+### Add QT GUI Frequency Sink Block
 We need to a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle`` block.
 
 >[!NOTE]
@@ -135,25 +135,43 @@ In the **Id** field write **Lab1**, and under **Generate Options** select **QT G
 
 <br>
 
+### Running the Flow #1
+
 Let's run the flow by pressing ``F6``.<br>
-You will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on **Desktop**.
+You will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on our **Desktop**.
 
 You might also get a warning, ignore it!
 
+<!--
 >[!IMPORTANT]
 >Here is a [Checkpoint File](/Assets/RLab1/TheIntercept_1.grc)
 >
+><pre>cd /Downloads</pre>
+><pre>curl -O https://github.com/doergestim/satellite-security/blob/main/Assets/RLab1/TheIntercept_1.grc</pre>
 >If you need to use this, just **download** it into your **VM** and **double click** on it
+-->
+
+After saving, you will see this window pop up:
 
 ![](/Assets/RLab1/Lab1-11.png)
 
-- You’re looking at **raw baseband**. You will notice two energy blobs near **±2 kHz**, indicating that this signal was likely encoded using **Binary FSK** a.k.a. **2-FSK** or **2FSK**
+You’re looking at **raw baseband**.<br>
+You will notice two energy blobs near **±2 kHz**, indicating that this signal was likely encoded using **Binary FSK** a.k.a. **2-FSK** or **2FSK**
 
 ![](/Assets/RLab1/Lab1-12.png)
 
-- Close that and let's go on, we are going to keep that for reference and testing purposes
+Close that and let's go on, we are going to keep that for reference and testing purposes.
 
-- Add a ``Quadrature Demod`` block and connect it to the ``Throttle``, this is a **Frequency discriminator** that can convert **FSK** into a **1-D float** representation. **FSK** encodes data as instantaneous frequency. ``Quadrature Demod`` converts frequency shifts into a float that swings **high**/**low** for **1**/**0**, respectively. For the sake of simplicity, open the settings for the ``Quadrature Demod`` block and change **fsk_deviation_hz** to **fdev**
+<br>
+
+### Add Quadrature Demod
+
+Add a ``Quadrature Demod`` block and connect it to the ``Throttle``.<br>
+This is a **Frequency discriminator** that can convert **FSK** into a **1-D float** representation. **FSK** encodes data as instantaneous frequency.<br>
+``Quadrature Demod`` converts frequency shifts into a float that swings **high**/**low** for **1**/**0**, respectively. 
+<br>
+
+For the sake of simplicity, open the settings for the ``Quadrature Demod`` block and change **fsk_deviation_hz** to **fdev**
 
 ![](/Assets/RLab1/Lab1-13.png)
 
