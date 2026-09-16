@@ -93,18 +93,14 @@ Connect the 2 blocks by dragging the **out** from `File Source` to the **in** of
 ![](/Assets/RLab1/Lab1-5.png)
 
 >[!NOTE]
->Why do we use ``Throttle``?
+>Why do we use ``Throttle``?<br>
 >``Throttle`` limits how fast samples flow through the graph
 >
 >Without a ``Throttle``, GNU Radio will run as fast as your CPU allows, spike usage, and make the GUI unusable when there’s no real hardware clock to otherwise limit the input rate
 
-
-
-<br>
-
 ![](/Assets/RLab1/Lab1-6.png)
 
-- Double click the ``samp_rate`` variable block at the top of the graph and edit the **Value** to **48000**. Press **Apply** and then **Ok**, as we do with every block when we edit it
+*Double click the ``samp_rate`` variable block at the top of the graph and edit the **Value** to **48000**. Press **Apply** and then **Ok**, as we do with every block when we edit it
 
 ![](/Assets/RLab1/Lab1-7.png)
 
