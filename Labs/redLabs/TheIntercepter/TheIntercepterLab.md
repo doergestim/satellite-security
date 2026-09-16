@@ -84,7 +84,10 @@ Press **Apply** and then **Ok**.
 >[!TIP]
 >For each block we add, don't forget that the shortcut to search for blocks is `Ctrl + f`
 
-- Now let's add a ``Throttle`` block and connect the 2 blocks by dragging the **out** from `File Source` to the **in** of `Throttle`
+Now let's add a ``Throttle`` block.<br>
+Connect the 2 blocks by dragging the **out** from `File Source` to the **in** of `Throttle`.
+
+![](/Assets/RLab1/Lab1-5.png)
 
 >[!NOTE]
 >Why do we use ``Throttle``?
@@ -92,7 +95,7 @@ Press **Apply** and then **Ok**.
 >
 >Without a ``Throttle``, GNU Radio will run as fast as your CPU allows, spike usage, and make the GUI unusable when there’s no real hardware clock to otherwise limit the input rate
 
-![](/Assets/RLab1/Lab1-5.png)
+
 
 <br>
 
