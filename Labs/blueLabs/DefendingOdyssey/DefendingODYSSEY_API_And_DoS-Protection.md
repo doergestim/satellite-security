@@ -31,8 +31,6 @@ In this lab you will:
 
 Before we begin, we need to open a terminal.
 
-
-
 Next, we need to create our groundstation by running the following commands:
 
 ```bash
