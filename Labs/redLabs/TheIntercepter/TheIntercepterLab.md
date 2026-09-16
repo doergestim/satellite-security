@@ -106,7 +106,8 @@ Press **Apply** and then **Ok**.
 ![](/Assets/Attachments/variable_48000.png)
 
 >[!NOTE]
->What is **Sample rate**?
+>What is **Sample rate**?<br>
+>
 >It’s how many **samples per second** the signal contains
 >Here, **48 kS/s** tells every block how fast the signal was captured so **timing**, **filters**, and **symbol recovery** work correctly
 
@@ -114,7 +115,8 @@ Press **Apply** and then **Ok**.
 - Add a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle``
 
 >[!NOTE]
->What is `QT GUI Frequency Sink`?
+>What is `QT GUI Frequency Sink`?<br>
+>
 >It shows the **signal** in the **frequency domain**.
 >We use it to see where energy sits in the **spectrum** so we can quickly identify things like **bandwidth**, **offsets**, and **FSK (Frequency-Shift Keying) tones**
 
