@@ -184,15 +184,9 @@ Edit each of them by **double-clicking** on each of them and edit them to be the
 
 ![](/Assets/RLab1/Lab1-14.png)
 
-<br>
-
 ![](/Assets/RLab1/Lab1-15.png)
 
-<br>
-
 ![](/Assets/RLab1/Lab1-16.png)
-
-<br>
 
 ![](/Assets/RLab1/Lab1-17.png)
 
