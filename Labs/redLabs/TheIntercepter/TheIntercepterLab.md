@@ -54,13 +54,17 @@ gnuradio-companion &
 
 ![](/Assets/RLab1/Lab1-1.png)
 
-- First things first, let's input data from our file that's under ``/home/satuser/Desktop/TheIntercepter/assets/pass_01.iq``
+First things first, let's input data from our file that's under ``/home/satuser/Desktop/TheIntercepter/assets/pass_01.iq``
 
-- To add blocks to the flow press ``Ctrl + f`` to open the search bar on the right
+<br>
+
+### Add File Source Block
+To add blocks to the flow press ``Ctrl + f`` to open the search bar on the right.<br>
+Search for `file source`.
 
 ![](/Assets/RLab1/Lab1-2.png)
 
-- Look for ``File Source`` and drag it into the flow. We are using the ``File Source`` block because the signal is already captured
+Look for ``File Source`` and drag it into the flow. We are using the ``File Source`` block because the signal is already captured
 
 The `File Source` just replays the **IQ samples** so we can analyze them reliably without **live RF**
 
