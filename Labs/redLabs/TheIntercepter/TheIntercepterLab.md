@@ -317,7 +317,11 @@ Let's add a ``Correlate Access Code - Tag`` block and connect it to the ``Binary
 
 ![](/Assets/RLab1/Lab1-28.png)
 
-- To make sure we are getting hits, add a ``Tag Debug`` block and connect it to the ``Correlate Access Code - Tag`` block. The ``Tag Debug`` block just shows you the tags in the **stream**. Open the ``Tag Debug`` block settings and change the **Type** to **Byte**
+<br>
+
+### Add Tag Debug Block
+To make sure we are getting hits, add a ``Tag Debug`` block and connect it to the ``Correlate Access Code - Tag`` block.<br> 
+The ``Tag Debug`` block just shows you the tags in the **stream**. Open the ``Tag Debug`` block settings and change the **Type** to **Byte**
 
 ![](/Assets/RLab1/Lab1-29.png)
 
