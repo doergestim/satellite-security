@@ -367,11 +367,14 @@ Open the settings for the ``Repack Bits`` block and ensure they match those seen
 <br>
 
 #### Add File Sink Block
-- Add a ``File Sink`` block, connect it to the ``Repack Bits`` block, and change the settings to those seen in the image below
+Add a ``File Sink`` block, connect it to the ``Repack Bits`` block, and change the settings to those seen in the image below:
 
 ![](/Assets/RLab1/Lab1-33.png)
 
-- This is how the **final flow** should look:
+<br>
+
+### Match The Final Flow
+This is how the **final flow** should look:
 
 ![](/Assets/RLab1/Lab1-34.png)
 
@@ -382,28 +385,31 @@ Open the settings for the ``Repack Bits`` block and ensure they match those seen
 >If you need to use this, just **download** it into your **VM** and **double click** on it
 -->
 
-- Now let it Run for 5-10 seconds then stop
+Now let it Run for 5-10 seconds then stop it.
+Then, open a terminal and navigate into `~/Desktop/TheIntercepter` directory:
 
 ```bash
 cd ~/Desktop/TheIntercepter
 ```
 
-- Run
+Follow it up by running the following:
+
 ```bash
 xxd assets/pass_01_BPF.bits
 ```
 
-- You should see information flowing out
+You should see information flowing out
 
 ![](/Assets/RLab1/Lab1-35.png)
 
-- Hooray!! It works! We get valuable information:
+Hooray!! It works! We get valuable information:
 
 1. The first flag: **FLAG1{downlink_decoded}**
 2. The **sat**: **ODYSSEY-1**
 3. The **epoch**: **1713371337**
 
-- We will use these to make a payload to get the last flag, run the same logic for ``pass_02.iq``, basically just change the paths
+We will use these to make a payload to get the last flag.<br>
+Run the same logic for ``pass_02.iq``, basically just change the paths.
 
 ![](/Assets/RLab1/Lab1-36.png)
 
