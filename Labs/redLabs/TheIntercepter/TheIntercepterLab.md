@@ -363,6 +363,7 @@ Add a ``Repack Bits`` block and connect it to the ``Tagged Stream Align`` block.
 ![](/Assets/RLab1/Lab1-32.png)
 
 <br>
+
 ### Add File Sink Block
 - Add a ``File Sink`` block, connect it to the ``Repack Bits`` block, and change the settings to those seen in the image below
 
