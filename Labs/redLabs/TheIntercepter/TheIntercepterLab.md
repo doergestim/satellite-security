@@ -385,7 +385,8 @@ This is how the **final flow** should look:
 >If you need to use this, just **download** it into your **VM** and **double click** on it
 -->
 
-Now let it Run for 5-10 seconds then stop it.
+Now let it Run for 5-10 seconds then stop it.<br>
+
 Then, open a terminal and navigate into `~/Desktop/TheIntercepter` directory:
 
 ```bash
