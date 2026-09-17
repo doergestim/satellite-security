@@ -58,7 +58,7 @@ First things first, let's input data from our file that's under ``/home/satuser/
 
 <br>
 
-### Add File Source Block
+#### Add File Source Block
 To add blocks to the flow press ``Ctrl + f`` to open the search bar on the right.<br>
 Search for `file source`.
 
@@ -113,7 +113,7 @@ Press **Apply** and then **Ok**.
 
 <br>
 
-### Add QT GUI Frequency Sink Block
+#### Add QT GUI Frequency Sink Block
 We need to a ``QT GUI Frequency Sink`` block and connect it to the ``Throttle`` block.
 
 >[!NOTE]
@@ -135,7 +135,7 @@ In the **Id** field write **Lab1**, and under **Generate Options** select **QT G
 
 <br>
 
-## Run the Flow #1
+### Run the Flow #1
 
 Let's run the flow by pressing ``F6``.<br>
 You will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on our **Desktop**.
@@ -164,7 +164,7 @@ Close that and let's go on, we are going to keep that for reference and testing 
 
 <br>
 
-### Add Quadrature Demod
+#### Add Quadrature Demod
 
 Add a ``Quadrature Demod`` block and connect it to the ``Throttle``.<br>
 This is a **Frequency discriminator** that can convert **FSK** into a **1-D float** representation. **FSK** encodes data as instantaneous frequency.<br>
@@ -204,7 +204,7 @@ What do they mean?
 
 <br>
 
-### Add Low Pass Filter Block
+#### Add Low Pass Filter Block
 
 Add a ``Low Pass Filter`` block and connect it to the ``Quadrature Demod`` block.<br>
 The ``Low Pass Filter`` block removes high-frequency noise so that the clock recovery locks faster.<br>
@@ -215,7 +215,7 @@ Open the settings for the ``Low Pass Filter`` block and change them to match wha
 
 <br>
 
-### Add QT GUI Time Sink Block
+#### Add QT GUI Time Sink Block
 
 Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, and change the **Type** setting to **Float**
 
@@ -225,7 +225,7 @@ Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, a
 
 <br>
 
-## Run the Flow #2
+### Run the Flow #2
 
 Run it again by pressing ``F6`` to visualize this
 
@@ -240,7 +240,7 @@ Run it again by pressing ``F6`` to visualize this
 
 <br> 
 
-### Add Clock Recovery MM Block
+#### Add Clock Recovery MM Block
 Add a ``Clock Recovery MM`` block and connect it to the ``Low Pass Filter`` block.<br>
 Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block finds the optimal sample per symbol every 40 samples to align to bit boundaries. Open the ``Clock Recovery MM`` block and change the settings to match what is seen in the image below
 
@@ -248,13 +248,13 @@ Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block find
 
 <br>
 
-### Add Binary Slicer Block
+#### Add Binary Slicer Block
 Add a ``Binary Slicer`` block and connect it to the ``Clock Recovery MM`` block.<br> 
 Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` block. The ``Binary Slicer`` converts each symbol into a byte 0x00 or 0x01.
 
 <br>
 
-### Add QT GUI Time Sink Block
+#### Add QT GUI Time Sink Block
 Add a ``QT GUI Time Sink`` block and connect it to the ``UChar To Float`` block.<br>
 Open the settings for the ``QT GUI Time Sink`` block and set the **Type** setting to **Float**.
 
@@ -264,7 +264,7 @@ Open the settings for the ``QT GUI Time Sink`` block and set the **Type** settin
 
 <br>
 
-## Run the Flow #3
+### Run the Flow #3
 Run again with ``F6`` to see what we got.
 
 ![](/Assets/RLab1/Lab1-25.png)
@@ -278,14 +278,14 @@ Run again with ``F6`` to see what we got.
 
 <br>
 
-### Add Const Block
+#### Add Const Block
 Add a ``Add Const`` block and connect it to the ``Binary Slicer`` block. We will add 48 to convert the ``Binary Slicer`` output to **ASCII**. Open the settings for the ``Add Const`` block and change them match what is seen in the image below
 
 ![](/Assets/RLab1/Lab1-26.png)
 
 <br>
 
-### Add File Sink Block
+#### Add File Sink Block
 Add a ``File Sink`` block and connect it to the ``Add Const`` block.<br> 
 The `File Sink` block reads the **output** from the ``Add Const`` block and saves it into a **file**.<br> 
 Open the settings for the ``File Sink`` block and change them to match what is seen in the image below
@@ -311,7 +311,7 @@ Let's turn those 0's and 1's into something more readable. We first need to dete
 
 <br>
 
-### Add Correlate Access Code Block
+#### Add Correlate Access Code Block
 
 Let's add a ``Correlate Access Code - Tag`` block and connect it to the ``Binary Slicer`` block. The ``Correlate Access Code - Tag`` block searches the **bitstream** for a known **sync word**. When the block finds that **sync word**, it tags the stream so that downstream blocks know **“a frame starts here”**.<br>
 **Double-click** the ``Correlate Access Code - Tag`` block to open it's options.
@@ -325,7 +325,7 @@ After, match the other fields below:
 
 <br>
 
-### Add Tag Debug Block
+#### Add Tag Debug Block
 To make sure we are getting hits, add a ``Tag Debug`` block and connect it to the ``Correlate Access Code - Tag`` block.<br> 
 The ``Tag Debug`` block just shows you the tags in the **stream**. Open the ``Tag Debug`` block settings and change the **Type** to **Byte**
 
@@ -333,7 +333,7 @@ The ``Tag Debug`` block just shows you the tags in the **stream**. Open the ``Ta
 
 <br>
 
-## Run the Flow #4
+### Run the Flow #4
 Run the flow, you should see hits in the debug section in the bottom-left
 
 ![](/Assets/RLab1/Lab1-30.png)
@@ -357,14 +357,14 @@ Change the settings in the ``Tagged Stream Align`` block to match those seen in 
 
 <br>
 
-### Add Repack Bits Block
+#### Add Repack Bits Block
 Add a ``Repack Bits`` block and connect it to the ``Tagged Stream Align`` block. The ``Repack Bits`` block groups **individual bits** into **bytes**. After **frame sync**, we need real **bytes** so the data can be dumped, parsed, and read as a **packet**. Open the settings for the ``Repack Bits`` block and ensure they match those seen in the image below
 
 ![](/Assets/RLab1/Lab1-32.png)
 
 <br>
 
-### Add File Sink Block
+#### Add File Sink Block
 - Add a ``File Sink`` block, connect it to the ``Repack Bits`` block, and change the settings to those seen in the image below
 
 ![](/Assets/RLab1/Lab1-33.png)
