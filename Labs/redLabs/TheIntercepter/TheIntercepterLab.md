@@ -338,12 +338,17 @@ Run the flow, you should see hits in the debug section in the bottom-left
 
 ![](/Assets/RLab1/Lab1-30.png)
 
+<!--
 >[!IMPORTANT]
 >Here is a [Checkpoint File](/Assets/RLab1/TheIntercept_4.grc)
 >
 >If you need to use this, just **download** it into your **VM** and **double click** on it
+-->
 
-- Add a ``Tagged Stream Align`` block and connect it to the ``Correlate Access Code - Tag`` block. The ``Tagged Stream Align`` block realigns the **stream** so data starts exactly at the **tagged frame boundary**. Change the settings in the ``Tagged Stream Align`` block to match those seen in the image below
+Add a ``Tagged Stream Align`` block and connect it to the ``Correlate Access Code - Tag`` block.<br>
+The ``Tagged Stream Align`` block realigns the **stream** so data starts exactly at the **tagged frame boundary**.<br>
+
+Change the settings in the ``Tagged Stream Align`` block to match those seen in the image below
 
 ![](/Assets/RLab1/Lab1-31.png)
 
