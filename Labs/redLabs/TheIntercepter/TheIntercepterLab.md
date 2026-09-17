@@ -331,7 +331,10 @@ The ``Tag Debug`` block just shows you the tags in the **stream**. Open the ``Ta
 
 ![](/Assets/RLab1/Lab1-29.png)
 
-- Run the flow, you should see hits in the debug section in the bottom-left
+<br>
+
+## Run the Flow #4
+Run the flow, you should see hits in the debug section in the bottom-left
 
 ![](/Assets/RLab1/Lab1-30.png)
 
