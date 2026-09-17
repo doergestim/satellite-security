@@ -358,7 +358,9 @@ Change the settings in the ``Tagged Stream Align`` block to match those seen in 
 <br>
 
 #### Add Repack Bits Block
-Add a ``Repack Bits`` block and connect it to the ``Tagged Stream Align`` block. The ``Repack Bits`` block groups **individual bits** into **bytes**. After **frame sync**, we need real **bytes** so the data can be dumped, parsed, and read as a **packet**. Open the settings for the ``Repack Bits`` block and ensure they match those seen in the image below
+Add a ``Repack Bits`` block and connect it to the ``Tagged Stream Align`` block. The ``Repack Bits`` block groups **individual bits** into **bytes**. After **frame sync**, we need real **bytes** so the data can be dumped, parsed, and read as a **packet**.<br>
+
+Open the settings for the ``Repack Bits`` block and ensure they match those seen in the image below
 
 ![](/Assets/RLab1/Lab1-32.png)
 
