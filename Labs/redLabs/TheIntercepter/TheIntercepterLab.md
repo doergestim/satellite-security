@@ -373,7 +373,7 @@ Add a ``File Sink`` block, connect it to the ``Repack Bits`` block, and change t
 
 <br>
 
-### Match The Final Flow
+## Match The Final Flow
 This is how the **final flow** should look:
 
 ![](/Assets/RLab1/Lab1-34.png)
