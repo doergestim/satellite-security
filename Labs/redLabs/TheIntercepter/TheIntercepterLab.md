@@ -345,6 +345,9 @@ Run the flow, you should see hits in the debug section in the bottom-left
 >If you need to use this, just **download** it into your **VM** and **double click** on it
 -->
 
+<br>
+
+### Add Tagged Stream Align Block
 Add a ``Tagged Stream Align`` block and connect it to the ``Correlate Access Code - Tag`` block.<br>
 The ``Tagged Stream Align`` block realigns the **stream** so data starts exactly at the **tagged frame boundary**.<br>
 
@@ -352,10 +355,15 @@ Change the settings in the ``Tagged Stream Align`` block to match those seen in 
 
 ![](/Assets/RLab1/Lab1-31.png)
 
-- Add a ``Repack Bits`` block and connect it to the ``Tagged Stream Align`` block. The ``Repack Bits`` block groups **individual bits** into **bytes**. After **frame sync**, we need real **bytes** so the data can be dumped, parsed, and read as a **packet**. Open the settings for the ``Repack Bits`` block and ensure they match those seen in the image below
+<br>
+
+### Add Repack Bits Block
+Add a ``Repack Bits`` block and connect it to the ``Tagged Stream Align`` block. The ``Repack Bits`` block groups **individual bits** into **bytes**. After **frame sync**, we need real **bytes** so the data can be dumped, parsed, and read as a **packet**. Open the settings for the ``Repack Bits`` block and ensure they match those seen in the image below
 
 ![](/Assets/RLab1/Lab1-32.png)
 
+<br>
+### Add File Sink Block
 - Add a ``File Sink`` block, connect it to the ``Repack Bits`` block, and change the settings to those seen in the image below
 
 ![](/Assets/RLab1/Lab1-33.png)
