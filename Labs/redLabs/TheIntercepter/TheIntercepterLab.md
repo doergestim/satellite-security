@@ -86,7 +86,7 @@ Press **Apply** and then **Ok**.
 
 <br>
 
-### Add Throttle Block
+#### Add Throttle Block
 Now let's add a ``Throttle`` block.<br>
 Connect the 2 blocks by dragging the **out** from `File Source` to the **in** of `Throttle`.
 
@@ -135,7 +135,7 @@ In the **Id** field write **Lab1**, and under **Generate Options** select **QT G
 
 <br>
 
-### Run the Flow #1
+### Checkpoint Run #1
 
 Let's run the flow by pressing ``F6``.<br>
 You will be prompted to save the file, let's save it with the name **Lab1_GNU.grc** on our **Desktop**.
@@ -225,7 +225,7 @@ Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, a
 
 <br>
 
-### Run the Flow #2
+### Checkpoint Run #2
 
 Run it again by pressing ``F6`` to visualize this
 
@@ -264,7 +264,7 @@ Open the settings for the ``QT GUI Time Sink`` block and set the **Type** settin
 
 <br>
 
-### Run the Flow #3
+### Checkpoint Run #3
 Run again with ``F6`` to see what we got.
 
 ![](/Assets/RLab1/Lab1-25.png)
@@ -333,7 +333,7 @@ The ``Tag Debug`` block just shows you the tags in the **stream**. Open the ``Ta
 
 <br>
 
-### Run the Flow #4
+### Checkpoint Run #4
 Run the flow, you should see hits in the debug section in the bottom-left
 
 ![](/Assets/RLab1/Lab1-30.png)
