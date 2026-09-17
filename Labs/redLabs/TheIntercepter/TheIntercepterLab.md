@@ -347,7 +347,7 @@ Run the flow, you should see hits in the debug section in the bottom-left
 
 <br>
 
-### Add Tagged Stream Align Block
+#### Add Tagged Stream Align Block
 Add a ``Tagged Stream Align`` block and connect it to the ``Correlate Access Code - Tag`` block.<br>
 The ``Tagged Stream Align`` block realigns the **stream** so data starts exactly at the **tagged frame boundary**.<br>
 
