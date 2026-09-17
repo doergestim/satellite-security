@@ -373,10 +373,12 @@ Add a ``Repack Bits`` block and connect it to the ``Tagged Stream Align`` block.
 
 ![](/Assets/RLab1/Lab1-34.png)
 
+<!--
 >[!IMPORTANT]
 >Here is a [Checkpoint File](/Assets/RLab1/TheIntercept_5.grc)
 >
 >If you need to use this, just **download** it into your **VM** and **double click** on it
+-->
 
 - Now let it Run for 5-10 seconds then stop
 
