@@ -1,6 +1,4 @@
-![image](/Assets/Attachments/blueantisyphon.png)
-
-# RFQuack Lab
+# RFQuack
 
 > **Tool:** RFQuack
 >
