@@ -414,15 +414,15 @@ Run the same logic for ``pass_02.iq``, basically just change the paths.
 
 ![](/Assets/RLab1/Lab1-36.png)
 
-- We get an **ACK** response with our second flag: **FLAG2{protocol_reversed}**
+We get an **ACK** response with our second flag: **FLAG2{protocol_reversed}**
 
-- For the final flag, we will build this payload script using the information from ``pass_01.iq`` and save it as ``uplink_craft.py`` in the main directory
+For the final flag, we will build this payload script using the information from ``pass_01.iq`` and save it as ``uplink_craft.py`` in the main directory:
 
 ```bash
 nano uplink_craft.py
 ```
 
-- Copy-Paste is your friend
+Now, paste the following into the file:
 
 ```bash
 import json, struct, hashlib, binascii
@@ -445,9 +445,9 @@ open('uplink.bin','wb').write(uplink)
 print("uplink.bin written")
 ```
 
-- To save and exit do `Ctrl + x` and `y` and `Enter`
+To save and exit do `Ctrl + x` and `y` and `Enter`
 
-- Run it
+Now let's run it!
 
 ```bash
 python3 uplink_craft.py
