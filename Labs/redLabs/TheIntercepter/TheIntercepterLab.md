@@ -314,7 +314,12 @@ Let's turn those 0's and 1's into something more readable. We first need to dete
 ### Add Correlate Access Code Block
 
 Let's add a ``Correlate Access Code - Tag`` block and connect it to the ``Binary Slicer`` block. The ``Correlate Access Code - Tag`` block searches the **bitstream** for a known **sync word**. When the block finds that **sync word**, it tags the stream so that downstream blocks know **“a frame starts here”**.<br>
-Change the settings in the ``Correlate Access Code - Tag`` block to match what is seen in the image below
+**Double-click** the ``Correlate Access Code - Tag`` block to open it's options.
+In the `Access Code` field, paste in the following:
+<pre>00011010110011111111110000011101</pre>
+
+<br>
+After, match the other fields below:
 
 ![](/Assets/RLab1/Lab1-28.png)
 
