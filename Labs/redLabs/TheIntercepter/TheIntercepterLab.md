@@ -453,30 +453,15 @@ Now let's run it!
 python3 uplink_craft.py
 ```
 
-- Now let's feed the local gateway
+Now let's feed the local gateway:
 
 ```bash
 python3 tools/sat_gateway.py uplink.bin
 ```
 ![](/Assets/RLab1/Lab1-37.png)
 
-- Now we got our 3rd and final flag: **FLAG3{uplink_forged_locally}**
+Look! We got our 3rd and final flag: **FLAG3{uplink_forged_locally}**
 
-
-
-
-
-***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/Labs/redLabs/TheDenial/TheDenialLab.md)</i></b>
-
-<b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
-
-***Finished with the Labs?***
-
-Please be sure to destroy the lab environment!
-
-[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
-
----
+<br> 
 
 > Created By Turcu Știolică Alexandru - Black Hills Information Security
