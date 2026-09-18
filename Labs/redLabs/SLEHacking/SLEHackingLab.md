@@ -71,10 +71,11 @@ This proves the service is **alive**
 
 <img width="1160" height="220" alt="2026-03-19_11-53" src="https://github.com/user-attachments/assets/8067c4ad-24af-4f2e-b405-18c42a0ab3c7" />
 
-
 ---
 
 ### 2.2 Enumerate API root
+For the next step, we need to enumerate the API root.<br>
+Run the following in your terminal:
 ```bash
 curl -i http://127.0.0.1:2048/api/
 ```
@@ -87,9 +88,7 @@ GET /api/sle-config
 GET, PATCH /api/sle-config/<string:param>
 ```
 
-
 <img width="707" height="218" alt="2026-03-19_11-57" src="https://github.com/user-attachments/assets/99f6930e-b37b-4533-a9f3-1625b99673ca" />
-
 
 ### Finding
 The server **advertises sensitive management endpoints and HTTP verbs without authentication**
