@@ -12,7 +12,7 @@ Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> 
 
 ---
 
-## Setup
+## Step 1: Setup
 
 Download the zip for this main folder from [Here](./RFQuack_Lab.zip) ( Only if you are not using the VM )
 
