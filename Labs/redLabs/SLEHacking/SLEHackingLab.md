@@ -16,11 +16,12 @@ You are assessing a **VisionSpace SLE Provider** deployed with insecure defaults
 <br>
 
 ## Lab Objective
-Your goal is to **enumerate, validate impact, and remediate** the issue
+Your goal is to **enumerate, validate impact, and then remediate** the issue.
 
 ---
 
-## Start
+## Start the Docker
+Begin by opening a terminal and running the following:
 
 ```bash
 cd ~/Desktop/SLEHacking
