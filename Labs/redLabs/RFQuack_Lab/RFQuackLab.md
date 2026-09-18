@@ -90,10 +90,10 @@ You should now see beacons every ~2s
 ## 2) Focus the signal (filter)
 
 Keep only frames for SAT=0xA1:
-```bash
-rq> packet_filter add ^AAAA5555A1
-rq> packet_filter list
-```
+
+<pre>packet_filter add ^AAAA5555A1</pre>
+<pre>packet_filter list</pre>
+
 
 **Why:** Mirrors RFQuack’s packet filter to kill noise
 
