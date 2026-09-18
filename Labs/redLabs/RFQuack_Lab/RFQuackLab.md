@@ -15,13 +15,7 @@ Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> 
 ## Step 1: Setup
 
 We need to start by downloading the folder for this lab.<br>
-Start by navigating to your desktop:
-<pre>cd Desktop</pre>
-
-Next, run the following to download the zip folder:
-<pre>curl -O https://github.com/doergestim/satellite-security/blob/main/Labs/redLabs/RFQuack_Lab/RFQuack_Lab.zip</pre>
-
-Now, extract it:
+Open a browser and navigate to the following site:
 
 
 
@@ -79,11 +73,11 @@ PRE(2) | SYNC(2) | SAT(1) | MODE(1) | SEQ(1) | CMD(1) | PAD(6) | CRC(2)
 >[!NOTE]
 >Everytime you see `rq> ...` it means you will write only the `...` part in **Terminal C**
 
-Start capture:
-```bash
-rq> radio.set_modem_config modulation=2FSK carrierFreq=433.920
-rq> rx start
-```
+Start the capture by running each of the following:
+
+<pre>radio.set_modem_config modulation=2FSK carrierFreq=433.920</pre>
+<pre>rx start</pre>
+
 You should now see beacons every ~2s
 
 <img width="617" height="193" alt="image" src="https://github.com/user-attachments/assets/3825d078-6b2b-489f-b9f9-a6896523aa16" />
