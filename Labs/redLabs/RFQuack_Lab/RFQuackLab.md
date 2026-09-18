@@ -104,10 +104,8 @@ rq> packet_filter list
 Let the ground station send something
 
 Capture and replay:
-```bash
-rq> dump last
-rq> send <paste the 16-byte hex>
-```
+<pre>dump last</pre>
+<pre>send <paste the 16-byte hex></pre>
 
 **Expected:** Emulator toggles state and prints an ACK-style line
 **Why:** CRC isn’t auth; replay still lands
@@ -117,11 +115,9 @@ rq> send <paste the 16-byte hex>
 ## 4) In-flight manipulation (bit-flip)
 
 Flip the MODE byte as frames pass and auto-forward:
-```bash
-rq> packet_manipulator add XOR 5 0x01   # offset 5 = MODE
-rq> repeater on
-rq> rx start
-```
+<pre>packet_manipulator add XOR 5 0x01   # offset 5 = MODE</pre>
+<pre>repeater on</pre>
+<pre>rx start</pre>
 
 **Why:** On-path attackers can silently change command meaning
 
