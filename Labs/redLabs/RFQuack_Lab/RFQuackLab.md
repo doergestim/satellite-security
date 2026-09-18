@@ -18,13 +18,12 @@ We need to start by downloading the folder for this lab.<br>
 Start by navigating to your desktop:
 <pre>cd /Desktop</pre>
 
-- Click the Download button
+Next, run the following to download the zip folder:
+<pre>curl -O https://github.com/doergestim/satellite-security/blob/main/Labs/redLabs/RFQuack_Lab/RFQuack_Lab.zip</pre>
 
-<img width="330" height="177" alt="image" src="https://github.com/user-attachments/assets/df15f9ee-985a-4f6a-af65-32698e1aa337" />
+Now, extract it:
 
-- Extract it
 
-- Go to the **lab directory**
 
 ```bash
 cd ~/Desktop/RFQuack_Lab
