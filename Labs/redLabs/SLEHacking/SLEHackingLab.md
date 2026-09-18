@@ -104,7 +104,7 @@ This alone constitutes a **high-severity vulnerability**.
 ## 3. Exploitation: Unauthorized Enumeration
 
 ### 3.1 Enumerate service instances
-Now it's time for our first exploitation. We are going to enumerate service instances.
+Now it's time for our first exploitation. We are going to enumerate service instances.<br>
 Let's run the following in our terminal:
 ```bash
 curl -s http://127.0.0.1:2048/api/service-instances/ | jq .
