@@ -1,8 +1,14 @@
+![image](/FilesForLabs/images/blueantisyphon.png)
+
 # RFQuack Simulation Lab
 
+#### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
+If you do not have this VM, please contact us!
 
-## What you’ll do
-> Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> observe jamming effects -> propose defenses
+<hr>
+
+## Lab Objective
+Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> observe jamming effects -> propose defenses
 
 ---
 
