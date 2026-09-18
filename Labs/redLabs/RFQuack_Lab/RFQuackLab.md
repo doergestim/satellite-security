@@ -1,4 +1,4 @@
-![image](/Attachments/images/blueantisyphon.png)
+![image](/Assets/Attachments/blueantisyphon.png)
 
 # RFQuack Simulation Lab
 
