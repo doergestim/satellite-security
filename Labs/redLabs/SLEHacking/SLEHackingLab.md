@@ -80,6 +80,8 @@ Run the following in your terminal:
 curl -i http://127.0.0.1:2048/api/
 ```
 
+<br>
+
 Expected output (critical finding):
 ```text
 GET, DELETE /api/service-instances
