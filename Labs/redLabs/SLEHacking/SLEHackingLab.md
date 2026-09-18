@@ -1,13 +1,21 @@
-![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+![image](/Assets/Attachments/blueantisyphon.png)
 
-# Lab 6 - Exploiting an Unauthenticated SLE Management Plane
+# Exploiting an Unauthenticated SLE Management Plane
 
-## Context
+#### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
+If you do not have this VM, please contact us!
+
+<hr>
+
+## Lab Scenario
 This lab demonstrates a **realistic vulnerability class**:  
 - **unauthenticated exposure of a management/control plane** in a protocol-heavy system
 
 You are assessing a **VisionSpace SLE Provider** deployed with insecure defaults 
 
+<br>
+
+## Lab Objective
 Your goal is to **enumerate, validate impact, and remediate** the issue
 
 ---
