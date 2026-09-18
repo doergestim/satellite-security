@@ -92,10 +92,12 @@ GET, PATCH /api/sle-config/<string:param>
 
 <img width="707" height="218" alt="2026-03-19_11-57" src="https://github.com/user-attachments/assets/99f6930e-b37b-4533-a9f3-1625b99673ca" />
 
-### Finding
-The server **advertises sensitive management endpoints and HTTP verbs without authentication**
+<br>
 
-This alone constitutes a **high-severity vulnerability**
+#### Why is this a Critical Finding
+The server **advertises sensitive management endpoints and HTTP verbs without authentication**.
+
+This alone constitutes a **high-severity vulnerability**.
 
 ---
 
