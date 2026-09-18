@@ -16,7 +16,7 @@ Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> 
 
 We need to start by downloading the folder for this lab.<br>
 Start by navigating to your desktop:
-<pre>cd /Desktop</pre>
+<pre>cd Desktop</pre>
 
 Next, run the following to download the zip folder:
 <pre>curl -O https://github.com/doergestim/satellite-security/blob/main/Labs/redLabs/RFQuack_Lab/RFQuack_Lab.zip</pre>
