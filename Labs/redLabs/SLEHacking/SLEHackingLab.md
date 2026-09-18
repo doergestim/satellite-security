@@ -36,6 +36,9 @@ sudo docker compose up --build -d
 ## 1. Establish Baseline Exposure
 
 ### 1.1 Identify exposed ports
+Before we can get into the data, we need to establish the baseline exposure.<br>
+Let's begin by identifying the exposed ports. Open a terminal and run the following:
+
 ```bash
 sudo docker ps --format "table {{.Names}}\t{{.Ports}}"
 ```
