@@ -51,13 +51,14 @@ Expected exposure:
 - **TCP 55529** -> SLE user port
 - **UDP 16887–16888** -> frame data
 
-This confirms a **remotely reachable management interface**
+This confirms a **remotely reachable management interface**.
 
 ---
 
 ## 2. Management Plane Discovery
 
 ### 2.1 Confirm REST service
+Now that we've confirmed a remotely reachable management interface, we need to confirm a REST service.
 ```bash
 curl -i http://127.0.0.1:2048/
 ```
