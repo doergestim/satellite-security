@@ -150,7 +150,9 @@ for score, off, preview in candidates:
 python3 decodeScript.py
 ```
 
-### Part B - Replay Attack (Confuse Operators)
+<hr>
+
+## Part B - Replay Attack (Confuse Operators)
 - Start the **ground station**
 ```bash
 cd ~/Desktop/TheDenial/groundstation
