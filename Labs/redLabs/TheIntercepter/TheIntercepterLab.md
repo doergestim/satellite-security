@@ -380,7 +380,7 @@ Open the settings for the ``Repack Bits`` block and ensure they match those seen
 Add a ``File Sink`` block, connect it to the ``Repack Bits`` block.<br>
 Change the type to `byte` and then paste the following in the file field:
 
-<pre>/home/ubuntu/Desktop/TheIntercepter/assets/pass_01.bits</pre>
+<pre>/home/ubuntu/Desktop/TheIntercepter/assets/pass_01_BPF.bits</pre>
 
 ![](/Assets/RLab1/Lab1-33.png)
 
