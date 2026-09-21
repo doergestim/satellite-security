@@ -1,22 +1,23 @@
+![image](/Assets/Attachments/blueantisyphon.png)
+
 # RFQuack Simulation Lab
 
+#### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
+If you do not have this VM, please contact us!
 
-## What you’ll do
-> Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> observe jamming effects -> propose defenses
+<hr>
+
+## Lab Objective
+Recon -> filter -> replay -> in-flight manipulation -> beat weak anti-replay -> observe jamming effects -> propose defenses
 
 ---
 
-## Setup
+## Step 1: Setup
 
-Download the zip for this main folder from [Here](./RFQuack_Lab.zip) ( Only if you are not using the VM )
+We need to start by downloading the folder for this lab.<br>
+Open a browser and navigate to the following site:
 
-- Click the Download button
 
-<img width="330" height="177" alt="image" src="https://github.com/user-attachments/assets/df15f9ee-985a-4f6a-af65-32698e1aa337" />
-
-- Extract it
-
-- Go to the **lab directory**
 
 ```bash
 cd ~/Desktop/RFQuack_Lab
@@ -72,11 +73,11 @@ PRE(2) | SYNC(2) | SAT(1) | MODE(1) | SEQ(1) | CMD(1) | PAD(6) | CRC(2)
 >[!NOTE]
 >Everytime you see `rq> ...` it means you will write only the `...` part in **Terminal C**
 
-Start capture:
-```bash
-rq> radio.set_modem_config modulation=2FSK carrierFreq=433.920
-rq> rx start
-```
+Start the capture by running each of the following:
+
+<pre>radio.set_modem_config modulation=2FSK carrierFreq=433.920</pre>
+<pre>rx start</pre>
+
 You should now see beacons every ~2s
 
 <img width="617" height="193" alt="image" src="https://github.com/user-attachments/assets/3825d078-6b2b-489f-b9f9-a6896523aa16" />
@@ -89,10 +90,10 @@ You should now see beacons every ~2s
 ## 2) Focus the signal (filter)
 
 Keep only frames for SAT=0xA1:
-```bash
-rq> packet_filter add ^AAAA5555A1
-rq> packet_filter list
-```
+
+<pre>packet_filter add ^AAAA5555A1</pre>
+<pre>packet_filter list</pre>
+
 
 **Why:** Mirrors RFQuack’s packet filter to kill noise
 
@@ -103,10 +104,8 @@ rq> packet_filter list
 Let the ground station send something
 
 Capture and replay:
-```bash
-rq> dump last
-rq> send <paste the 16-byte hex>
-```
+<pre>dump last</pre>
+<pre>send <paste the 16-byte hex></pre>
 
 **Expected:** Emulator toggles state and prints an ACK-style line
 **Why:** CRC isn’t auth; replay still lands
@@ -116,11 +115,9 @@ rq> send <paste the 16-byte hex>
 ## 4) In-flight manipulation (bit-flip)
 
 Flip the MODE byte as frames pass and auto-forward:
-```bash
-rq> packet_manipulator add XOR 5 0x01   # offset 5 = MODE
-rq> repeater on
-rq> rx start
-```
+<pre>packet_manipulator add XOR 5 0x01   # offset 5 = MODE</pre>
+<pre>repeater on</pre>
+<pre>rx start</pre>
 
 **Why:** On-path attackers can silently change command meaning
 

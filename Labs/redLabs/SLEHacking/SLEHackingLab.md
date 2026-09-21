@@ -1,18 +1,27 @@
-![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+![image](/Assets/Attachments/blueantisyphon.png)
 
-# Lab 6 - Exploiting an Unauthenticated SLE Management Plane
+# Exploiting an Unauthenticated SLE Management Plane
 
-## Context
+#### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
+If you do not have this VM, please contact us!
+
+<hr>
+
+## Lab Scenario
 This lab demonstrates a **realistic vulnerability class**:  
 - **unauthenticated exposure of a management/control plane** in a protocol-heavy system
 
 You are assessing a **VisionSpace SLE Provider** deployed with insecure defaults 
 
-Your goal is to **enumerate, validate impact, and remediate** the issue
+<hr>
+
+## Lab Objective
+Your goal is to **enumerate, validate impact, and then remediate** the issue.
 
 ---
 
-## Start
+## Start the Docker
+Begin by opening a terminal and running the following:
 
 ```bash
 cd ~/Desktop/SLEHacking
@@ -27,6 +36,9 @@ sudo docker compose up --build -d
 ## 1. Establish Baseline Exposure
 
 ### 1.1 Identify exposed ports
+Before we can get into the data, we need to establish the baseline exposure.<br>
+Let's begin by identifying the exposed ports. Open a terminal and run the following:
+
 ```bash
 sudo docker ps --format "table {{.Names}}\t{{.Ports}}"
 ```
@@ -39,13 +51,14 @@ Expected exposure:
 - **TCP 55529** -> SLE user port
 - **UDP 16887–16888** -> frame data
 
-This confirms a **remotely reachable management interface**
+This confirms a **remotely reachable management interface**.
 
 ---
 
 ## 2. Management Plane Discovery
 
 ### 2.1 Confirm REST service
+Now that we've confirmed a remotely reachable management interface, we need to confirm a REST service.
 ```bash
 curl -i http://127.0.0.1:2048/
 ```
@@ -58,13 +71,16 @@ This proves the service is **alive**
 
 <img width="1160" height="220" alt="2026-03-19_11-53" src="https://github.com/user-attachments/assets/8067c4ad-24af-4f2e-b405-18c42a0ab3c7" />
 
-
 ---
 
 ### 2.2 Enumerate API root
+For the next step, we need to enumerate the API root.<br>
+Run the following in your terminal:
 ```bash
 curl -i http://127.0.0.1:2048/api/
 ```
+
+<br>
 
 Expected output (critical finding):
 ```text
@@ -74,20 +90,22 @@ GET /api/sle-config
 GET, PATCH /api/sle-config/<string:param>
 ```
 
-
 <img width="707" height="218" alt="2026-03-19_11-57" src="https://github.com/user-attachments/assets/99f6930e-b37b-4533-a9f3-1625b99673ca" />
 
+<br>
 
-### Finding
-The server **advertises sensitive management endpoints and HTTP verbs without authentication**
+#### Why is this a Critical Finding
+The server **advertises sensitive management endpoints and HTTP verbs without authentication**.
 
-This alone constitutes a **high-severity vulnerability**
+This alone constitutes a **high-severity vulnerability**.
 
 ---
 
 ## 3. Exploitation: Unauthorized Enumeration
 
 ### 3.1 Enumerate service instances
+Now it's time for our first exploitation. We are going to enumerate service instances.<br>
+Let's run the following in our terminal:
 ```bash
 curl -s http://127.0.0.1:2048/api/service-instances/ | jq .
 ```
@@ -258,19 +276,6 @@ wireshark sle-management-abuse.pcap
 
 <img width="1837" height="1057" alt="image" src="https://github.com/user-attachments/assets/03cc85a0-69ab-42ec-910d-371d7c3a2bf6" />
 
-
-***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/Labs/blueLabs/DefendingOdyssey/DefendingODYSSEY_RF-Analysis.md)</i></b>
-
-<b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/TheDrift/TheDriftLab.md)</i></b>
-
-<b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
-
-***Finished with the Labs?***
-
-Please be sure to destroy the lab environment!
-
-[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
 
 ---
 
