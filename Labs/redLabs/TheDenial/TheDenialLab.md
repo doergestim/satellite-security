@@ -37,8 +37,7 @@ As **red team**, your task is to **disrupt ODYSSEY-1’s ground communications**
 
 ---
 
-## Start
-### Part A - Break the Link (Simulated Jamming)
+## Part A - Break the Link (Simulated Jamming)
 
 - You will need the **GRC Flowgraph** we built during [Lab 1](../TheIntercepter/TheInterceptLab.md)
 
