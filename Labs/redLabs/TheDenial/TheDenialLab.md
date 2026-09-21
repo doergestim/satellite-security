@@ -156,7 +156,7 @@ python3 decodeScript.py
 ### Part B - Replay Attack (Confuse Operators)
 - Start the **ground station**
 ```bash
-cd groundstation
+cd ~/Desktop/TheDenial/groundstation
 ```
 ```bash
 sudo docker compose up --build
