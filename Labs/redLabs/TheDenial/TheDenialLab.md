@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
+![image](/Assets/Attachments/blueantisyphon.png)
 
 # Lab 2 - The Denial
 #### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
