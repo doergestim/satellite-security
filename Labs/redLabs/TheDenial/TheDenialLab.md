@@ -43,19 +43,16 @@ You will need the **GRC Flowgraph** we built during [Lab 1](https://freelabfrida
 
 ![image](/Assets/RLab2/RLab2-1.png)
 
-- Let's use that for our ``pass_clean.iq``, we need to update our 2 ``Sink File`` blocks and our ``File Source`` block
+We need to update our 2 ``File Sink`` blocks and our ``File Source`` block in order to use ``pass_clean.iq``.
 
 ![image](/Assets/RLab2/RLab2-2.png)
 
-<br>
-
 ![image](/Assets/RLab2/RLab2-3.png)
-
-<br>
 
 ![image](/Assets/RLab2/RLab2-4.png)
 
-- Run the flow after changing the **File Source** and the 2 **File Sinks** to the right paths. You can run it for **5-10 seconds**, that is plenty!
+Run the flow after changing the **File Source** and the 2 **File Sinks** to the right paths.<br>
+You can run it for **5-10 seconds**, that is plenty!
 
 ```bash
 cd ~/Desktop/TheDenial
