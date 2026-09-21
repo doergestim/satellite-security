@@ -267,7 +267,7 @@ All three pillars of the **CIA triad** are compromised from a single unauthentic
 sudo tcpdump -i lo -nn tcp port 2048 -w sle-management-abuse.pcap
 ```
 
-- Then in another **terminal**, generate traffic:
+Open up another **terminal** to generate traffic:
 
 ```bash
 curl http://127.0.0.1:2048/api/
