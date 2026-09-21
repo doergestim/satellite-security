@@ -13,7 +13,7 @@ This lab demonstrates a **realistic vulnerability class**:
 
 You are assessing a **VisionSpace SLE Provider** deployed with insecure defaults 
 
-<br>
+<hr>
 
 ## Lab Objective
 Your goal is to **enumerate, validate impact, and then remediate** the issue.
