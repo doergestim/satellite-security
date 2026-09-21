@@ -265,6 +265,9 @@ All three pillars of the **CIA triad** are compromised from a single unauthentic
 
 ## 5. Traffic capture:
 
+In this section, we are going to capture traffic and inspect it with Wireshark.<br>
+In your terminal, run the following:
+
 ```bash
 sudo tcpdump -i lo -nn tcp port 2048 -w sle-management-abuse.pcap
 ```
