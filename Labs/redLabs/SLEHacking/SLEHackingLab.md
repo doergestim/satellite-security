@@ -25,6 +25,8 @@ Begin by opening a terminal.
 
 ![image](/Assets/Attachments/terminalinubuntu.png)
 
+Now run the following commands to start the docker:
+
 ```bash
 cd ~/Desktop/SLEHacking
 ```
