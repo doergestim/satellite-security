@@ -23,7 +23,7 @@ Your goal is to **enumerate, validate impact, and then remediate** the issue.
 ## Start the Docker
 Begin by opening a terminal.
 
-![image](/Assets/Attachments/terminalubuntu.png)
+![image](/Assets/Attachments/terminalinubuntu.png)
 
 ```bash
 cd ~/Desktop/SLEHacking
