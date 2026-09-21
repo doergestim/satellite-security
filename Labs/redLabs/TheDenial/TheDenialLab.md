@@ -9,7 +9,9 @@ If you do not have this VM, please contact us!
 ## Lab Scenario
 As **red team**, your task is to **disrupt ODYSSEY-1’s ground communications**
 
-You will:  
+<hr>
+
+## Lab Objective
 1. **Degrade** the downlink (simulate jamming)
 2. **Confuse** operators with replay attacks
 3. **Lock operators out** by overwhelming their weak ground station service
