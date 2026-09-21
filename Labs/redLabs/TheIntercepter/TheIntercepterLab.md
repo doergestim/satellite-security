@@ -46,6 +46,8 @@ Intercept -> Decode -> Reverse -> (Simulated) Command
 
 Begin by opening a terminal.
 
+![image](/Assets/Attachments/terminalinubuntu.png)
+
 Open [GNU Radio Companion](/Tools%20and%20Frameworks/GNU_radio.md)
 
 ```bash
