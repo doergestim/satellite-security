@@ -252,12 +252,12 @@ Our float stream is oversampled at 48 kS/s. The ``Clock Recovery MM`` block find
 
 #### Add Binary Slicer Block
 Add a ``Binary Slicer`` block and connect it to the ``Clock Recovery MM`` block.<br> 
-Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` block. The ``Binary Slicer`` converts each symbol into a byte 0x00 or 0x01.
+The ``Binary Slicer`` converts each symbol into a byte 0x00 or 0x01.
 
 <br>
 
 #### Add UChar To Float Block
-Add a ``UChar To Float Block`` and connect it to the ``Binary Slicer`` block.
+Then add a ``UChar To Float`` block and connect it to the ``Binary Slicer`` block. 
 
 <br>
 
