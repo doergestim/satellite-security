@@ -1,8 +1,13 @@
 ![image](https://github.com/user-attachments/assets/068fae26-6e8f-402f-ad69-63a4e6a1f59e)
 
 # Lab 2 - The Denial
+#### This lab requires the use of the **Hacking & Defending Satellite Infrastructure w/ John Strand** VM.<br>
+If you do not have this VM, please contact us!
 
-**Scenario:** As **red team**, your task is to **disrupt ODYSSEY-1’s ground communications**
+<hr>
+
+## Lab Scenario
+As **red team**, your task is to **disrupt ODYSSEY-1’s ground communications**
 
 You will:  
 1. **Degrade** the downlink (simulate jamming)
