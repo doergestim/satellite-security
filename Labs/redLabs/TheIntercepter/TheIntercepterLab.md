@@ -475,8 +475,10 @@ python3 tools/sat_gateway.py uplink.bin
 
 Look! We got our 3rd and final flag: **FLAG3{uplink_forged_locally}**
 
+<hr>
+
 >[!IMPORTANT]
->If you are planning on moving on to the next lab, DO NOT DESTROY WHAT YOU JUST BUILT!<br>
+>If you are planning on moving on to the next lab, **DO NOT DESTROY WHAT YOU JUST BUILT!**<br>
 >The labs build off of each other, and you need this workflow!<br>
 >Leave it as is, and click HERE for the next set of instructions!
 
