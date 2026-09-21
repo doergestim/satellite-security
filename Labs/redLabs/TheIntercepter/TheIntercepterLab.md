@@ -286,10 +286,7 @@ Run again with ``F6`` to see what we got.
 <br>
 
 #### Add Const Block
-Add a ``Add Const`` block and connect it to the ``Binary Slicer`` block. We will add 48 to convert the ``Binary Slicer`` output to **ASCII**. Open the settings for the ``Add Const`` block.<br>
-Change the type to `byte` and then paste the following in the file field:
-
-<pre>/home/ubuntu/Desktop/TheIntercepter/assets/pass_01.bits</pre>
+Add a ``Add Const`` block and connect it to the ``Binary Slicer`` block. We will add 48 to convert the ``Binary Slicer`` output to **ASCII**. Open the settings for the ``Add Const`` block and change them match what is seen in the image below:
 
 ![](/Assets/RLab1/Lab1-26.png)
 
@@ -298,7 +295,10 @@ Change the type to `byte` and then paste the following in the file field:
 #### Add File Sink Block
 Add a ``File Sink`` block and connect it to the ``Add Const`` block.<br> 
 The `File Sink` block reads the **output** from the ``Add Const`` block and saves it into a **file**.<br> 
-Open the settings for the ``File Sink`` block and change them to match what is seen in the image below
+Open the settings for the ``File Sink`` block.<br>
+Change the type to `byte` and then paste the following in the file field:
+
+<pre>/home/ubuntu/Desktop/TheIntercepter/assets/pass_01.bits</pre>
 
 <img src="/Assets/RLab1/Lab1-27.png" width="700">
 
