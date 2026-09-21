@@ -277,9 +277,10 @@ curl http://127.0.0.1:2048/api/
 curl http://127.0.0.1:2048/api/sle-config/
 ```
 
-- Go back to the **tcpdump terminal** and press **Ctrl + c** to stop the capture, it will save it into `sle-management-abuse.pcap` under the same folder
+Go back to the **tcpdump terminal** and press **Ctrl + c** to stop the capture.<br>
+It will save it into `sle-management-abuse.pcap` under the same folder.
 
-- Open it:
+Now open it in Wireshark:
 
 ```bash
 wireshark sle-management-abuse.pcap
