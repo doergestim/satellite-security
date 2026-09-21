@@ -124,6 +124,10 @@ curl -s http://127.0.0.1:2048/api/service-instances/ | jq .
 ---
 
 ### 3.2 Enumerate runtime configuration
+
+Next, let's enumerate the runtime configuration.
+Go ahead and run the following:
+
 ```bash
 curl -s http://127.0.0.1:2048/api/sle-config/ | jq .
 ```
