@@ -99,7 +99,7 @@ n = (np.random.normal(0, math.sqrt(noise_var), x.shape)
 (x+n).tofile(out_iq)
 ```
 
-- Do `Ctrl + x` and `y` and `Enter` to save and exit
+Press `Ctrl + x` and `y` and `Enter` to save and exit
 
 - And make the new files like this
 ```bash
