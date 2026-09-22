@@ -43,15 +43,23 @@ You will need the **GRC Flowgraph** we built during [Lab 1](https://freelabfrida
 
 ![image](/Assets/RLab2/RLab2-1.png)
 
-We need to update our 2 ``File Sink`` blocks and our ``File Source`` block in order to use ``pass_clean.iq``.
+We need to update our 2 ``File Sink`` blocks and our ``File Source`` block in order to use ``pass_clean.iq``.<br>
 
+In the `File Source` block, paste the following:<br>
+<pre>/home/ubuntu/Desktop/TheDenial/pass_clean.iq</pre>
 ![image](/Assets/RLab2/RLab2-2.png)
 
+<br>
+In the first `File Sink` block, paste the following:<br>
+<pre>/home/ubuntu/Desktop/TheDenial/pass_clean.bits</pre>
 ![image](/Assets/RLab2/RLab2-3.png)
 
+<br>
+Finally, in the second `File Sink` block, paste the following:<br>
+<pre>/home/ubuntu/Desktop/TheDenial/pass_clean_BPF.txt</pre>
 ![image](/Assets/RLab2/RLab2-4.png)
 
-Run the flow after changing the **File Source** and the 2 **File Sinks** to the right paths.<br>
+After changing these, let's run the flow by pressing `F6`.<br>
 You can run it for **5-10 seconds**, that is plenty!
 
 ```bash
