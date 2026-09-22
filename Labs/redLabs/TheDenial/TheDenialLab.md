@@ -72,15 +72,14 @@ Next, navigate into the proper directory:
 cd ~/Desktop/TheDenial
 ```
 
-- Using **xxd** grants us this output, make sure it works for you as well
+Using **xxd** grants us this output, make sure it works for you as well:
 ```bash
 xxd pass_clean_BPF.txt
 ```
 
-
 ![image](/Assets/RLab2/RLab2-5.png)
 
-- Now try to write your own jamming script with [Gaussian Noise](https://en.wikipedia.org/wiki/Gaussian_noise) or use this one if you don't know how
+Now try to write your own jamming script with [Gaussian Noise](https://en.wikipedia.org/wiki/Gaussian_noise) or use this one if you don't know how
 
 ```bash
 nano jam.py
