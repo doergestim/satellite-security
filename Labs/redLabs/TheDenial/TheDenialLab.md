@@ -79,13 +79,14 @@ xxd pass_clean_BPF.txt
 
 ![image](/Assets/RLab2/RLab2-5.png)
 
-Now try to write your own jamming script with [Gaussian Noise](https://en.wikipedia.org/wiki/Gaussian_noise) or use this one if you don't know how
+Now try to write your own jamming script with [Gaussian Noise](https://en.wikipedia.org/wiki/Gaussian_noise).<br>
+If you don't know how, don't worry, follow these steps instead:
 
 ```bash
 nano jam.py
 ```
 
-- Copy paste this:
+Then, copy paste this:
 
 ```
 import numpy as np, sys, math
