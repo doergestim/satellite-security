@@ -50,13 +50,13 @@ In the `File Source` block, paste the following:<br>
 
 ![image](/Assets/RLab2/RLab2-2.png)
 
-<br>
+
 In the first `File Sink` block, paste the following:<br>
 <pre>/home/ubuntu/Desktop/TheDenial/pass_clean.bits</pre>
 
 ![image](/Assets/RLab2/RLab2-3.png)
 
-<br>
+
 Finally, in the second `File Sink` block, paste the following:<br>
 <pre>/home/ubuntu/Desktop/TheDenial/pass_clean_BPF.txt</pre>
 
