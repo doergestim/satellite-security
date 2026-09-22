@@ -65,6 +65,9 @@ Finally, in the second `File Sink` block, paste the following:<br>
 After changing these, let's run the flow by pressing `F6`.<br>
 You can run it for **5-10 seconds**, that is plenty!
 
+
+Next, navigate into the proper directory:
+
 ```bash
 cd ~/Desktop/TheDenial
 ```
