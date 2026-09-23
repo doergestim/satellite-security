@@ -53,6 +53,9 @@ In the `File Source` block, paste the following:<br>
 
 ![image](/Assets/RLab2/RLab2-2.png)
 
+>[!Tip]
+>We have gone ahead and included the completed flow created in Lab 1 for your convenience.<br>
+>Remember, our team recommends completing [Lab 1](https://freelabfridays.com/satlabs/labs/redlabs/theintercepter/theintercepterlab/) first in order to understand this flow.
 
 In the first `File Sink` block, paste the following:<br>
 <pre>/home/ubuntu/Desktop/TheDenial/pass_clean.bits</pre>
