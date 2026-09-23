@@ -16,10 +16,13 @@ As **red team**, your task is to **disrupt ODYSSEY-1’s ground communications**
 2. **Confuse** operators with replay attacks
 3. **Lock operators out** by overwhelming their weak ground station service
 
->[!IMPORTANT]
->Make sure you have done [Lab 1](../TheIntercepter/TheIntercepterLab.md) already
-
 ---
+>[!IMPORTANT]
+>**Prerequisite**
+>These labs were designed and written to be completed sequentially.<br>
+>In order to fully understand the content, we recommend completing [Lab 1](https://freelabfridays.com/satlabs/labs/redlabs/theintercepter/theintercepterlab) prior to this lab.
+
+
 
 **Provided:**
 - **pass_clean.iq** (48 kS/s, complex float32) - synthetic BFSK downlink
