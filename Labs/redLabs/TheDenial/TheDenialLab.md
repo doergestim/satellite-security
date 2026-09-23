@@ -53,6 +53,7 @@ You will need the **GRC Flowgraph** we built during [Lab 1](https://freelabfrida
 >To open the flow, run the following:<br>
 ><pre>gnuradio-companion &</pre>
 >Then go to `File` and `Open`. Select `Lab1_GNU.grc` and open it.
+>![image](/Assets/RLab2/openflow.png)
 
 We need to update our 2 ``File Sink`` blocks and our ``File Source`` block in order to use ``pass_clean.iq``.<br>
 
