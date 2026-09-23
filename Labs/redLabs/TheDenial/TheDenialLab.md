@@ -46,13 +46,6 @@ You will need the **GRC Flowgraph** we built during [Lab 1](https://freelabfrida
 
 ![image](/Assets/RLab2/RLab2-1.png)
 
-We need to update our 2 ``File Sink`` blocks and our ``File Source`` block in order to use ``pass_clean.iq``.<br>
-
-In the `File Source` block, paste the following:<br>
-<pre>/home/ubuntu/Desktop/TheDenial/pass_clean.iq</pre>
-
-![image](/Assets/RLab2/RLab2-2.png)
-
 >[!Tip]
 >We have gone ahead and included the completed flow created in Lab 1 for your convenience.<br>
 >Remember, our team recommends completing [Lab 1](https://freelabfridays.com/satlabs/labs/redlabs/theintercepter/theintercepterlab/) first in order to understand this flow.<br>
@@ -60,6 +53,13 @@ In the `File Source` block, paste the following:<br>
 >To open the flow, run the following:<br>
 ><pre>gnuradio-companion &</pre>
 >Then go to `File` and `Open`. Select `Lab1_GNU.grc` and open it.
+
+We need to update our 2 ``File Sink`` blocks and our ``File Source`` block in order to use ``pass_clean.iq``.<br>
+
+In the `File Source` block, paste the following:<br>
+<pre>/home/ubuntu/Desktop/TheDenial/pass_clean.iq</pre>
+
+![image](/Assets/RLab2/RLab2-2.png)
 
 In the first `File Sink` block, paste the following:<br>
 <pre>/home/ubuntu/Desktop/TheDenial/pass_clean.bits</pre>
