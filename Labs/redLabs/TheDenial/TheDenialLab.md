@@ -58,7 +58,7 @@ In the `File Source` block, paste the following:<br>
 >Remember, our team recommends completing [Lab 1](https://freelabfridays.com/satlabs/labs/redlabs/theintercepter/theintercepterlab/) first in order to understand this flow.<br>
 ><br>
 >To open the flow, run the following:<br>
-><pre>gnuradio-companion &</pre><br>
+><pre>gnuradio-companion &</pre>
 >Then go to `File` and `Open`. Select `Lab1_GNU.grc` and open it.
 
 In the first `File Sink` block, paste the following:<br>
