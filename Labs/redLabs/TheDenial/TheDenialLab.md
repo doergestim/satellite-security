@@ -112,7 +112,7 @@ n = (np.random.normal(0, math.sqrt(noise_var), x.shape)
 
 Press `Ctrl + x` and `y` and `Enter` to save and exit
 
-- And make the new files like this
+And make the new files like this
 ```bash
 python3 jam.py pass_clean.iq pass_jam_0dB.iq 0
 ```
@@ -122,7 +122,7 @@ python3 jam.py pass_clean.iq pass_jam_-5dB.iq -5
 ```
 
 
-- Now run the flowgraph on both of these files, what do you notice?
+Now run the flowgraph on both of these files, what do you notice?
 1. The tag debug doesn't work, it messes up the access code and so it will not get any hits
 2. Because of Nr. 1, the BPF file will be empty
 3. The ``.bits`` files are completely different from each other, I'll show only the beginnings
@@ -137,16 +137,15 @@ python3 jam.py pass_clean.iq pass_jam_-5dB.iq -5
 
 ![image](/Assets/RLab2/RLab2-8.png)
 
-- It makes it impossible to decode, and if you don't believe, try it yourself with this script
+It makes it impossible to decode, and if you don't believe, try it yourself with this script:
 
 ```bash
 nano decodeScript.py
 ```
-
-- Paste this code in the file and replace `<whole 0/1 string here>` with your encoded **bit stream**
+Paste this code in the file and replace `<whole 0/1 string here>` with your encoded **bit stream**
 
 >[!IMPORTANT]
->Make sure to replace in code with your bit stream, else it will not work
+>Make sure to replace in code with your bit stream, else it will not work.
 
 ```
 b = "<whole 0/1 string here>"
@@ -168,9 +167,10 @@ for score, off, preview in candidates:
     print(f"offset={off}, printable={score:.2%}\n{preview}\n")
 ```
 
-- To save and exit do `Ctrl + x` and `y` and `Enter`
+To save and exit do `Ctrl + x` and `y` and `Enter`
 
-- Run it with
+Run it with the following:
+
 ```bash
 python3 decodeScript.py
 ```
@@ -178,7 +178,7 @@ python3 decodeScript.py
 <hr>
 
 ## Part B - Replay Attack (Confuse Operators)
-- Start the **ground station**
+Start up the **ground station**:
 ```bash
 cd ~/Desktop/TheDenial/groundstation
 ```
