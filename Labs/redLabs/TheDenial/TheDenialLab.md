@@ -122,7 +122,15 @@ python3 jam.py pass_clean.iq pass_jam_-5dB.iq -5
 ```
 
 
-Now run the flowgraph on both of these files, what do you notice?
+Now let's go back and run the flowgraph using both of these files.<br>
+For the first file, open the `File Source` block and paste the following:
+<pre>/home/ubuntu/Desktop/TheDenial/pass_jam_0dB.iq<pre>
+
+
+
+
+
+, what do you notice?
 1. The tag debug doesn't work, it messes up the access code and so it will not get any hits
 2. Because of Nr. 1, the BPF file will be empty
 3. The ``.bits`` files are completely different from each other, I'll show only the beginnings
