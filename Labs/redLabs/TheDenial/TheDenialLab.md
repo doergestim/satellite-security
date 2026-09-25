@@ -126,13 +126,22 @@ Now let's go back and run the flowgraph using both of these files.<br>
 For the first file, open the `File Source` block and paste the following:
 <pre>/home/ubuntu/Desktop/TheDenial/pass_jam_0dB.iq<pre>
 
+![image](/Assets/RLab2/newfile_run1.png)
+
+Run the flow with `F6`.<br>
+
+Now, go back and change the `File Source` block one more time by pasting the following:
+<pre>/home/ubuntu/Desktop/TheDenial/pass_jam_-5dB.iq<pre>
+
+![image](/Assets/RLab2/newfile_run2.png)
 
 
 
-
-, what do you notice?
+What do you notice?
 1. The tag debug doesn't work, it messes up the access code and so it will not get any hits
-2. Because of Nr. 1, the BPF file will be empty
+2. Because of Nr. 1, the BPF file will be empty. Run the following to check for yourself:
+<pre>cat /home/ubuntu/Desktop/TheDenial/pass_clean_BPF.bits</pre>
+
 3. The ``.bits`` files are completely different from each other, I'll show only the beginnings
 
 ![image](/Assets/RLab2/RLab2-6.png)
