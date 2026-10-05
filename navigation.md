@@ -13,6 +13,7 @@
   - [Defending Odyssey API And DoS Protection](Labs/blueLabs/DefendingOdyssey/DefendingODYSSEY_API_And_DoS-Protection.md)
   - [SatDump Lab](Labs/blueLabs/SatDump/SatDump.md)
   - [Ephemerista Lab](Labs/blueLabs/EphemeristaLab/Ephemerista.md)
+  - [SatNOGS](https://github.com/doergestim/satellite-security/blob/main/Labs/blueLabs/SatNogLab.md)
 
 
 ### CTFs
