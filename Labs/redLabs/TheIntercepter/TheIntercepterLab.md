@@ -158,9 +158,22 @@ After saving, you will see this window pop up:
 ![](/Assets/RLab1/Lab1-11.png)
 
 You’re looking at **raw baseband**.<br>
-You will notice two energy blobs near **±2 kHz**, indicating that this signal was likely encoded using **Binary FSK** a.k.a. **2-FSK** or **2FSK**
+You will notice two energy blobs near **±2.4 kHz**, indicating that this signal was likely encoded using **Binary FSK** a.k.a. **2-FSK** or **2FSK**
 
 ![](/Assets/RLab1/Lab1-12.png)
+
+>[!TIP]
+>**Measure it yourself: the frequency deviation (`fdev`)**
+>
+>Each blob is one of the two FSK tones: one tone means **0**, the other means **1**.
+>The **deviation** is how far each tone sits from the centre (0 Hz).
+>
+>1. Find the peak of each blob on the **Frequency (kHz)** axis.
+>2. Read the distance from **0** to either peak. Here the peaks are at about **-2.4 kHz** and **+2.4 kHz**, so the deviation is about **2400 Hz**.
+>
+>![](/Assets/RLab1/Lab1-measure-fdev.png)
+>
+>On an unknown signal (like the CTFs), this is how you find `fdev`: nobody gives it to you.
 
 Close that and let's go on, we are going to keep that for reference and testing purposes.
 
@@ -204,6 +217,10 @@ What do they mean?
 
 3. **fdev** (**2000**): **Frequency deviation** (in **Hz**) of the **FSK tones** - how far the signal shifts for a **0** vs **1**
 
+>[!NOTE]
+>**Where these numbers come from.** `fdev` is the deviation you measured on the spectrum (about 2.4 kHz). We use **2000** here; anything close works, because `fdev` only sets **how tall** the `Quadrature Demod` output is, not **which bits** come out. `2400` works just as well.
+>`sym_rate` (**1200**) you will **measure yourself** on the time plot at Checkpoint Run #2. `sps` is then simple math: **48000 / 1200 = 40** samples per bit.
+
 <br>
 
 #### Add Low Pass Filter Block
@@ -232,6 +249,21 @@ Add a ``QT GUI Time Sink`` block, connect it to the ``Low Pass Filter`` block, a
 Run it again by pressing ``F6`` to visualize this
 
 ![](/Assets/RLab1/Lab1-21.png)
+
+>[!TIP]
+>**Measure it yourself: the symbol rate (`sym_rate`)**
+>
+>Every transmission starts with a **preamble**: alternating **1 0 1 0 1 0 ...** bits.
+>After the `Quadrature Demod`, the preamble looks like a **square wave**, and each flat step is exactly **one bit** long.
+>
+>1. In the time plot, **click and drag** a box around the start of the signal to zoom in until you can see individual steps.
+>2. Measure how long **one step** lasts on the **Time (ms)** axis. Here it is about **0.833 ms** (12 steps in 10 ms).
+>3. Symbol rate = **1 / bit time** = 1 / 0.000833 s = **1200 symbols per second**.
+>4. Check it: **samples per symbol** = 48000 / 1200 = **40**.
+>
+>![](/Assets/RLab1/Lab1-measure-symrate.png)
+>
+>On an unknown signal (like the CTFs), this is how you find `sym_rate`. Get it wrong and the `Binary Slicer` output is garbage, so the sync word is never found.
 
 <!--
 >[!IMPORTANT]

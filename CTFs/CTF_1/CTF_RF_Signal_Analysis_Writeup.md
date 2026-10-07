@@ -16,7 +16,82 @@
 
 ---
 
-**Q2. What sync word marks the start of each frame in the bitstream?**
+**Q2. What modulation scheme was used to transmit this signal?**
+
+`2-FSK` (Binary FSK / BFSK)
+
+> Build a minimal GNU Radio flowgraph: `File Source` -> `Throttle` ->
+> `QT GUI Frequency Sink` with `samp_rate = 48000`. Run it.
+>
+> You will see two distinct energy concentrations symmetric around the center
+> frequency. Two discrete tones that switch between them = binary
+> frequency-shift keying.
+>
+> Distractor: BPSK produces a single carrier with phase transitions. QPSK shows
+> four phase states. What you see here is unambiguously two separate tones.
+
+---
+
+**Q3. What is the FSK frequency deviation in Hz?**
+
+`4500 Hz`
+
+> Set `fdev` in the `Quadrature Demod` block and observe the output on a
+> `QT GUI Time Sink`. With the correct deviation value the demodulated float
+> signal swings cleanly between +1 and -1.
+>
+> You can also measure it directly from the `QT GUI Frequency Sink`: the two
+> tone peaks sit at approximately -4500 Hz and +4500 Hz relative to center.
+>
+> Distractor: 2000 Hz is the deviation used in Lab 1. Using that value here
+> causes the `Quadrature Demod` gain to be wrong by a factor of 2.25, producing
+> a compressed float output. The `Binary Slicer` can still threshold it, but
+> intersymbol noise margin is reduced and you may see bit errors on longer
+> frames.
+
+---
+
+**Q4. What is the symbol rate of this downlink in bits per second?**
+
+`2400 bps`
+
+> This value is the `sym_rate` variable in the GNU Radio flowgraph. It controls
+> the `Clock Recovery MM` block's omega parameter:
+>
+> ```
+> omega = samp_rate / sym_rate = 48000 / 2400 = 20
+> ```
+>
+> You can measure it experimentally from the `QT GUI Time Sink` by counting
+> how many samples fit in one symbol period. At 48 kS/s with 20 samples per
+> symbol, each symbol lasts ~416 us.
+>
+> Distractor: 1200 bps is the symbol rate used in Lab 1 (TheIntercepter) for
+> ODYSSEY-1. This is a different satellite and a different recording - do not
+> reuse Lab 1 parameters.
+
+---
+
+**Q5. How many IQ samples represent exactly one transmitted symbol?**
+
+`20 samples per symbol`
+
+Working:
+
+```
+sps = samp_rate / sym_rate = 48000 / 2400 = 20.0
+```
+
+> This is the `omega` value passed to `Clock Recovery MM`. It tells the block
+> how far apart (in samples) to expect consecutive bit boundaries.
+>
+> Distractor: some students compute `48000 / 1200 = 40` by reusing the Lab 1
+> symbol rate. The Clock Recovery block will appear to lock but decodes at
+> half speed, producing garbage where every other bit is merged.
+
+---
+
+**Q6. What sync word marks the start of each frame in the bitstream?**
 
 `0x1ACFFC1D`
 
@@ -52,81 +127,6 @@
 > ```
 >
 > `0001 1010 1100 1111 1111 1100 0001 1101` = `1A CF FC 1D`.
-
----
-
-**Q3. What modulation scheme was used to transmit this signal?**
-
-`2-FSK` (Binary FSK / BFSK)
-
-> Build a minimal GNU Radio flowgraph: `File Source` -> `Throttle` ->
-> `QT GUI Frequency Sink` with `samp_rate = 48000`. Run it.
->
-> You will see two distinct energy concentrations symmetric around the center
-> frequency. Two discrete tones that switch between them = binary
-> frequency-shift keying.
->
-> Distractor: BPSK produces a single carrier with phase transitions. QPSK shows
-> four phase states. What you see here is unambiguously two separate tones.
-
----
-
-**Q4. What is the symbol rate of this downlink in bits per second?**
-
-`2400 bps`
-
-> This value is the `sym_rate` variable in the GNU Radio flowgraph. It controls
-> the `Clock Recovery MM` block's omega parameter:
->
-> ```
-> omega = samp_rate / sym_rate = 48000 / 2400 = 20
-> ```
->
-> You can measure it experimentally from the `QT GUI Time Sink` by counting
-> how many samples fit in one symbol period. At 48 kS/s with 20 samples per
-> symbol, each symbol lasts ~416 us.
->
-> Distractor: 1200 bps is the symbol rate used in Lab 1 (TheIntercepter) for
-> ODYSSEY-1. This is a different satellite and a different recording - do not
-> reuse Lab 1 parameters.
-
----
-
-**Q5. What is the FSK frequency deviation in Hz?**
-
-`4500 Hz`
-
-> Set `fdev` in the `Quadrature Demod` block and observe the output on a
-> `QT GUI Time Sink`. With the correct deviation value the demodulated float
-> signal swings cleanly between +1 and -1.
->
-> You can also measure it directly from the `QT GUI Frequency Sink`: the two
-> tone peaks sit at approximately -4500 Hz and +4500 Hz relative to center.
->
-> Distractor: 2000 Hz is the deviation used in Lab 1. Using that value here
-> causes the `Quadrature Demod` gain to be wrong by a factor of 2.25, producing
-> a compressed float output. The `Binary Slicer` can still threshold it, but
-> intersymbol noise margin is reduced and you may see bit errors on longer
-> frames.
-
----
-
-**Q6. How many IQ samples represent exactly one transmitted symbol?**
-
-`20 samples per symbol`
-
-Working:
-
-```
-sps = samp_rate / sym_rate = 48000 / 2400 = 20.0
-```
-
-> This is the `omega` value passed to `Clock Recovery MM`. It tells the block
-> how far apart (in samples) to expect consecutive bit boundaries.
->
-> Distractor: some students compute `48000 / 1200 = 40` by reusing the Lab 1
-> symbol rate. The Clock Recovery block will appear to lock but decodes at
-> half speed, producing garbage where every other bit is merged.
 
 ---
 
