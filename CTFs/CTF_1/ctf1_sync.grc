@@ -36,8 +36,8 @@ blocks:
 - name: dev
   id: variable
   parameters:
-    comment: approx FSK deviation in Hz (only scales the demod output)
-    value: '6500'
+    comment: FSK deviation in Hz (Q5; only scales the demod output)
+    value: '4500'
   states:
     coordinate: [400, 12]
     rotation: 0
