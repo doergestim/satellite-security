@@ -2,13 +2,14 @@ options:
   parameters:
     author: VTEM Labs
     category: '[GRC Hier Blocks]'
-    description: 'CTF 1: 2-FSK demod of pass_ctf.iq to bits, tags the CCSDS sync word 0x1ACFFC1D'
-    generate_options: no_gui
+    description: 'CTF 1 (GUI): 2-FSK demod of pass_ctf.iq to bits, tags the CCSDS sync word 0x1ACFFC1D'
+    generate_options: qt_gui
     id: ctf1_sync
     output_language: python
     run: 'True'
     run_options: run
     title: CTF 1 sync word finder
+    window_size: (1000,1000)
   states:
     coordinate: [8, 8]
     rotation: 0
@@ -163,8 +164,97 @@ blocks:
     rotation: 0
     state: enabled
 
+- name: blocks_throttle_0
+  id: blocks_throttle2
+  parameters:
+    comment: plays the file at real speed (1.5 s) so the plots are watchable
+    limit: auto
+    maximum: '0.1'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    coordinate: [120, 260]
+    rotation: 0
+    state: enabled
+- name: blocks_uchar_to_float_0
+  id: blocks_uchar_to_float
+  parameters:
+    comment: bits as 0.0 / 1.0 for plotting
+  states:
+    coordinate: [1340, 300]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_demod
+  id: qtgui_time_sink_x
+  parameters:
+    autoscale: 'False'
+    axislabels: 'True'
+    entags: 'True'
+    grid: 'True'
+    gui_hint: ''
+    legend: 'False'
+    name: '"Demod, averaged per symbol (above 0 = 1, below 0 = 0)"'
+    nconnections: '1'
+    size: '480'
+    srate: samp_rate
+    stemplot: 'False'
+    type: float
+    update_time: '0.10'
+    ymax: '1.5'
+    ymin: '-1.5'
+    tr_mode: qtgui.TRIG_MODE_FREE
+  states:
+    coordinate: [440, 300]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_bits
+  id: qtgui_time_sink_x
+  parameters:
+    autoscale: 'False'
+    axislabels: 'True'
+    entags: 'True'
+    grid: 'True'
+    gui_hint: ''
+    legend: 'False'
+    name: '"Bits - display freezes on each sync tag (frame start)"'
+    nconnections: '1'
+    size: '96'
+    srate: samp_rate/sps
+    stemplot: 'False'
+    type: float
+    update_time: '0.10'
+    ymax: '1.2'
+    ymin: '-0.2'
+    tr_mode: qtgui.TRIG_MODE_TAG
+    tr_tag: '"sync"'
+    tr_delay: 32/(samp_rate/sps)
+    tr_chan: '0'
+    tr_level: '0.5'
+    tr_slope: qtgui.TRIG_SLOPE_POS
+  states:
+    coordinate: [1540, 300]
+    rotation: 0
+    state: enabled
+
+- name: snippet_window_size
+  id: snippet
+  parameters:
+    comment: opens the window big enough to read both plots
+    code: self.resize(1200, 900)
+    priority: '0'
+    section: main_after_init
+  states:
+    coordinate: [8, 360]
+    rotation: 0
+    state: enabled
+
 connections:
-- [blocks_file_source_0, '0', analog_quadrature_demod_cf_0, '0']
+- [blocks_file_source_0, '0', blocks_throttle_0, '0']
+- [blocks_throttle_0, '0', analog_quadrature_demod_cf_0, '0']
+- [blocks_moving_average_xx_0, '0', qtgui_time_sink_demod, '0']
+- [digital_correlate_access_code_tag_xx_0, '0', blocks_uchar_to_float_0, '0']
+- [blocks_uchar_to_float_0, '0', qtgui_time_sink_bits, '0']
 - [analog_quadrature_demod_cf_0, '0', blocks_moving_average_xx_0, '0']
 - [blocks_moving_average_xx_0, '0', blocks_keep_one_in_n_0, '0']
 - [blocks_keep_one_in_n_0, '0', digital_binary_slicer_fb_0, '0']
