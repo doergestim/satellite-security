@@ -1,267 +1,639 @@
 options:
   parameters:
-    author: VTEM Labs
+    author: ''
     category: '[GRC Hier Blocks]'
-    description: 'CTF 1 (GUI): 2-FSK demod of pass_ctf.iq to bits, tags the CCSDS sync word 0x1ACFFC1D'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
     generate_options: qt_gui
-    id: ctf1_sync
+    hier_block_src_path: '.:'
+    id: CTF1_sync
+    max_nouts: '0'
     output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
     run: 'True'
-    run_options: run
-    title: CTF 1 sync word finder
-    window_size: (1000,1000)
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: CTF 1 - RF Signal Analysis
+    window_size: ''
   states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
     coordinate: [8, 8]
     rotation: 0
     state: enabled
 
 blocks:
+- name: fdev
+  id: variable
+  parameters:
+    comment: ''
+    value: '4500.0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [453, 17]
+    rotation: 0
+    state: true
 - name: samp_rate
   id: variable
   parameters:
-    comment: from pass_ctf.json
+    comment: ''
     value: '48000'
   states:
-    coordinate: [200, 12]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
     rotation: 0
     state: enabled
 - name: sps
   id: variable
   parameters:
-    comment: samples per symbol (48000 / 2400 baud)
-    value: '20'
+    comment: ''
+    value: samp_rate / sym_rate
   states:
-    coordinate: [300, 12]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [371, 18]
     rotation: 0
-    state: enabled
-- name: dev
+    state: true
+- name: sym_rate
   id: variable
   parameters:
-    comment: FSK deviation in Hz (Q5; only scales the demod output)
-    value: '4500'
+    comment: ''
+    value: '2400'
   states:
-    coordinate: [400, 12]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [280, 15]
     rotation: 0
-    state: enabled
-- name: imports_0
-  id: import
+    state: true
+- name: analog_quadrature_demod_cf_0
+  id: analog_quadrature_demod_cf
   parameters:
-    imports: import os, glob
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain: samp_rate/(2*math.pi*fdev)
+    maxoutbuf: '0'
+    minoutbuf: '0'
   states:
-    coordinate: [8, 80]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [156, 323]
     rotation: 0
-    state: enabled
-- name: in_file
-  id: variable
+    state: true
+- name: blocks_add_const_vxx_0
+  id: blocks_add_const_vxx
   parameters:
-    comment: 'finds pass_ctf.iq: next to the .grc, else anywhere under your home folder.
-      Set a full path here to override.'
-    value: next(iter([p for p in [os.path.join(os.getcwd(), "pass_ctf.iq")] if os.path.isfile(p)]
-      + sorted(glob.glob(os.path.expanduser("~/**/pass_ctf.iq"), recursive=True))), "pass_ctf.iq")
+    affinity: ''
+    alias: ''
+    comment: ''
+    const: '48'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: byte
+    vlen: '1'
   states:
-    coordinate: [500, 12]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [101, 650]
     rotation: 0
-    state: enabled
-- name: bits_file
-  id: variable
+    state: true
+- name: blocks_file_sink_0
+  id: blocks_file_sink
   parameters:
-    comment: one byte per bit (00/01), written next to pass_ctf.iq
-    value: os.path.join(os.path.dirname(os.path.abspath(in_file)), "bits.bin")
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: /home/ubuntu/Desktop/satellite-security/CTFs/CTF_1/pass_ctf.bits
+    type: byte
+    unbuffered: 'False'
+    vlen: '1'
   states:
-    coordinate: [640, 12]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [306, 634]
     rotation: 0
-    state: enabled
+    state: true
+- name: blocks_file_sink_1
+  id: blocks_file_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    append: 'False'
+    comment: ''
+    file: /home/ubuntu/Desktop/satellite-security/CTFs/CTF_1/pass_ctf_BPF.txt
+    type: byte
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1583, 522]
+    rotation: 0
+    state: true
 - name: blocks_file_source_0
   id: blocks_file_source
   parameters:
+    affinity: ''
+    alias: ''
     begin_tag: pmt.PMT_NIL
-    file: in_file
+    comment: ''
+    file: /home/ubuntu/Desktop/satellite-security/CTFs/CTF_1/pass_ctf.iq
     length: '0'
+    maxoutbuf: '0'
+    minoutbuf: '0'
     offset: '0'
     repeat: 'False'
     type: complex
     vlen: '1'
   states:
-    coordinate: [8, 140]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [21, 136]
     rotation: 0
-    state: enabled
-- name: analog_quadrature_demod_cf_0
-  id: analog_quadrature_demod_cf
+    state: true
+- name: blocks_repack_bits_bb_0
+  id: blocks_repack_bits_bb
   parameters:
-    comment: instantaneous frequency, about +1 for a 1 and -1 for a 0
-    gain: samp_rate/(2*math.pi*dev)
+    affinity: ''
+    alias: ''
+    align_output: 'False'
+    comment: ''
+    endianness: gr.GR_MSB_FIRST
+    k: '1'
+    l: '8'
+    len_tag_key: '""'
+    maxoutbuf: '0'
+    minoutbuf: '0'
   states:
-    coordinate: [230, 156]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1345, 530]
     rotation: 0
-    state: enabled
-- name: blocks_moving_average_xx_0
-  id: blocks_moving_average_xx
-  parameters:
-    comment: average over one symbol (matched filter for FSK)
-    length: sps
-    max_iter: '4000'
-    scale: 1.0/sps
-    type: float
-    vlen: '1'
-  states:
-    coordinate: [440, 140]
-    rotation: 0
-    state: enabled
-- name: blocks_keep_one_in_n_0
-  id: blocks_keep_one_in_n
-  parameters:
-    comment: one sample per symbol, at the end of each averaging window
-    n: sps
-    type: float
-    vlen: '1'
-  states:
-    coordinate: [650, 156]
-    rotation: 0
-    state: enabled
-- name: digital_binary_slicer_fb_0
-  id: digital_binary_slicer_fb
-  parameters:
-    comment: '> 0 is 1, otherwise 0'
-  states:
-    coordinate: [840, 160]
-    rotation: 0
-    state: enabled
-- name: blocks_file_sink_0
-  id: blocks_file_sink
-  parameters:
-    append: 'False'
-    file: bits_file
-    type: byte
-    unbuffered: 'False'
-    vlen: '1'
-  states:
-    coordinate: [1040, 60]
-    rotation: 0
-    state: enabled
-- name: digital_correlate_access_code_tag_xx_0
-  id: digital_correlate_access_code_tag_xx
-  parameters:
-    access_code: '"00011010110011111111110000011101"'
-    comment: 0x1ACFFC1D (CCSDS ASM); tag lands on the first bit AFTER the sync word
-    tagname: '"sync"'
-    threshold: '0'
-    type: byte
-  states:
-    coordinate: [1040, 220]
-    rotation: 0
-    state: enabled
+    state: true
 - name: blocks_tag_debug_0
   id: blocks_tag_debug
   parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
     display: 'True'
-    filter: '"sync"'
-    name: '"ASM found"'
+    filter: '""'
+    name: sync
     num_inputs: '1'
     type: byte
     vlen: '1'
   states:
-    coordinate: [1340, 228]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1070, 403]
     rotation: 0
-    state: enabled
-
-- name: blocks_throttle_0
-  id: blocks_throttle2
+    state: true
+- name: blocks_tagged_stream_align_0
+  id: blocks_tagged_stream_align
   parameters:
-    comment: plays the file at real speed (1.5 s) so the plots are watchable
-    limit: auto
-    maximum: '0.1'
+    affinity: ''
+    alias: ''
+    comment: ''
+    lengthtagname: sync
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    type: byte
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1132, 537]
+    rotation: 0
+    state: true
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
     samples_per_second: samp_rate
     type: complex
     vlen: '1'
   states:
-    coordinate: [120, 260]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [266, 168]
     rotation: 0
-    state: enabled
+    state: true
 - name: blocks_uchar_to_float_0
   id: blocks_uchar_to_float
   parameters:
-    comment: bits as 0.0 / 1.0 for plotting
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
   states:
-    coordinate: [1340, 300]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [850, 282]
+    rotation: 0
+    state: true
+- name: digital_binary_slicer_fb_0
+  id: digital_binary_slicer_fb
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [883, 376]
+    rotation: 0
+    state: true
+- name: digital_clock_recovery_mm_xx_0
+  id: digital_clock_recovery_mm_xx
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    gain_mu: '0.175'
+    gain_omega: 0.25*0.175*0.175
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    mu: '0.5'
+    omega: sps
+    omega_relative_limit: '0.005'
+    type: float
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [620, 340]
+    rotation: 0
+    state: true
+- name: digital_correlate_access_code_tag_xx_0
+  id: digital_correlate_access_code_tag_xx
+  parameters:
+    access_code: '00011010110011111111110000011101'
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    tagname: sync
+    threshold: '0'
+    type: byte
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [837, 521]
     rotation: 0
     state: enabled
-- name: qtgui_time_sink_demod
+- name: low_pass_filter_0
+  id: low_pass_filter
+  parameters:
+    affinity: ''
+    alias: ''
+    beta: '6.76'
+    comment: ''
+    cutoff_freq: 1.5e3
+    decim: '1'
+    gain: '1'
+    interp: '1'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samp_rate: samp_rate
+    type: fir_filter_fff
+    width: '500'
+    win: window.WIN_HAMMING
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [422, 275]
+    rotation: 0
+    state: true
+- name: qtgui_freq_sink_x_0
+  id: qtgui_freq_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    average: '1.0'
+    axislabels: 'True'
+    bw: samp_rate
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    ctrlpanel: 'False'
+    fc: '0'
+    fftsize: '1024'
+    freqhalf: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label: Relative Gain
+    label1: ''
+    label10: ''''''
+    label2: ''''''
+    label3: ''''''
+    label4: ''''''
+    label5: ''''''
+    label6: ''''''
+    label7: ''''''
+    label8: ''''''
+    label9: ''''''
+    legend: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    name: '""'
+    nconnections: '1'
+    showports: 'False'
+    tr_chan: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_tag: '""'
+    type: complex
+    units: dB
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    wintype: firdes.WIN_BLACKMAN_hARRIS
+    ymax: '10'
+    ymin: '-140'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [479, 97]
+    rotation: 0
+    state: true
+- name: qtgui_time_sink_x_0
   id: qtgui_time_sink_x
   parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
     autoscale: 'False'
     axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
     entags: 'True'
-    grid: 'True'
+    grid: 'False'
     gui_hint: ''
-    legend: 'False'
-    name: '"Demod, averaged per symbol (above 0 = 1, below 0 = 0)"'
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
     nconnections: '1'
-    size: '480'
+    size: '1024'
     srate: samp_rate
     stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
     type: float
     update_time: '0.10'
-    ymax: '1.5'
-    ymin: '-1.5'
-    tr_mode: qtgui.TRIG_MODE_FREE
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
   states:
-    coordinate: [440, 300]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [620, 262]
     rotation: 0
-    state: enabled
-- name: qtgui_time_sink_bits
+    state: true
+- name: qtgui_time_sink_x_1
   id: qtgui_time_sink_x
   parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
     autoscale: 'False'
     axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
     entags: 'True'
-    grid: 'True'
+    grid: 'False'
     gui_hint: ''
-    legend: 'False'
-    name: '"Bits - display freezes on each sync tag (frame start)"'
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
     nconnections: '1'
-    size: '96'
-    srate: samp_rate/sps
+    size: '1024'
+    srate: samp_rate
     stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
     type: float
     update_time: '0.10'
-    ymax: '1.2'
-    ymin: '-0.2'
-    tr_mode: qtgui.TRIG_MODE_TAG
-    tr_tag: '"sync"'
-    tr_delay: 32/(samp_rate/sps)
-    tr_chan: '0'
-    tr_level: '0.5'
-    tr_slope: qtgui.TRIG_SLOPE_POS
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
   states:
-    coordinate: [1540, 300]
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1069, 262]
     rotation: 0
-    state: enabled
-
-- name: snippet_window_size
-  id: snippet
-  parameters:
-    comment: opens the window big enough to read both plots
-    code: self.resize(1200, 900)
-    priority: '0'
-    section: main_after_init
-  states:
-    coordinate: [8, 360]
-    rotation: 0
-    state: enabled
+    state: true
 
 connections:
+- [analog_quadrature_demod_cf_0, '0', low_pass_filter_0, '0']
+- [blocks_add_const_vxx_0, '0', blocks_file_sink_0, '0']
 - [blocks_file_source_0, '0', blocks_throttle_0, '0']
+- [blocks_repack_bits_bb_0, '0', blocks_file_sink_1, '0']
+- [blocks_tagged_stream_align_0, '0', blocks_repack_bits_bb_0, '0']
 - [blocks_throttle_0, '0', analog_quadrature_demod_cf_0, '0']
-- [blocks_moving_average_xx_0, '0', qtgui_time_sink_demod, '0']
-- [digital_correlate_access_code_tag_xx_0, '0', blocks_uchar_to_float_0, '0']
-- [blocks_uchar_to_float_0, '0', qtgui_time_sink_bits, '0']
-- [analog_quadrature_demod_cf_0, '0', blocks_moving_average_xx_0, '0']
-- [blocks_moving_average_xx_0, '0', blocks_keep_one_in_n_0, '0']
-- [blocks_keep_one_in_n_0, '0', digital_binary_slicer_fb_0, '0']
-- [digital_binary_slicer_fb_0, '0', blocks_file_sink_0, '0']
+- [blocks_throttle_0, '0', qtgui_freq_sink_x_0, '0']
+- [blocks_uchar_to_float_0, '0', qtgui_time_sink_x_1, '0']
+- [digital_binary_slicer_fb_0, '0', blocks_add_const_vxx_0, '0']
+- [digital_binary_slicer_fb_0, '0', blocks_uchar_to_float_0, '0']
 - [digital_binary_slicer_fb_0, '0', digital_correlate_access_code_tag_xx_0, '0']
+- [digital_clock_recovery_mm_xx_0, '0', digital_binary_slicer_fb_0, '0']
 - [digital_correlate_access_code_tag_xx_0, '0', blocks_tag_debug_0, '0']
+- [digital_correlate_access_code_tag_xx_0, '0', blocks_tagged_stream_align_0, '0']
+- [low_pass_filter_0, '0', digital_clock_recovery_mm_xx_0, '0']
+- [low_pass_filter_0, '0', qtgui_time_sink_x_0, '0']
 
 metadata:
   file_format: 1
-  grc_version: 3.10.9.2

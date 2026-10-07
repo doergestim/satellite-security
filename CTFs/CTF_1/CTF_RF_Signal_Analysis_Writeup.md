@@ -33,22 +33,22 @@
 > the bitstream before the sync word and gets stripped by the `Correlate Access
 > Code - Tag` block.
 >
-> **Reference flowgraph:** [ctf1_sync.grc](ctf1_sync.grc) (GNU Radio 3.10). Open it
-> in GNU Radio Companion and run it (F6). A window opens with the demodulated
-> signal and the bit stream, which freezes on each `sync` tag; the tag offsets
-> also print in GRC's console pane. Close the window when done. It finds
-> `pass_ctf.iq` next to the `.grc` or
-> anywhere under your home folder (set `in_file` to a full path to override), and
-> writes `bits.bin` beside the recording. The chain is `File Source` -> `Quadrature Demod`
-> -> `Moving Average` (20) -> `Keep 1 in N` (20) -> `Binary Slicer`, which writes
-> one byte per bit to `bits.bin` and feeds a `Correlate Access Code - Tag` set to
-> `00011010110011111111110000011101`. `Tag Debug` prints a `sync` tag for each
-> frame (offsets 592 and 2504; the tag sits on the first bit after the sync word).
-> To read the sync word yourself, print the bits as text and take the 32 bits
-> where the `0101...` preamble ends:
+> **Reference flowgraph:** [ctf1_sync.grc](ctf1_sync.grc) is the Lab 1
+> (TheIntercepter) final flowgraph with the CTF 1 values: `sym_rate` 2400,
+> `fdev` 4500, File Source not repeating. It uses full paths on the lab VM:
+>
+> - input: `/home/ubuntu/Desktop/satellite-security/CTFs/CTF_1/pass_ctf.iq`
+>   (unzip `ctf_1_files.zip` in that folder first)
+> - bits: `/home/ubuntu/Desktop/satellite-security/CTFs/CTF_1/pass_ctf.bits`
+> - frames: `/home/ubuntu/Desktop/satellite-security/CTFs/CTF_1/pass_ctf_BPF.txt`
+>
+> Run it (F6): `Tag Debug` prints a `sync` tag per frame in the GRC console
+> (offsets 596 and 2508) and `xxd pass_ctf_BPF.txt` starts with the frame bytes.
+> To read the sync word from the bits yourself, take the 32 bits where the
+> `0101...` preamble ends in `pass_ctf.bits` (ASCII `0`/`1`):
 >
 > ```bash
-> python3 -c "print(''.join(str(b) for b in open('bits.bin','rb').read()))" | fold -w 64
+> fold -w 64 /home/ubuntu/Desktop/satellite-security/CTFs/CTF_1/pass_ctf.bits | head
 > ```
 >
 > `0001 1010 1100 1111 1111 1100 0001 1101` = `1A CF FC 1D`.
