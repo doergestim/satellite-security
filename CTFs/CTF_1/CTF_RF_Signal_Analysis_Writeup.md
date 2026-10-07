@@ -33,8 +33,10 @@
 > the bitstream before the sync word and gets stripped by the `Correlate Access
 > Code - Tag` block.
 >
-> **Reference flowgraph:** [ctf1_sync.grc](ctf1_sync.grc) (GNU Radio 3.10). Put it
-> next to `pass_ctf.iq` and run it. The chain is `File Source` -> `Quadrature Demod`
+> **Reference flowgraph:** [ctf1_sync.grc](ctf1_sync.grc) (GNU Radio 3.10). Open it
+> in GNU Radio Companion and run it. It finds `pass_ctf.iq` next to the `.grc` or
+> anywhere under your home folder (set `in_file` to a full path to override), and
+> writes `bits.bin` beside the recording. The chain is `File Source` -> `Quadrature Demod`
 > -> `Moving Average` (20) -> `Keep 1 in N` (20) -> `Binary Slicer`, which writes
 > one byte per bit to `bits.bin` and feeds a `Correlate Access Code - Tag` set to
 > `00011010110011111111110000011101`. `Tag Debug` prints a `sync` tag for each

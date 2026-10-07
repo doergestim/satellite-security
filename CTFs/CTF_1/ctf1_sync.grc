@@ -42,11 +42,21 @@ blocks:
     coordinate: [400, 12]
     rotation: 0
     state: enabled
+- name: imports_0
+  id: import
+  parameters:
+    imports: import os, glob
+  states:
+    coordinate: [8, 80]
+    rotation: 0
+    state: enabled
 - name: in_file
   id: variable
   parameters:
-    comment: path to the recording
-    value: '"pass_ctf.iq"'
+    comment: 'finds pass_ctf.iq: next to the .grc, else anywhere under your home folder.
+      Set a full path here to override.'
+    value: next(iter([p for p in [os.path.join(os.getcwd(), "pass_ctf.iq")] if os.path.isfile(p)]
+      + sorted(glob.glob(os.path.expanduser("~/**/pass_ctf.iq"), recursive=True))), "pass_ctf.iq")
   states:
     coordinate: [500, 12]
     rotation: 0
@@ -54,8 +64,8 @@ blocks:
 - name: bits_file
   id: variable
   parameters:
-    comment: one byte per bit (00/01)
-    value: '"bits.bin"'
+    comment: one byte per bit (00/01), written next to pass_ctf.iq
+    value: os.path.join(os.path.dirname(os.path.abspath(in_file)), "bits.bin")
   states:
     coordinate: [640, 12]
     rotation: 0
