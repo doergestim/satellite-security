@@ -1,0 +1,167 @@
+options:
+  parameters:
+    author: VTEM Labs
+    category: '[GRC Hier Blocks]'
+    description: 'CTF 1: 2-FSK demod of pass_ctf.iq to bits, tags the CCSDS sync word 0x1ACFFC1D'
+    generate_options: no_gui
+    id: ctf1_sync
+    output_language: python
+    run: 'True'
+    run_options: run
+    title: CTF 1 sync word finder
+  states:
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: from pass_ctf.json
+    value: '48000'
+  states:
+    coordinate: [200, 12]
+    rotation: 0
+    state: enabled
+- name: sps
+  id: variable
+  parameters:
+    comment: samples per symbol (48000 / 2400 baud)
+    value: '20'
+  states:
+    coordinate: [300, 12]
+    rotation: 0
+    state: enabled
+- name: dev
+  id: variable
+  parameters:
+    comment: approx FSK deviation in Hz (only scales the demod output)
+    value: '6500'
+  states:
+    coordinate: [400, 12]
+    rotation: 0
+    state: enabled
+- name: in_file
+  id: variable
+  parameters:
+    comment: path to the recording
+    value: '"pass_ctf.iq"'
+  states:
+    coordinate: [500, 12]
+    rotation: 0
+    state: enabled
+- name: bits_file
+  id: variable
+  parameters:
+    comment: one byte per bit (00/01)
+    value: '"bits.bin"'
+  states:
+    coordinate: [640, 12]
+    rotation: 0
+    state: enabled
+- name: blocks_file_source_0
+  id: blocks_file_source
+  parameters:
+    begin_tag: pmt.PMT_NIL
+    file: in_file
+    length: '0'
+    offset: '0'
+    repeat: 'False'
+    type: complex
+    vlen: '1'
+  states:
+    coordinate: [8, 140]
+    rotation: 0
+    state: enabled
+- name: analog_quadrature_demod_cf_0
+  id: analog_quadrature_demod_cf
+  parameters:
+    comment: instantaneous frequency, about +1 for a 1 and -1 for a 0
+    gain: samp_rate/(2*math.pi*dev)
+  states:
+    coordinate: [230, 156]
+    rotation: 0
+    state: enabled
+- name: blocks_moving_average_xx_0
+  id: blocks_moving_average_xx
+  parameters:
+    comment: average over one symbol (matched filter for FSK)
+    length: sps
+    max_iter: '4000'
+    scale: 1.0/sps
+    type: float
+    vlen: '1'
+  states:
+    coordinate: [440, 140]
+    rotation: 0
+    state: enabled
+- name: blocks_keep_one_in_n_0
+  id: blocks_keep_one_in_n
+  parameters:
+    comment: one sample per symbol, at the end of each averaging window
+    n: sps
+    type: float
+    vlen: '1'
+  states:
+    coordinate: [650, 156]
+    rotation: 0
+    state: enabled
+- name: digital_binary_slicer_fb_0
+  id: digital_binary_slicer_fb
+  parameters:
+    comment: '> 0 is 1, otherwise 0'
+  states:
+    coordinate: [840, 160]
+    rotation: 0
+    state: enabled
+- name: blocks_file_sink_0
+  id: blocks_file_sink
+  parameters:
+    append: 'False'
+    file: bits_file
+    type: byte
+    unbuffered: 'False'
+    vlen: '1'
+  states:
+    coordinate: [1040, 60]
+    rotation: 0
+    state: enabled
+- name: digital_correlate_access_code_tag_xx_0
+  id: digital_correlate_access_code_tag_xx
+  parameters:
+    access_code: '"00011010110011111111110000011101"'
+    comment: 0x1ACFFC1D (CCSDS ASM); tag lands on the first bit AFTER the sync word
+    tagname: '"sync"'
+    threshold: '0'
+    type: byte
+  states:
+    coordinate: [1040, 220]
+    rotation: 0
+    state: enabled
+- name: blocks_tag_debug_0
+  id: blocks_tag_debug
+  parameters:
+    display: 'True'
+    filter: '"sync"'
+    name: '"ASM found"'
+    num_inputs: '1'
+    type: byte
+    vlen: '1'
+  states:
+    coordinate: [1340, 228]
+    rotation: 0
+    state: enabled
+
+connections:
+- [blocks_file_source_0, '0', analog_quadrature_demod_cf_0, '0']
+- [analog_quadrature_demod_cf_0, '0', blocks_moving_average_xx_0, '0']
+- [blocks_moving_average_xx_0, '0', blocks_keep_one_in_n_0, '0']
+- [blocks_keep_one_in_n_0, '0', digital_binary_slicer_fb_0, '0']
+- [digital_binary_slicer_fb_0, '0', blocks_file_sink_0, '0']
+- [digital_binary_slicer_fb_0, '0', digital_correlate_access_code_tag_xx_0, '0']
+- [digital_correlate_access_code_tag_xx_0, '0', blocks_tag_debug_0, '0']
+
+metadata:
+  file_format: 1
+  grc_version: 3.10.9.2
